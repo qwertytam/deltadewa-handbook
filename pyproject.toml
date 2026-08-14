@@ -1,14 +1,11 @@
 [project]
-name = "deltadewa-handbook"
+name = "deltadewa_handbook"
 version = "0.1.0"
 description = "An Options & Downside Hedging Handbook"
 readme = "README.md"
-authors = [
-    {name = "Tom Marshall",email = "tom.q.marshall@gmail.com"}
-]
+authors = [{ name = "Tom Marshall", email = "tom.q.marshall@gmail.com" }]
 requires-python = ">=3.14,<4.0"
-dependencies = [
-]
+dependencies = []
 
 [tool.mypy]
 mypy_path = ["typings"]
@@ -50,11 +47,11 @@ select = [
 
 [dependency-groups]
 dev = [
-    "mkdocs-material (>=9.7.7,<10.0.0)",
-    "ruff (>=0.16.0)",
-    "mypy>=1.10",
-    "types-PyYAML>=6.0",
-    "pylint (>=4.0.4,<5.0.0)",
+	"mkdocs-material (>=9.7.7,<10.0.0)",
+	"ruff (>=0.16.0)",
+	"mypy>=1.10",
+	"types-PyYAML>=6.0",
+	"pylint (>=4.0.4,<5.0.0)",
 ]
 
 [tool.pylint.main]
