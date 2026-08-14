@@ -1,0 +1,76 @@
+[project]
+name = "deltadewa-handbook"
+version = "0.1.0"
+description = "An Options & Downside Hedging Handbook"
+readme = "README.md"
+authors = [
+    {name = "Tom Marshall",email = "tom.q.marshall@gmail.com"}
+]
+requires-python = ">=3.14,<4.0"
+dependencies = [
+]
+
+[tool.mypy]
+mypy_path = ["typings"]
+strict = true
+
+[tool.ruff]
+line-length = 80
+target-version = "py311"
+
+[tool.ruff.lint]
+preview = true
+select = [
+	"ANN", # type annotations
+	"ARG", # falke8 unused arguments
+	"B",   # flake8-bugbear
+	"COM", # flake8-commas (specifically trailing commas)
+	"C4",  # flake8-comprehensions
+	"D",   # pydocstyle
+	"E",   # Error
+	"ERA", # eradicate commented out code
+	"F",   # pyflakes
+	"FIX", # flake8 fixme
+	"I",   # isort
+	"ISC", # flake8-implicit-str-concat
+	"N",   # pep8-naming
+	# "NPY",  # NumPy specific rules
+	"PERF", # Perflint: performance
+	"PIE",  # flake8-pie 
+	"PGH",  # pygrep-hooks
+	"PTH",  # flake8-use-pathlib 
+	"Q",    # flake8-quotes
+	"RUF",  # Ruff specific rules
+	"S",    # bandit security checks 
+	"SIM",  # flake8-simplify
+	"UP",   # pyupgrade
+	"W",    # Warning
+	# "YTT",  # flake8-2020 
+]
+
+[dependency-groups]
+dev = [
+    "mkdocs-material (>=9.7.7,<10.0.0)",
+    "ruff (>=0.16.0)",
+    "mypy>=1.10",
+    "types-PyYAML>=6.0",
+    "pylint (>=4.0.4,<5.0.0)",
+]
+
+[tool.pylint.main]
+py-version = "3.11"
+jobs = 0
+ignore-paths = []
+fail-under = 10.0
+
+[tool.pylint.format]
+max-line-length = 80
+
+[tool.pylint.design]
+
+[tool.pylint.similarities]
+min-similarity-lines = 10
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
