@@ -1,5 +1,5 @@
 [project]
-name = "deltadewa_handbook"
+name = "deltadewa-handbook"
 version = "0.1.0"
 description = "An Options & Downside Hedging Handbook"
 readme = "README.md"
