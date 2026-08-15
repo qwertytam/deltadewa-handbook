@@ -24,7 +24,7 @@ No intrinsic value yet.
 
 Immediate exercise value.
 
-*Example:* Put intrinsic = max(\$K$ − \$S$, 0).
+*Example:* Put intrinsic = max($K$ − $S$, 0).
 
 #### Extrinsic (Time Value)
 

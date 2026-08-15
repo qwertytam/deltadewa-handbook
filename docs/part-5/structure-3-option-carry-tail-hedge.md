@@ -40,5 +40,5 @@ Even if the trade is ultimately profitable, short options can require additional
 
 #### Volatility Carry Reversal
 
-The See Volatility Risk Premium that funds the hedge can compress or reverse, making the income side unreliable in certain regimes.
+The See [Volatility Risk Premium](../part-4/volatility-risk-premium.md) that funds the hedge can compress or reverse, making the income side unreliable in certain regimes.
 

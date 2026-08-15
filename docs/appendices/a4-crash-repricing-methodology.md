@@ -9,7 +9,7 @@ are valued, at what volatility, or whether the option still has time value left.
 Two defects came out of that gap — one netting the equity loss into the
 numerator, one valuing the crash leg at intrinsic — and between them they made a
 correctly-sized book read as failing every scenario row. This appendix closes the
-gap by stating exactly how \$V_{crash}$ is formed.
+gap by stating exactly how $V_{crash}$ is formed.
 
 It is a **description of the shipped engine**, written against
 `deltadewa/analysis/crash_repricing.py` and `deltadewa/analysis/repricing.py`.
@@ -17,13 +17,13 @@ The normative specification, its acceptance tests, and the full derivation live 
 [`docs/repricing-methodology.md`](https://github.com/qwertytam/deltadewa/blob/main/docs/repricing-methodology.md); where a number
 appears in both, that document is the reference and this one is the summary.
 
-#### The three properties that pin \$V_{crash}$
+#### The three properties that pin $V_{crash}$
 
-- **Hedge-only.** \$V$ counts the **option legs only**. The underlying equity
+- **Hedge-only.** $V$ counts the **option legs only**. The underlying equity
   position is excluded from both terms. Convexity measures what the hedge does;
   netting the book's own loss into it answers a different question and always
   answers it badly.
-- **Repriced, not intrinsic.** \$V_{crash}$ is the legs **repriced** at the crash
+- **Repriced, not intrinsic.** $V_{crash}$ is the legs **repriced** at the crash
   spot and crash volatility — full option value, time value included. Valuing
   them at intrinsic zeroes every strike more than the crash move out of the
   money, which is precisely the part of a tail ladder that is supposed to be
@@ -34,12 +34,12 @@ appears in both, that document is the reference and this one is the summary.
 
 #### The crash state
 
-From today's state — spot \$S_0$, each leg's own $\sigma_i$, rate \$r$, dividend
-yield \$q$, valuation date \$t_0$ — the crash state is built as:
+From today's state — spot $S_0$, each leg's own $\sigma_i$, rate $r$, dividend
+yield $q$, valuation date $t_0$ — the crash state is built as:
 
 | Quantity             | Rule                                                                |
 | -------------------- | ------------------------------------------------------------------- |
-| Crash spot           | \$S_{crash} = S_0 (1 + m)$, \$m$ signed (e.g. $-0.25$)              |
+| Crash spot           | $S_{crash} = S_0 (1 + m)$, $m$ signed (e.g. $-0.25$)              |
 | Crash vol, per leg   | $\sigma_{i,crash} = \sigma_{i} + \Delta\sigma + \kappa\, w_i$       |
 | Rate, dividend yield | held at today's values                                              |
 | Time to maturity     | unchanged                                                           |
@@ -69,7 +69,7 @@ w_i = \begin{cases}
 
 Three properties of that expression carry the weight:
 
-**The anchor is per-leg.** \$K_{ref,i}$ is *leg \$i$'s own* ≈10-delta wing — the
+**The anchor is per-leg.** $K_{ref,i}$ is *leg $i$'s own* ≈10-delta wing — the
 strike whose European put-delta magnitude equals the configured reference delta,
 solved at **that leg's own tenor and today-volatility**. It is a property of the
 strike and the tenor, not of the book. An earlier version anchored the steepening
@@ -95,18 +95,18 @@ the knob can be turned off without changing any other number.
 
 #### Formula
 
-$\$V_{today} = \sum_i \text{price}\big(S_0,\,K_i,\,\sigma_i,\,r,\,q,\,T_i\big)\cdot q_i \cdot c_i$$
+$$V_{today} = \sum_i \text{price}\big(S_0,\,K_i,\,\sigma_i,\,r,\,q,\,T_i\big)\cdot q_i \cdot c_i$$
 
-$\$V_{crash} = \sum_i \text{price}\big(S_{crash},\,K_i,\,\sigma_i + \Delta\sigma + \kappa\,w_i,\,r,\,q,\,T_i\big)\cdot q_i \cdot c_i$$
+$$V_{crash} = \sum_i \text{price}\big(S_{crash},\,K_i,\,\sigma_i + \Delta\sigma + \kappa\,w_i,\,r,\,q,\,T_i\big)\cdot q_i \cdot c_i$$
 
-with \$q_i$ the signed contract quantity, \$c_i$ the contract size, and \$T_i$
+with $q_i$ the signed contract quantity, $c_i$ the contract size, and $T_i$
 unchanged. The denominator is the protected book — the equity notional today —
 so the numerator is a change in *hedge* value and the denominator is a *book*
 value.
 
 An **intrinsic floor** is also computed, as a conservative lower bound:
 
-$\$V_{crash}^{floor} = \sum_i \max\big(K_i - S_{crash},\,0\big)\cdot q_i \cdot c_i \quad \text{(puts)}$$
+$$V_{crash}^{floor} = \sum_i \max\big(K_i - S_{crash},\,0\big)\cdot q_i \cdot c_i \quad \text{(puts)}$$
 
 It is a labelled secondary figure and must never be the headline. The worked
 example below shows why: it reads 2.5× where the repriced value reads 17.5×.
@@ -115,16 +115,16 @@ example below shows why: it reads 2.5× where the repriced value reads 17.5×.
 
 A \$20M book hedged with a three-rung ladder at 20/30/40% out of the money,
 18-month tenor, 23/26/16 contracts, European puts. Spot 6600, today-volatility
-20% flat, \$r = 4.5\%$, \$q = 1.5\%$, contract size 100. Crash move $-25\%$
-(\$S_{crash} = 4950$), flat bump $\Delta\sigma = +0.15$, steepening
+20% flat, $r = 4.5\%$, $q = 1.5\%$, contract size 100. Crash move $-25\%$
+($S_{crash} = 4950$), flat bump $\Delta\sigma = +0.15$, steepening
 $\kappa = +0.10$ anchored at the 0.10 put-delta wing.
 
 At this common tenor and today-volatility all three rungs share a wing at
-\$K_{ref} \approx 5213$ — about 21% out of the money. The 20% rung sits just
-*shallower* than its wing and so reaches \$w = 0.95$; the 30% and 40% rungs sit
+$K_{ref} \approx 5213$ — about 21% out of the money. The 20% rung sits just
+*shallower* than its wing and so reaches $w = 0.95$; the 30% and 40% rungs sit
 *past* it and cap at the full $\kappa$:
 
-| Leg       | Strike | Qty | \$w$ | Crash vol | Value today   | Value in crash  |
+| Leg       | Strike | Qty | $w$ | Crash vol | Value today   | Value in crash  |
 | --------- | ------ | --- | ---- | --------- | ------------- | --------------- |
 | 20% OTM   | 5280   | 23  | 0.95 | 44.5%     | \$219,392     | \$2,524,349     |
 | 30% OTM   | 4620   | 26  | 1.00 | 45.0%     | \$70,696      | \$1,961,615     |

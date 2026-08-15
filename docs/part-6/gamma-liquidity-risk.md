@@ -43,11 +43,11 @@ $\text{Gamma Exposure} = \sum_i \Gamma_i N_i$
 
 Simplified dashboard approximation:
 
-\$GEX = \sum (\Gamma \times OpenInterest)$
+$GEX = \sum (\Gamma \times OpenInterest)$
 
 because dealer gamma models normally include:
 
-\$GEX \approx Gamma \times OI \times contract size \times spot^2 \times 0.01$
+$GEX \approx Gamma \times OI \times contract size \times spot^2 \times 0.01$
 
 Many sites publish estimates.
 

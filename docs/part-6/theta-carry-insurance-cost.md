@@ -34,7 +34,7 @@ Annualized cost:
 -$2,500 × 252 ≈ -$630k → 6.3% of portfolio
 ```
 
-Note: See See Theta Day Convention
+Note: See [Theta Day Convention](../part-2/theta.md#theta-day-convention)
 
 #### Portfolio Interpretation
 
@@ -45,5 +45,5 @@ maximize crash convexity
 minimize theta carry
 ```
 
-See See Typical institutional targets.
+See [Typical institutional targets](../part-7/typical-hedge-program-targets.md#typical-institutional-targets).
 

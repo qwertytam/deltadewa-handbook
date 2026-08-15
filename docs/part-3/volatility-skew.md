@@ -62,11 +62,11 @@ Instead they use **delta-based metrics**, which are more stable across maturitie
 
 A common definition is:
 
-\$Skew = \sigma_{25\Delta\ put} - \sigma_{ATM}$
+$Skew = \sigma_{25\Delta\ put} - \sigma_{ATM}$
 
 Where:
 
-- \$25\Delta_{put} \approx 10\ to\ 15\% \text{ OTM}$
+- $25\Delta_{put} \approx 10\ to\ 15\% \text{ OTM}$
 
 In practice traders often approximate ATM volatility using the 50$\Delta$ call
 or the 40 to 50$\Delta$ put depending on convention.

@@ -8,7 +8,7 @@ These determine hedge effectiveness and the core economics.
 
 How much payoff in large crashes.
 
-See See Crash Convexity for further detail.
+See [Crash Convexity](../part-6/crash-convexity.md) for further detail.
 
 #### 2. Crash Scenario Table & Payoff Ratio
 
@@ -25,7 +25,7 @@ The table simulates portfolio performance under market crashes.
 | -20%     | -\$2M          | +\$650k    | -\$1.35M |
 | -35%     | -\$3.5M        | +\$2M      | -\$1.5M  |
 
-See See Example tail hedge payoff structure
+See [Example tail hedge payoff structure](#2-crash-scenario-table-payoff-ratio)
 
 ##### Key Insight
 
@@ -34,17 +34,17 @@ Options produce convex payoffs:
 - small moves → small protection
 - crashes → accelerating (convex) hedge payoff
 
-This convex structure is the foundation of tail hedging[^gateway].
+This convex structure is the foundation of tail hedging [[Gateway/GIA]](../footnotes/index.md#gateway).
 
-See See Crash Payoff Ratio / Tail Hedge Effectiveness for details on payoff ratio.
+See [Crash Payoff Ratio / Tail Hedge Effectiveness](../part-6/crash-payoff-ratio-tail-hedge-effectiveness.md) for details on payoff ratio.
 
 #### 3. Theta Carry (Insurance Cost)
 
-See See Theta Carry / Insurance Cost
+See [Theta Carry / Insurance Cost](../part-6/theta-carry-insurance-cost.md)
 
 #### 4. Vega Sufficiency Gauge
 
-See See Vega Sufficiency for definition details.
+See [Vega Sufficiency](../part-6/vega-sufficiency.md) for definition details.
 
 ##### Dashboard Display
 
@@ -65,7 +65,7 @@ maximize convexity
 minimize carry
 ```
 
-See See Crash Convexity and See Theta Carry for definitions of convexity and carry.
+See [Crash Convexity](../part-6/crash-convexity.md) and See [Theta Carry](../part-6/theta-carry-insurance-cost.md) for definitions of convexity and carry.
 
 ##### Mathematical Definition of the Ratio
 

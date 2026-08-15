@@ -26,7 +26,7 @@ assuming other inputs remain constant.
 
 $\Theta = -\frac{\partial V}{\partial t}$
 
-where \$t$ is calendar time.
+where $t$ is calendar time.
 
 $\text{Annual Carry} = \frac{-\Theta_{daily} \times 252}{Portfolio}$
 

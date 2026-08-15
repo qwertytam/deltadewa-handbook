@@ -6,15 +6,15 @@ The investor can use three lenses at once to evaluate a long-dated downside hedg
 
 #### 1. Anchor to public strategy indexes
 
-Cboe’s **PPUT** index holds the S&P 500 and buys a **monthly 5% OTM SPX put**, while **PPUT3M** buys **10% OTM quarterly-cycle SPX puts**. Those are useful “expensive / less expensive” public reference points for protective-put style hedging[^cobe-pp-indices].
+Cboe’s **PPUT** index holds the S&P 500 and buys a **monthly 5% OTM SPX put**, while **PPUT3M** buys **10% OTM quarterly-cycle SPX puts**. Those are useful “expensive / less expensive” public reference points for protective-put style hedging [[Cboe: Put Protection Indices]](../footnotes/index.md#cobe-pp-indices).
 
 #### 2. Bottom-up price the intended hedge today
 
-Use the live SPX option surface and price the exact ladder under examination: strikes, maturities, roll dates, and sizing. For USD discounting, use a Treasury or SOFR-style term structure rather than a flat hand-waved rate. The VIX methodology and Cboe volatility materials are useful references for how the market thinks about implied variance and term structure[^cboe-vix-maths].
+Use the live SPX option surface and price the exact ladder under examination: strikes, maturities, roll dates, and sizing. For USD discounting, use a Treasury or SOFR-style term structure rather than a flat hand-waved rate. The VIX methodology and Cboe volatility materials are useful references for how the market thinks about implied variance and term structure [[Cboe: VIX Methodology]](../footnotes/index.md#cboe-vix-maths).
 
 #### 3. Historical simulation
 
-Replay the roll rules through history using SPX returns plus a proxy for long-vol pricing. This is the most informative estimate because hedge cost depends heavily on the volatility regime and skew when the roll is initiated. Cboe’s protective-put and options-based benchmark materials are good sanity checks for what protective strategies have looked like historically[^cobe-pp-indices].
+Replay the roll rules through history using SPX returns plus a proxy for long-vol pricing. This is the most informative estimate because hedge cost depends heavily on the volatility regime and skew when the roll is initiated. Cboe’s protective-put and options-based benchmark materials are good sanity checks for what protective strategies have looked like historically [[Cboe: Put Protection Indices]](../footnotes/index.md#cobe-pp-indices).
 
 #### Metrics to Track During Testing
 
@@ -26,7 +26,7 @@ Estimate these three quantities:
 
 Notes:
 
-- See See Crash Payoff Ratio Metric in See PART VI for details on the calculation for item 2. above
+- See [Crash Payoff Ratio Metric](../part-6/crash-payoff-ratio-tail-hedge-effectiveness.md) in See [PART VI](../part-6/index.md) for details on the calculation for item 2. above
 - $\text{Carry-to-Convexity}$ measures crash protection per unit of annual cost.
 
 Those three metrics tell the investor, respectively:
@@ -53,7 +53,7 @@ Value-at-Risk measures the loss threshold exceeded only with probability (1−α
 
 Algebraically:
 
-\$P(\text{Loss} > \text{VaR}_\alpha) = 1 - \alpha$
+$P(\text{Loss} > \text{VaR}_\alpha) = 1 - \alpha$
 
 Example:
 
@@ -82,7 +82,7 @@ This is why **VaR alone is a misleading** metric for evaluating tail-hedge effec
 
 ###### Conditional Value-at-Risk (CVaR)
 
-CVaR (also called Expected Shortfall)  measures the **expected loss in the worst tail outcomes** of a return distribution[^artzner].
+CVaR (also called Expected Shortfall)  measures the **expected loss in the worst tail outcomes** of a return distribution [[Artzner et al. 1999]](../footnotes/index.md#artzner).
 
 $\text{CVaR}_{\alpha} = \mathbb{E}[\text{Loss} \mid \text{Loss} > \text{VaR}_{\alpha}]$
 
@@ -143,7 +143,7 @@ This metric captures the **total impact of the hedge on portfolio drawdowns**, r
 
 #### Why These Metrics Matter
 
-Tail hedges should **not** be evaluated solely on **stand-alone option P&L**. See See Portfolio Drawdown Reduction Modeling for further discussion on this point.
+Tail hedges should **not** be evaluated solely on **stand-alone option P&L**. See [Portfolio Drawdown Reduction Modeling](../part-6/portfolio-drawdown-reduction-modeling.md) for further discussion on this point.
 
 #### Investment Committee Reporting
 
@@ -203,7 +203,7 @@ For a **systematic long-dated OTM put program** on a broad equity portfolio, a r
 - **balanced ladder**: **~2% to 3% per year**
 - **richer / closer-to-spot protection**: more than **~3% per year**
 
-That is a heuristic, not a law. The cost depends mainly on moneyness, tenor, roll frequency, and whether to monetize into spikes. Public Cboe protective-put indexes are a useful reminder that nearer-strike, frequent-roll protection is meaningfully costlier than deeper-OTM tail structures[^cobe-pp-indices].
+That is a heuristic, not a law. The cost depends mainly on moneyness, tenor, roll frequency, and whether to monetize into spikes. Public Cboe protective-put indexes are a useful reminder that nearer-strike, frequent-roll protection is meaningfully costlier than deeper-OTM tail structures [[Cboe: Put Protection Indices]](../footnotes/index.md#cobe-pp-indices).
 
 #### Suggested Starting Point
 
@@ -275,10 +275,10 @@ That gives the answer the investor actually needs: not “what does it cost,” 
 
 For a clean public-data version:
 
-- **SPX / S&P 500 history** for underlying path and drawdowns. S&P describes the index and methodology for the benchmark[^spglobal].
-- **VIX history** as a public proxy for the implied-volatility regime. Cboe provides historical VIX data and methodology[^cboe-vix-historical].
-- **Treasury yields** for discounting and carry assumptions. FRED is a practical public source for Treasury curve points[^fred].
-- **PPUT / PPUT3M methodology** for public benchmark protective-put structures to compare against[^cobe-pp-indices].
+- **SPX / S&P 500 history** for underlying path and drawdowns. S&P describes the index and methodology for the benchmark [[S&P Dow Jones Indices]](../footnotes/index.md#spglobal).
+- **VIX history** as a public proxy for the implied-volatility regime. Cboe provides historical VIX data and methodology [[Cboe: VIX Historical Data]](../footnotes/index.md#cboe-vix-historical).
+- **Treasury yields** for discounting and carry assumptions. FRED is a practical public source for Treasury curve points [[FRED]](../footnotes/index.md#fred).
+- **PPUT / PPUT3M methodology** for public benchmark protective-put structures to compare against [[Cboe: Put Protection Indices]](../footnotes/index.md#cobe-pp-indices).
 
 #### Usable Approximation in the Absence of Full Historical Option Chains
 
@@ -339,7 +339,7 @@ If the backtest shows:
 - annual carry above ~5% for a strategic program, the scenario is probably too close to the money or rolling too often
 - poor payoff until catastrophic crashes, the scenario is probably too concentrated in the deepest strike
 
-That kind of sanity check is where comparing to public protective-put benchmarks like PPUT and PPUT3M helps[^cobe-pp-indices].
+That kind of sanity check is where comparing to public protective-put benchmarks like PPUT and PPUT3M helps [[Cboe: Put Protection Indices]](../footnotes/index.md#cobe-pp-indices).
 
 #### Suggested Recording Structure for the Evaluation and Testing
 

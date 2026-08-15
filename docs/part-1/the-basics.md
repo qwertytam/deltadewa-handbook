@@ -20,19 +20,19 @@ Right to **sell** the underlying.
 
 *Example:* “Long puts hedge the equity portfolio.”
 
-#### Strike Price (\$K$)
+#### Strike Price ($K$)
 
 Price at which exercise occurs.
 
 *Example:* “The 4500 strike put is slightly OTM.”
 
-#### Expiration / Maturity (\$T$)
+#### Expiration / Maturity ($T$)
 
 Date the option expires.
 
 *Example:* “LEAPS with 1 to 2 year maturity are common institutional instruments.”
 
-See See LEAPS for further details.
+See [LEAPS](exercise-settlement.md#leaps) for further details.
 
 #### Premium
 

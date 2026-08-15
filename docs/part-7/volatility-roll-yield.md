@@ -4,7 +4,7 @@ title: "Volatility Roll Yield"
 
 #### What It Is
 
-When a long-dated option is held over time, its implied volatility changes not only because the overall level of the vol surface changes, but also because the option's remaining maturity shortens — causing it to slide along the vol term structure toward the shorter-dated part of the curve.[^bennett][^sinclair][^cboe-vix-term-structures]
+When a long-dated option is held over time, its implied volatility changes not only because the overall level of the vol surface changes, but also because the option's remaining maturity shortens — causing it to slide along the vol term structure toward the shorter-dated part of the curve. [[Bennett 2014]](../footnotes/index.md#bennett)[[Sinclair 2013]](../footnotes/index.md#sinclair)[[Cboe: VIX Term Structure]](../footnotes/index.md#cboe-vix-term-structures)
 
 The P&L effect of this slide is called *volatility roll yield*. It is a distinct cost or benefit that exists independently of:
 
@@ -55,7 +55,7 @@ $\sigma_{fwd}^2 = \frac{T_2\sigma_2^2 - T_1\sigma_1^2}{T_2 - T_1}$
 
 If the forward vol exceeds the spot vol for the target tenor, rolling generates a cost. If forward vol is below spot vol, rolling provides a benefit.
 
-See See Forward Variance Level for the full definition.
+See [Forward Variance Level](../part-6/forward-variance-level.md) for the full definition.
 
 #### Practical Impact on a Tail Hedge Program
 
@@ -100,5 +100,5 @@ Total roll cost = Volatility roll yield (negative or positive)
 
 For a \$10M portfolio running a 2% carry budget, a 5% bid-ask spread on both legs of a roll translates to roughly 10 basis points of additional cost per roll. Across four rolls per year this amounts to approximately 0.4% of portfolio value in friction — not negligible relative to a 2% budget.
 
-**Mitigation:** execute rolls patiently using limit orders placed near the mid-price rather than hitting the bid or lifting the offer. In liquid SPX strikes, a mid-price limit order typically fills within the session. See See Execution Best Practices in PART VII for further detail.
+**Mitigation:** execute rolls patiently using limit orders placed near the mid-price rather than hitting the bid or lifting the offer. In liquid SPX strikes, a mid-price limit order typically fills within the session. See [Execution Best Practices](program-constraints-and-governance.md#execution-best-practices-for-deep-otm-and-long-dated-options) in PART VII for further detail.
 

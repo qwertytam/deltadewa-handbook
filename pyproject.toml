@@ -7,13 +7,21 @@ authors = [{ name = "Tom Marshall", email = "tom.q.marshall@gmail.com" }]
 requires-python = ">=3.14,<4.0"
 dependencies = []
 
+# This repository builds a documentation site; it is not a distributable
+# Python package. package-mode = false stops Poetry trying to install a root
+# package (there are no longer any Python sources to install).
+[tool.poetry]
+package-mode = false
+
 [tool.mypy]
 mypy_path = ["typings"]
 strict = true
 
 [tool.ruff]
 line-length = 80
-target-version = "py311"
+# Kept in step with requires-python above; these previously disagreed
+# (py311 against a >=3.14 floor).
+target-version = "py314"
 
 [tool.ruff.lint]
 preview = true
@@ -55,7 +63,7 @@ dev = [
 ]
 
 [tool.pylint.main]
-py-version = "3.11"
+py-version = "3.14"
 jobs = 0
 ignore-paths = []
 fail-under = 10.0
@@ -67,7 +75,3 @@ max-line-length = 80
 
 [tool.pylint.similarities]
 min-similarity-lines = 10
-
-[build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"

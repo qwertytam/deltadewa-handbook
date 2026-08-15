@@ -6,6 +6,31 @@ repo_url: https://github.com/qwertytam/deltadewa-handbook
 repo_name: qwertytam/deltadewa-handbook
 edit_uri: edit/main/docs/
 
+# Rendered into the footer of every page. Material inserts this verbatim, so
+# the link must be a full URL: a root-absolute path would 404 under a local
+# `mkdocs serve`, which is not served from the /deltadewa-handbook/ prefix.
+copyright: >
+  <strong>Educational and operational reference only — not investment
+  advice.</strong>
+  See
+  <a href="https://qwertytam.github.io/deltadewa-handbook/preface/important-limitations/">Important
+  Limitations</a>.
+  &copy; 2025 Tom Marshall.
+
+# Surface broken internal links, anchors and orphaned files as warnings.
+# CI builds with --strict, which promotes these to hard errors; local
+# `mkdocs serve` keeps them as warnings so drafting is not blocked.
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  anchors: warn
+
+# index.md is the site landing page, intentionally reachable via the header
+# title rather than as a duplicate sidebar entry alongside "Preface".
+not_in_nav: |
+  index.md
+
 theme:
   name: material
   features:
@@ -18,14 +43,21 @@ plugins:
   - search
 
 markdown_extensions:
+  # attr_list supplies the explicit `{ #slug }` anchors on the References
+  # page, so citation links stay stable if an entry's title is reworded.
+  - attr_list
   - footnotes
   - pymdownx.arithmatex:
       generic: true
 
 extra_javascript:
   - javascripts/config.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  # Pinned to an exact version: a floating `mathjax@3` tag silently changes
+  # the executable served to every reader. The polyfill.io script that used
+  # to sit here was removed — that domain was the vector of the June 2024
+  # supply-chain attack and no longer resolves. MathJax 3 needs no ES6
+  # polyfill in any currently supported browser.
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
 
 nav:
   - 'Preface':

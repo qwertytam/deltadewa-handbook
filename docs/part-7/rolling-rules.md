@@ -2,7 +2,7 @@
 title: "Rolling Rules"
 ---
 
-As discussed in See Volatility Roll Yield above, total carry includes theta decay, roll yield, and transaction costs. The rolling rules below operate within that framework.
+As discussed in See [Volatility Roll Yield](volatility-roll-yield.md) above, total carry includes theta decay, roll yield, and transaction costs. The rolling rules below operate within that framework.
 
 Most programs roll on **time or moneyness triggers**. Hedge programs rarely hold options to expiry.
 
@@ -39,7 +39,7 @@ Note on the gamma-theta trade-off: the standard time-based roll rule is designed
 
 #### Rule 2 — Market Rally Rebalance Trigger
 
-See See Hedge Rebalance Triggers in Part X for how this trigger integrates with the dashboard monitoring framework.
+See [Hedge Rebalance Triggers](../part-10/tier-3-structural-and-operational-metrics.md#11-hedge-rebalance-triggers) in Part X for how this trigger integrates with the dashboard monitoring framework.
 
 When the market rallies significantly after a hedge is established, several effects compound against the existing position:
 
@@ -102,11 +102,11 @@ The key principle: the family office has generated meaningful equity profits in 
 
 ##### Entry Conditions After a Rally
 
-A practical benefit that partially offsets the higher roll-up cost: a market that has rallied 15% is typically accompanied by lower VIX and, often, lower skew percentile. This means the **conditions for re-establishing protection may be favorable** — precisely the market environment the See Entry Timing Decision Tree identifies as ideal for accumulating hedges. Investors should check VIX and skew percentile before executing the roll-up. If VIX has fallen below 15 and skew is below the 30th percentile, the cost of the new position may be lower per unit of crash convexity than the original entry, partially compensating for the realized loss on the old hedge.
+A practical benefit that partially offsets the higher roll-up cost: a market that has rallied 15% is typically accompanied by lower VIX and, often, lower skew percentile. This means the **conditions for re-establishing protection may be favorable** — precisely the market environment the See [Entry Timing Decision Tree](../part-10/tail-hedge-decision-matrix.md#entry-timing-decision-tree) identifies as ideal for accumulating hedges. Investors should check VIX and skew percentile before executing the roll-up. If VIX has fallen below 15 and skew is below the 30th percentile, the cost of the new position may be lower per unit of crash convexity than the original entry, partially compensating for the realized loss on the old hedge.
 
 #### Rule 3 — Crash Monetization
 
-See See Monetizing crashes for detail.
+See [Monetizing crashes](../part-8/typical-monetization-triggers.md) for detail.
 
 #### Alternative Rules
 

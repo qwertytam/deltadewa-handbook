@@ -22,7 +22,7 @@ This non-linear payoff structure is called convexity.
 
 Convexity in tail hedging is primarily a portfolio-level concept rather than a local option Greek. It reflects the combined impact of gamma, vega expansion, and skew repricing during large market moves.
 
-Convex strategies benefit from extreme moves in the benchmark index[^informaconnect].
+Convex strategies benefit from extreme moves in the benchmark index [[Informa Connect]](../footnotes/index.md#informaconnect).
 
 ##### Example Tail Hedge Payoff Structure
 
@@ -82,7 +82,7 @@ This approach ensures the hedge program is calibrated
 to the portfolio’s true downside risk rather than
 arbitrary premium spending.
 
-For how convexity targets are used to size hedge programs, see See Convexity Budget and Premium Budget in PART VII.
+For how convexity targets are used to size hedge programs, see See [Convexity Budget and Premium Budget](../part-7/convexity-budget-and-premium-budget.md) in PART VII.
 
 #### Practical Value of Convexity
 

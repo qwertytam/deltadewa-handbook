@@ -6,15 +6,15 @@ Useful for implementation, but not critical.
 
 #### 9. Skew Exposure / Beta
 
-See See Skew Exposure / Beta for details.
+See [Skew Exposure / Beta](../part-6/skew-exposure-beta.md) for details.
 
 #### 10. Net Delta Exposure
 
-See See Net Delta for details.
+See [Net Delta](../part-6/net-delta.md) for details.
 
 #### 11. Hedge Rebalance Triggers
 
-See See Market Rally Rebalance Triggers for the detailed action framework
+See [Market Rally Rebalance Triggers](../part-7/rolling-rules.md#rule-2-market-rally-rebalance-trigger) for the detailed action framework
 
 ##### Trigger Definition
 

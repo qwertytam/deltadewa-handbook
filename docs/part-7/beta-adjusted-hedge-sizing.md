@@ -8,7 +8,7 @@ Standard institutional practice is to beta-adjust the hedge sizing as follows:
 
 $\text{Hedge Notional} = \text{Portfolio Value} \times \beta_{portfolio/SPX}$
 
-\$N_{contracts​}=\frac{\text{Hedge Notional​}}{SPX \times \text{Contract Multiplier}}$
+$N_{contracts​}=\frac{\text{Hedge Notional​}}{SPX \times \text{Contract Multiplier}}$
 
 where:
 
@@ -35,11 +35,11 @@ Hedge notional = \$10M × 1.00 = \$10M
 
 At SPX = 5,000, each SPX contract covers: \$5,000 × 100 = \$500,000 notional.
 
-\$N_{SPX} = \frac{\$10M}{\$500{,}000} = 20 \ \text{SPX contracts}$
+$N_{SPX} = \frac{\$10M}{\$500{,}000} = 20 \ \text{SPX contracts}$
 
 If using XSP (1/10 the size):
 
-\$N_{XSP} = 20 \times 10 = 200 \ \text{XSP contracts}$
+$N_{XSP} = 20 \times 10 = 200 \ \text{XSP contracts}$
 
 If portfolio beta were instead 0.85, the hedge notional would be \$8.5M, requiring only 17 SPX contracts. Buying 20 contracts in that case would overhedge by approximately 18% — a meaningful structural error in a systematic program.
 

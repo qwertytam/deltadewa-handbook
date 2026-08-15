@@ -41,7 +41,7 @@ $\Gamma = \frac{e^{-qT} N'(d_1)}{S \sigma \sqrt{T}}$
 
 Where:
 
-- \$N'(d_1)$ is the normal probability density function.
+- $N'(d_1)$ is the normal probability density function.
 
 #### Practical Interpretation for Gamma
 

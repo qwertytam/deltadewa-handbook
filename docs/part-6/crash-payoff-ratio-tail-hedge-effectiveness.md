@@ -4,7 +4,7 @@ title: "Crash Payoff Ratio / Tail Hedge Effectiveness"
 
 #### Definition of Crash Payoff Ratio
 
-Crash payoff ratio measures how much of the portfolio loss is offset by the hedge during a crash. This metric evaluates hedge effectiveness, not convexity[^bhansali][^meketa][^cambridge][^caia].
+Crash payoff ratio measures how much of the portfolio loss is offset by the hedge during a crash. This metric evaluates hedge effectiveness, not convexity [[Bhansali 2014]](../footnotes/index.md#bhansali)[[Meketa 2019]](../footnotes/index.md#meketa)[[Cambridge Associates 2025]](../footnotes/index.md#cambridge)[[CAIA 2021]](../footnotes/index.md#caia).
 
 It answers:
 > If markets crash, how much of the loss does the hedge absorb?
@@ -13,9 +13,9 @@ It answers:
 
 Let:
 
-\$Portfolio \ Loss$ = portfolio decline under crash scenario
+$Portfolio \ Loss$ = portfolio decline under crash scenario
 
-\$Hedge\ Gain$ = hedge profit under same scenario
+$Hedge\ Gain$ = hedge profit under same scenario
 
 Define:
 

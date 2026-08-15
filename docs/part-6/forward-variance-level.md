@@ -8,7 +8,7 @@ Forward variance measures **expected volatility in the future**. This is crucial
 
 Variance is volatility squared:
 
-\$Variance = \sigma^2$
+$Variance = \sigma^2$
 
 Forward variance is implied volatility for a **future time window**.
 

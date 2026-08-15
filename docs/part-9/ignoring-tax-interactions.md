@@ -40,5 +40,5 @@ The key mitigant is to ensure the collar leaves meaningful upside exposure — a
 | VIX options       | Section 1256                                      | Yes                        |
 | Single-stock puts | Standard capital gains                            | No                         |
 
-See See A3 Tax Considerations for the full appendix treatment.
+See [A3 Tax Considerations](../appendices/a3-tax-considerations-for-hedging-instruments.md) for the full appendix treatment.
 

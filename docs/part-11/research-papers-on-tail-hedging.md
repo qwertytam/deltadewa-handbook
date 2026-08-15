@@ -32,5 +32,5 @@ Key topics:
 - VIX-based hedges
 - volatility risk premium capture
 
-For example, research shows that rolling long puts provides direct protection against equity drawdowns, though it can have negative carry over time[^alpha-arch].
+For example, research shows that rolling long puts provides direct protection against equity drawdowns, though it can have negative carry over time [[Alpha Architect]](../footnotes/index.md#alpha-arch).
 

@@ -23,7 +23,7 @@ Industry classic covering:
 - hedging strategies
 - option pricing
 
-Widely recommended by traders as a foundational text[^mutinyfund].
+Widely recommended by traders as a foundational text [[Mutiny Fund]](../footnotes/index.md#mutinyfund).
 
 #### Dynamic Hedging – Nassim Taleb
 
@@ -44,7 +44,7 @@ Highly practical and quantitative, with the strongest treatment of volatility ri
 
 #### Tail Risk Hedging — Vineer Bhansali
 
-The most complete published framework for systematic crash protection and hedge payoff quantification[^bhansali], addressed directly at institutional investors and family offices.
+The most complete published framework for systematic crash protection and hedge payoff quantification [[Bhansali 2014]](../footnotes/index.md#bhansali), addressed directly at institutional investors and family offices.
 
 #### Universa / Mark Spitznagel
 

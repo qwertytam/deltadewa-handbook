@@ -24,7 +24,7 @@ mark-to-market annually
 
 #### XSP Index Options
 
-Same as See SPX index options
+Same as See [SPX index options](#spx-index-options)
 
 #### SPY Options
 

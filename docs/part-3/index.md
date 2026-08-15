@@ -14,8 +14,8 @@ $\sigma = \sigma(K, T)$
 
 Meaning volatility depends on:
 
-- strike \$K$
-- maturity \$T$
+- strike $K$
+- maturity $T$
 
 Graphically it is a **3-dimensional surface**:
 

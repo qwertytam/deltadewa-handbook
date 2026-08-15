@@ -26,5 +26,5 @@ vol
 
 Markets assign higher probability to **extreme outcomes** than predicted by Black-Scholes.
 
-Note: In equity markets, the volatility smile is skewed (see See Volatility Skew) due to crash risk aversion and demand imbalance.
+Note: In equity markets, the volatility smile is skewed (see See [Volatility Skew](volatility-skew.md)) due to crash risk aversion and demand imbalance.
 

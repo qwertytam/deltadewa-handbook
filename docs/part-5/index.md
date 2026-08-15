@@ -18,11 +18,11 @@ For a hedged equity portfolio, key metrics to track are:
 
 | Metric                                       | What it answers                        |
 | -------------------------------------------- | -------------------------------------- |
-| See Crash Convexity          | How much protection in a crash         |
-| See Vega Sufficiency        | If the hedge benefits from vol spikes  |
-| See Theta Carry  | Cost of holding hedge                  |
-| See Skew Exposure / Beta | Sensitivity to downside skew           |
-| See Volatility Regime      | Whether options are expensive or cheap |
+| See [Crash Convexity](../part-6/crash-convexity.md)          | How much protection in a crash         |
+| See [Vega Sufficiency](../part-6/vega-sufficiency.md)        | If the hedge benefits from vol spikes  |
+| See [Theta Carry](../part-6/theta-carry-insurance-cost.md)  | Cost of holding hedge                  |
+| See [Skew Exposure / Beta](../part-6/skew-exposure-beta.md) | Sensitivity to downside skew           |
+| See [Volatility Regime](../part-6/volatility-regime.md)      | Whether options are expensive or cheap |
 
 Professional hedge design is essentially optimizing:
 

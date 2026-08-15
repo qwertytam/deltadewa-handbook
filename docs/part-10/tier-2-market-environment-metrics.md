@@ -6,7 +6,7 @@ These determine when hedges are cheap or expensive. Useful, but not core.
 
 #### 6. Volatility Regime Indicator
 
-See See Volatility Regime for definition details.
+See [Volatility Regime](../part-6/volatility-regime.md) for definition details.
 
 ##### Dashboard Logic
 
@@ -40,7 +40,7 @@ Example ranges:
 
 ###### Realized versus Implied Volatility
 
-See See Volatility Risk Premium
+See [Volatility Risk Premium](../part-4/volatility-risk-premium.md)
 
 ##### Hedge Decision Rule for Vix
 
@@ -57,7 +57,7 @@ Typical rule:
 
 #### 7. Skew Percentile Gauge
 
-See See Skew Percentile for details.
+See [Skew Percentile](../part-3/volatility-skew.md#skew-percentile) for details.
 
 ##### Skew Percentile Dashboard Display
 
@@ -81,5 +81,5 @@ When skew is high, **deep OTM puts become extremely expensive**.
 
 #### 8. Forward Variance Level
 
-See See Forward Variance Level for details.
+See [Forward Variance Level](../part-6/forward-variance-level.md) for details.
 

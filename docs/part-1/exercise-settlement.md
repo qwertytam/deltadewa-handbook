@@ -28,5 +28,5 @@ No shares exchanged — only cash difference.
 
 #### LEAPS
 
-Long-term equity anticipation securities (LEAPS) are options contracts with expiration dates extending beyond one year, often up to three years. These contracts allow investors to gain exposure to long-term price movements in the underlying asset, similar to standard options but with extended expiration periods[^investopedia-leaps].
+Long-term equity anticipation securities (LEAPS) are options contracts with expiration dates extending beyond one year, often up to three years. These contracts allow investors to gain exposure to long-term price movements in the underlying asset, similar to standard options but with extended expiration periods [[Investopedia: LEAPS]](../footnotes/index.md#investopedia-leaps).
 

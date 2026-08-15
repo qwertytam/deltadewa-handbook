@@ -2,7 +2,7 @@
 title: "Net Delta"
 ---
 
-Delta represents the first derivative of option value with respect to the underlying price[^wiki-greeks].
+Delta represents the first derivative of option value with respect to the underlying price [[Wikipedia: Greeks]](../footnotes/index.md#wiki-greeks).
 
 $\Delta = \frac{\partial V}{\partial S}$
 
@@ -14,7 +14,7 @@ $\text{Net Delta} = \sum_i \Delta_i \times N_i$
 
 Where:
 
-- \$N_i$ = number of contracts
+- $N_i$ = number of contracts
 
 *Example:*
 

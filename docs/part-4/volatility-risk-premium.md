@@ -2,16 +2,16 @@
 title: "Volatility Risk Premium"
 ---
 
-Markets tend to price **implied volatility higher than realized volatility**.[^hist-put-writing]
+Markets tend to price **implied volatility higher than realized volatility**. [[Cboe: Put-Write Research]](../footnotes/index.md#hist-put-writing)
 
 Formally:
 
-\$VRP = IV - RV$
+$VRP = IV - RV$
 
 Where:
 
-- \$IV$ = implied volatility
-- \$RV$ = realized volatility
+- $IV$ = implied volatility
+- $RV$ = realized volatility
 
 *Example:*
 

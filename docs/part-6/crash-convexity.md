@@ -2,13 +2,13 @@
 title: "Crash Convexity"
 ---
 
-See See Convexity for additional detail on convexity.
+See [Convexity](../part-5/convexity.md) for additional detail on convexity.
 
 Crash convexity incorporates three drivers discussed earlier:
 
-- See Delta acceleration (gamma)
-- See Volatility expansion (vega)
-- See Skew steepening
+- See [Delta acceleration (gamma)](../part-2/gamma.md)
+- See [Volatility expansion (vega)](../part-2/vega.md)
+- See [Skew steepening](../part-3/volatility-skew.md)
 
 #### Crash Convexity Metric
 
@@ -18,18 +18,18 @@ Note, there is no single universally standardised formula - see See Why There Is
 
 Let:
 
-\$V_{today}$ = current hedge value
+$V_{today}$ = current hedge value
 
-\$V_{crash}$ = hedge value after a simulated crash
+$V_{crash}$ = hedge value after a simulated crash
 
-\$Portfolio$ = portfolio value
+$Portfolio$ = portfolio value
 
 Define:
 
 $\text{Crash Convexity}_x = \frac{V_{crash} − V_{today}}{Portfolio}$
 
-> This definition leaves \$V_{crash}$'s repricing mechanics unspecified. See
-> See A4 Crash Repricing Methodology for how the
+> This definition leaves $V_{crash}$'s repricing mechanics unspecified. See
+> See [A4 Crash Repricing Methodology](../appendices/a4-crash-repricing-methodology.md) for how the
 > implementation forms it — hedge-only, repriced rather than intrinsic,
 > instantaneous, on a skew-aware volatility shock — and
 > [`docs/repricing-methodology.md`](https://github.com/qwertytam/deltadewa/blob/main/docs/repricing-methodology.md) for the normative
@@ -37,7 +37,7 @@ $\text{Crash Convexity}_x = \frac{V_{crash} − V_{today}}{Portfolio}$
 
 Where:
 
-\$x$ is the assumed market decline (e.g. 20%, 30%, 40%)
+$x$ is the assumed market decline (e.g. 20%, 30%, 40%)
 
 This is a scenario P&L ratio — it measures how much the hedge gains as a percentage of the portfolio under a given crash assumption. Other names include:
 
@@ -124,7 +124,7 @@ For programs that want to make the vol assumption explicit:
 
 $\text{Crash Convexity}_x = \frac{\Delta_{hedge} \cdot \Delta S + \nu \cdot \Delta\sigma(x) + \text{Skew Adjustment}(x)}{P}$
 
-Where $\Delta\sigma(x)$ is the assumed vol spike at crash level \$x$, and the skew adjustment captures non-parallel surface repricing for deep OTM strikes. In practice, few firms compute this analytically — they use a scenario engine to reprice the full position instead.
+Where $\Delta\sigma(x)$ is the assumed vol spike at crash level $x$, and the skew adjustment captures non-parallel surface repricing for deep OTM strikes. In practice, few firms compute this analytically — they use a scenario engine to reprice the full position instead.
 
 #### What Family Offices and Institutional Investors Actually Use
 

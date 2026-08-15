@@ -4,7 +4,7 @@ title: "Introduction"
 
 These are the kinds of metrics volatility funds and institutional portfolio hedgers monitor daily. They combine the Greeks with **portfolio-level normalization**.
 
-These metrics help investors maintain **constant protection while controlling cost**, since tail-risk hedging aims to cushion severe drawdowns while preserving long-term portfolio growth[^resonanzcapital].
+These metrics help investors maintain **constant protection while controlling cost**, since tail-risk hedging aims to cushion severe drawdowns while preserving long-term portfolio growth [[Resonanz Capital]](../footnotes/index.md#resonanzcapital).
 
 #### Metric Prioritization
 

@@ -26,5 +26,5 @@ The correct response is to return the program to its target parameters, not to c
 
 The purpose of documenting rules in the IPS, defining pre-authorized monetization and re-risk actions, and conducting quarterly reviews is specifically to protect the program from behavioral modification under pressure. A well-governed program survives bull markets and crises alike because the rules — not the emotions of the moment — drive decisions.
 
-See See Long-Term Return Drag for the quantitative context of why multi-year bleed periods are an expected feature of a functioning program.
+See [Long-Term Return Drag](long-term-return-drag.md) for the quantitative context of why multi-year bleed periods are an expected feature of a functioning program.
 

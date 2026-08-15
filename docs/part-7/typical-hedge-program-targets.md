@@ -53,5 +53,5 @@ Strike selection and hedge sizing do not need to be static. A regime-sensitive a
 | VIX 15–25  | < 40%           | Maintain program as designed                                   |
 | VIX > 25   | > 70%           | Reduce new purchases; wait for vol to normalize                |
 
-This is consistent with the See Tail Hedge Decision Matrix in PART X.
+This is consistent with the See [Tail Hedge Decision Matrix](../part-10/tail-hedge-decision-matrix.md) in PART X.
 

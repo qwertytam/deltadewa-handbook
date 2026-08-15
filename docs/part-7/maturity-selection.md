@@ -22,7 +22,7 @@ stable convexity
 
 This is why **LEAPS are common** in institutional programs.
 
-See See LEAPS for further details.
+See [LEAPS](../part-1/exercise-settlement.md#leaps) for further details.
 
 Note: Long maturities have low theta on a relative or % basis, but the total absolute premium paid may be larger.
 

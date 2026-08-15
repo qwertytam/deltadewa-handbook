@@ -120,5 +120,5 @@ Blending them reduces overall carry cost.
 
 Most tail-hedge funds allocate across **three to five strikes using 20 to 40% OTM puts**.
 
-See See example allocation ladder.
+See [example allocation ladder](#the-strike-ladder-concept).
 

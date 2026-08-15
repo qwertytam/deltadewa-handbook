@@ -6,7 +6,7 @@ These are not really tail-hedging metrics. For example, dealer gamma is short-te
 
 #### 12. Liquidity Risk
 
-See See Liquidity Risk / Spread for definition details.
+See [Liquidity Risk / Spread](../part-4/liquidity-risk-spread.md) for definition details.
 
 ##### Liquidity Risk Metrics
 
@@ -154,5 +154,5 @@ This is because crisis volatility often lifts long-dated implied volatility as w
 
 #### 15. Hedge Efficiency Ratio
 
-See See Hedge Efficiency Ratio for details.
+See [Hedge Efficiency Ratio](../part-6/hedge-efficiency-ratio.md) for details.
 

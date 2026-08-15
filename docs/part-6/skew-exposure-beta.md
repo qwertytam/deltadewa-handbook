@@ -20,8 +20,8 @@ $\text{Skew Beta} = \frac{\partial V}{\partial \text{Skew}}$
 
 Where:
 
-- \$V$ = hedge value
-- \$Skew$ = difference between OTM put volatility and ATM volatility
+- $V$ = hedge value
+- $Skew$ = difference between OTM put volatility and ATM volatility
 
 #### Why Skew Beta Matters
 

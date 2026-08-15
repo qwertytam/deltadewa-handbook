@@ -30,5 +30,5 @@ The correct mental model is **insurance, not alpha**:
 
 This framing should be embedded in the IPS and communicated to the investment committee and stakeholders who review portfolio performance. The benchmark comparison should explicitly separate hedge cost from portfolio returns to make the drag visible and understood as an intended design feature.
 
-See See Behavioral Risks — Abandoning the Program for further discussion.
+See [Behavioral Risks — Abandoning the Program](behavioral-risks-abandoning-the-program.md) for further discussion.
 

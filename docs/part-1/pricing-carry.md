@@ -2,25 +2,25 @@
 title: "Pricing & Carry"
 ---
 
-#### Spot Price (\$S$)
+#### Spot Price ($S$)
 
 Current underlying price.
 
 *Example:* “Model uses spot = 5235.”
 
-#### Forward Price (\$F$)
+#### Forward Price ($F$)
 
 Future implied price including carry.
 
 *Example:* “SPX forwards embed rates minus dividends.”
 
-#### Risk-Free Rate (\$r$)
+#### Risk-Free Rate ($r$)
 
 Discounting rate used in pricing.
 
 *Example:* “Long-dated calls are sensitive to rates.”
 
-#### Dividend Yield (\$q$)
+#### Dividend Yield ($q$)
 
 Expected dividends (or index carry).
 

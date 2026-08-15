@@ -40,5 +40,5 @@ Therefore, the value of a tail hedge often comes not only from offsetting losses
 
 After a crash stabilizes and volatility declines, the hedge program is typically **rebuilt gradually**.
 
-See See Re-Risking Rules for further details.
+See [Re-Risking Rules](re-risking-rules.md) for further details.
 

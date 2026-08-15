@@ -29,12 +29,12 @@ Call option:  $\Delta_{call} = e^{-qT} N(d_1)$
 
 Put option: $\Delta_{put} = -e^{-qT} N(-d_1)$
 
-Where \$N(\cdot)$ is the standard normal cumulative distribution function.
+Where $N(\cdot)$ is the standard normal cumulative distribution function.
 
 #### Practical Interpretation
 
 - Delta is sometimes interpreted as the risk-neutral probability of finishing ITM, but this approximation is most accurate for short-dated ATM options
-- Properly, Delta corresponds to \$N(d_1)$ while the true risk-neutral probability is \$N(d_2)$ for calls and \$N(-d_2)$ for puts
+- Properly, Delta corresponds to $N(d_1)$ while the true risk-neutral probability is $N(d_2)$ for calls and $N(-d_2)$ for puts
 - Effective exposure to the underlying
 
 Portfolio:
@@ -44,7 +44,7 @@ Portfolio:
 delta = 0.40
 ```
 
-Total delta exposure: \$100 \times 0.40 = 40$
+Total delta exposure: $100 \times 0.40 = 40$
 
 Equivalent to owning 40 shares of the underlying.
 
