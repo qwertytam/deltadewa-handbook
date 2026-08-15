@@ -3,13 +3,13 @@ r"""Split a single HANDBOOK.md into one *.md page per H3.
 Split a single HANDBOOK.md into one markdown page per H3, grouped by H2 Part.
 
 Assumptions:
-- Source is CommonMark with ATX headings (# H1, ## H2 Part, ### H3 Chapter).
+- Source is markdown with md headings (# H1, ## H2 Part, ### H3 Chapter).
 - Content between an H2 and its first H3 becomes `<part-slug>/index.md`.
 - H1 (title), Preface, Quick Start, Appendices (H2), Footnotes handled
 specially.
 - Cross-refs like [text](#anchor) that point to now-split targets are rewritten
   to plain-text "See <text>" (anchors won't resolve across pages).
-- Literal '$' in prose is escaped as '\$' to keep MDX parser happy.
+- Literal '$' in prose is escaped as '\$' to keep parser happy.
 """
 
 from __future__ import annotations
@@ -273,6 +273,12 @@ def main() -> int:
     """Split HANDBOOK.md into one *.md page per H3 chapter.
 
     Split HANDBOOK.md into one *.md page per H3 chapter grouped by H2 part.
+
+    WARNING: This script is destructive: it overwrites the output directory.
+
+    Note: Take care in which folder you run this script, as it will overwrite
+    the output directory (docs/ by default). The script assumes that the source
+    file (HANDBOOK.md) is in the current working directory.
     """
     if not SRC.exists():
         print(f"\nERROR: {SRC.absolute()} not found", file=sys.stderr)
