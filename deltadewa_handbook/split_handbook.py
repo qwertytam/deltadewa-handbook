@@ -4,7 +4,7 @@ Split a single HANDBOOK.md into one markdown page per H3, grouped by H2 Part.
 
 Assumptions:
 - Source is CommonMark with ATX headings (# H1, ## H2 Part, ### H3 Chapter).
-- Content between an H2 and its first H3 becomes `<part-slug>/overview.md`.
+- Content between an H2 and its first H3 becomes `<part-slug>/index.md`.
 - H1 (title), Preface, Quick Start, Appendices (H2), Footnotes handled
 specially.
 - Cross-refs like [text](#anchor) that point to now-split targets are rewritten
@@ -223,7 +223,7 @@ def write_part(
     part_dir.mkdir(parents=True, exist_ok=True)
 
     if part.intro_lines and any(line.strip() for line in part.intro_lines):
-        intro_path = part_dir / "overview.md"
+        intro_path = part_dir / "index.md"
         intro_path.write_text(
             render_md("Overview", "".join(part.intro_lines), known_anchors),
             encoding="utf-8",
@@ -256,8 +256,9 @@ def build_nav(parts: list[Part], out_root: Path) -> str:
     for part in parts:
         part_dir = out_root / part.slug
         nav_tree.append(f"{part_indent}'{part.title}':")
-        if (part_dir / "overview.md").exists():
-            nav_tree.append(f"{page_indent}'Overview': '{part.slug}/overview.md'")
+        if (part_dir / "index.md").exists():
+            overview_path = f" '{part.slug}/index.md'"
+            nav_tree.append(f"{page_indent}{overview_path}")
         nav_tree.extend(
             f"{page_indent}'{ch.title}': '{part.slug}/{ch.slug}.md'"
             for ch in part.chapters

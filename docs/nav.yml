@@ -1,16 +1,3 @@
-site_name: Hedging Handbook
-site_url: https://qwertytam.github.io/deltadewa-handbook/
-site_description: A comprehensive guide to hedging strategies and risk management.
-
-repo_url: https://github.com/qwertytam/deltadewa-handbook
-repo_name: qwertytam/deltadewa-handbook
-
-theme:
-  name: material
-  features:
-    - navigation.expand
-    - navigation.indexes
-
 nav:
   - 'Table of Contents':
     -  'table-of-contents/index.md'
