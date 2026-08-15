@@ -30,12 +30,12 @@ Example targets:
 Hedges are sized so that:
 
 ```text
-Scenario Payoff ≥ Convexity Target  
+Scenario Payoff ≥ Convexity Target
 Expected Cost ≤ Premium Budget
 ```
 
 This dual-constraint approach prevents two common problems:
 
-- Overspending on hedges that rarely pay off  
+- Overspending on hedges that rarely pay off
 - Holding hedges that are too small to matter in a crash
 

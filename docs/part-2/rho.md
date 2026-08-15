@@ -25,7 +25,9 @@ For a call +$0.20 → long calls have positive rho, increasing in value when int
 For a put -$0.20 → long puts have negative rho, decreasing in value when interest rates rise
 ```
 
-Note: During equity crises, interest rates often fall due to monetary policy responses, leading to long-dated put hedges increasing in value.
+!!! note
+
+    During equity crises, interest rates often fall due to monetary policy responses, leading to long-dated put hedges increasing in value.
 
 #### Algebraic Definition Rho
 

@@ -14,7 +14,11 @@ Crash convexity incorporates three drivers discussed earlier:
 
 Crash convexity is typically evaluated using scenario analysis.
 
-Note, there is no single universally standardised formula - see See Why There Is No Single Standard for further detail.
+!!! note
+
+    There is no single universally standardised formula — see
+    [Why There Is No Single Standard](#why-there-is-no-single-standard) for
+    further detail.
 
 Let:
 
@@ -28,7 +32,7 @@ Define:
 
 $\text{Crash Convexity}_x = \frac{V_{crash} − V_{today}}{Portfolio}$
 
-> This definition leaves $V_{crash}$'s repricing mechanics unspecified. See
+> This definition leaves $V_{crash}$'s repricing mechanics unspecified.
 > See [A4 Crash Repricing Methodology](../appendices/a4-crash-repricing-methodology.md) for how the
 > implementation forms it — hedge-only, repriced rather than intrinsic,
 > instantaneous, on a skew-aware volatility shock — and

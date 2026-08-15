@@ -14,7 +14,9 @@ Buy call + put same strike.
 
 *Example:* “Bet on big move either direction.”
 
-Note: This is more of a volatility strategy rather than downside hedging.
+!!! note
+
+    This is more of a volatility strategy rather than downside hedging.
 
 #### Strangle
 
@@ -22,7 +24,9 @@ OTM call + OTM put.
 
 *Example:* “Cheaper volatility bet.”
 
-Note: This is more of a volatility strategy rather than downside hedging.
+!!! note
+
+    This is more of a volatility strategy rather than downside hedging.
 
 #### Calendar Spread
 
@@ -41,7 +45,9 @@ stock = 100
 strike = 100
 ```
 
-Note: This is relevant mainly to short options or expiry trading. Not important for long-dated tail hedges.
+!!! note
+
+    This is relevant mainly to short options or expiry trading. Not important for long-dated tail hedges.
 
 #### Gamma Scalping
 
@@ -59,5 +65,7 @@ sell high
 
 This captures realized volatility.
 
-Note: This is more relevant to market making or volatility trading, not portfolio hedging.
+!!! note
+
+    This is more relevant to market making or volatility trading, not portfolio hedging.
 

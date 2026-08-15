@@ -55,7 +55,9 @@ Advantages:
 
 XSP is often used by investors who want index-style hedging but require **more granular hedge sizing**.
 
-Note: While XSP tracks the same underlying as SPX, its options market is smaller. Bid-ask spreads and open interest in XSP can be thinner than in SPX, particularly for deep OTM and long-dated strikes. Investors should check OI and recent volume at target strikes before committing to XSP for large notional trades, and should use limit orders to avoid paying inflated spreads. Using XSP requires execution patience to avoid paying a 10% spread premium.
+!!! note
+
+    While XSP tracks the same underlying as SPX, its options market is smaller. Bid-ask spreads and open interest in XSP can be thinner than in SPX, particularly for deep OTM and long-dated strikes. Investors should check OI and recent volume at target strikes before committing to XSP for large notional trades, and should use limit orders to avoid paying inflated spreads. Using XSP requires execution patience to avoid paying a 10% spread premium.
 
 #### SPY Options (ETF Options)
 

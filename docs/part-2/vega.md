@@ -26,7 +26,9 @@ Option price increases:
 $0.50
 ```
 
-Note: In many option models vega is defined per unit volatility change ($\Delta\sigma = 1.00$). Traders typically quote vega per 1 volatility point ($\Delta\sigma = 0.01$).
+!!! note
+
+    In many option models vega is defined per unit volatility change ($\Delta\sigma = 1.00$). Traders typically quote vega per 1 volatility point ($\Delta\sigma = 0.01$).
 
 #### Algebraic Definition for Vega
 

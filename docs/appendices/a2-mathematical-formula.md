@@ -66,5 +66,7 @@ Notes:
 | ~-0.50          | ATM put       | Loses ~\$0.50 for each \$1 stock increase                                   | \$195 put on a \$195 stock  |
 | ~-0.80 to -1.00 | Deep ITM put  | Moves nearly dollar-for-dollar *against* the stock                          | \$240 put on a \$195 stock  |
 
-Note: Delta is a continuous value - these ranges are guidelines, not fixed buckets. See discussions on See the Greeks for a fuller explanation on drivers of moneyness.
+!!! note
+
+    Delta is a continuous value - these ranges are guidelines, not fixed buckets. See discussions on See [the Greeks](../part-2/index.md) for a fuller explanation on drivers of moneyness.
 

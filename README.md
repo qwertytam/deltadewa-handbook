@@ -67,6 +67,18 @@ mkdocs.yml            # site config, nav, and validation rules
   (`$S$`, not `$ S $`); display maths is `$$...$$`. A literal dollar sign in
   prose is escaped as `\$`, including inside a maths expression
   (`$\text{Cost} = \$225k$`).
+- **Callouts.** Use admonitions rather than a bare `Note:` paragraph. Content
+  must be indented four spaces:
+
+  ```markdown
+  !!! note
+
+      Body text here.
+
+  !!! warning "Custom title"
+
+      Used for anything with legal or tax consequence.
+  ```
 
 ## Deployment
 

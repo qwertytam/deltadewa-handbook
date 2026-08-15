@@ -25,7 +25,7 @@ The table simulates portfolio performance under market crashes.
 | -20%     | -\$2M          | +\$650k    | -\$1.35M |
 | -35%     | -\$3.5M        | +\$2M      | -\$1.5M  |
 
-See [Example tail hedge payoff structure](#2-crash-scenario-table-payoff-ratio)
+See [Example tail hedge payoff structure](../part-5/convexity.md#example-tail-hedge-payoff-structure)
 
 ##### Key Insight
 

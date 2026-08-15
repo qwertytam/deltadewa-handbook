@@ -14,7 +14,9 @@ where:
 
 - $\text{Contract Multiplier}$ is typically 100
 
-Note: Portfolio beta should be recalculated at least annually, or whenever significant portfolio changes occur — for example, when positions representing more than 10% of portfolio value are added or removed. Beta drift of 0.10 or more warrants resizing the hedge at the next scheduled roll to avoid persistent over- or under-hedging. A portfolio that shifts toward more defensive names over time (beta drifts from 1.00 to 0.85) with an unchanged hedge notional is overhedged by approximately 18%, paying unnecessary carry for protection that exceeds the actual market exposure.
+!!! note
+
+    Portfolio beta should be recalculated at least annually, or whenever significant portfolio changes occur — for example, when positions representing more than 10% of portfolio value are added or removed. Beta drift of 0.10 or more warrants resizing the hedge at the next scheduled roll to avoid persistent over- or under-hedging. A portfolio that shifts toward more defensive names over time (beta drifts from 1.00 to 0.85) with an unchanged hedge notional is overhedged by approximately 18%, paying unnecessary carry for protection that exceeds the actual market exposure.
 
 #### Worked Example — Multi-Position Portfolio
 
@@ -47,7 +49,7 @@ If portfolio beta were instead 0.85, the hedge notional would be \$8.5M, requiri
 
 For investors using XSP for finer granularity, the 200 XSP contracts computed above would be distributed across a strike ladder and maturity buckets as follows. Using the standard 3-strike, 2-maturity allocation:
 
-Strike allocations (consistent with See the typical tail hedge structure):
+Strike allocations (consistent with See [the typical tail hedge structure](typical-hedge-program-targets.md#typical-tail-hedge-structure)):
 
 | Strike  | Allocation % | XSP Contracts | Notional |
 | ------- | ------------ | ------------- | -------- |

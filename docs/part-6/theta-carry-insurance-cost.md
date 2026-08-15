@@ -34,7 +34,9 @@ Annualized cost:
 -$2,500 × 252 ≈ -$630k → 6.3% of portfolio
 ```
 
-Note: See [Theta Day Convention](../part-2/theta.md#theta-day-convention)
+!!! note
+
+    See [Theta Day Convention](../part-2/theta.md#theta-day-convention)
 
 #### Portfolio Interpretation
 

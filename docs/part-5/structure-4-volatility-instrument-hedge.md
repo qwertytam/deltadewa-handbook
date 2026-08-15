@@ -21,7 +21,9 @@ VIX 20 → 70
 
 These strategies require **more active management**.
 
-Note: Variance swaps are traded OTC and typically require ISDA master agreements, limiting their access to only larger, more sophisticated institutions.
+!!! note
+
+    Variance swaps are traded OTC and typically require ISDA master agreements, limiting their access to only larger, more sophisticated institutions.
 
 #### Comparing VIX Derivatives to SPX Puts
 

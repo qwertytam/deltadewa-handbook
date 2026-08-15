@@ -33,6 +33,8 @@ Convex strategies benefit from extreme moves in the benchmark index [[Informa Co
 | −30%        | large gain    |
 | -40%        | very large    |
 
+Editing note: Similar table also in [Tier 1 Core Hedge Metrics](../part-10/tier-1-core-hedge-metrics.md) - to decide which content to keep/prune.
+
 #### Convexity in Tail-Hedging
 
 Convexity can be defined in two different ways:
@@ -82,7 +84,7 @@ This approach ensures the hedge program is calibrated
 to the portfolio’s true downside risk rather than
 arbitrary premium spending.
 
-For how convexity targets are used to size hedge programs, see See [Convexity Budget and Premium Budget](../part-7/convexity-budget-and-premium-budget.md) in PART VII.
+For how convexity targets are used to size hedge programs, see [Convexity Budget and Premium Budget](../part-7/convexity-budget-and-premium-budget.md) in PART VII.
 
 #### Practical Value of Convexity
 

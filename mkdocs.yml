@@ -34,10 +34,41 @@ not_in_nav: |
 theme:
   name: material
   features:
-    - navigation.expand
+    # navigation.expand is deliberately NOT enabled: with 11 parts and ~100
+    # pages it renders the entire handbook as one long sidebar. Sections stay
+    # collapsed and expand on demand instead.
     - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+    - content.code.copy
+    - content.action.edit
     - search.suggest
     - search.highlight
+    - search.share
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    # Three states: follow the reader's OS setting by default, with an
+    # explicit override in each direction.
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
 
 plugins:
   - search
@@ -47,8 +78,14 @@ markdown_extensions:
   # page, so citation links stay stable if an entry's title is reworded.
   - attr_list
   - footnotes
+  - md_in_html
+  - admonition          # `!!! note` / `!!! warning` callouts
+  - pymdownx.details    # makes admonitions collapsible with `???`
+  - pymdownx.superfences
   - pymdownx.arithmatex:
       generic: true
+  - toc:
+      permalink: true
 
 extra_javascript:
   - javascripts/config.js

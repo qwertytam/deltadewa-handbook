@@ -18,5 +18,5 @@ See [example strike ladder](../part-7/strike-selection.md#the-strike-ladder-conc
 
 Crash scenario:
 
-See [Example tail hedge payoff structure](../part-10/tier-1-core-hedge-metrics.md#2-crash-scenario-table-payoff-ratio)
+See [Example tail hedge payoff structure](convexity.md#example-tail-hedge-payoff-structure)
 

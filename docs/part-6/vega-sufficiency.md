@@ -51,7 +51,9 @@ vega / delta
 vega / variance exposure
 ```
 
-Note: Variance exposure is also known as expected variance shock.
+!!! note
+
+    Variance exposure is also known as expected variance shock.
 
 *Example:*
 

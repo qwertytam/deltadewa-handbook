@@ -64,7 +64,7 @@ See [Skew Percentile](../part-3/volatility-skew.md#skew-percentile) for details.
 ```text
 LOW <----|-----[x]---------|------> HIGH
 15%          Current                  85%
-               40%                      
+               40%
 ```
 
 ##### Hedge Decision Rule for Skew Percentile

@@ -21,10 +21,10 @@ This attempts to **finance the hedge with volatility risk premium**.
 
 Risks:
 
-- See timing mismatch
-- See mis-timed short gamma risk
-- See margin/collateral pressure in a crisis
-- See volatility carry reversal
+- See [timing mismatch](#timing-mismatch)
+- See [mis-timed short gamma risk](#short-gamma-risk)
+- See [margin/collateral pressure in a crisis](#margincollateral-pressure)
+- See [volatility carry reversal](#volatility-carry-reversal)
 
 #### Timing Mismatch
 

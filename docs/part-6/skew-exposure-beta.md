@@ -2,7 +2,7 @@
 title: "Skew Exposure / Beta"
 ---
 
-As described in Part III, See volatility skew reflects the higher implied volatility of downside strikes.
+As described in Part III, See [volatility skew](../part-3/volatility-skew.md) reflects the higher implied volatility of downside strikes.
 
 While skew describes the **shape of the volatility surface**, tail hedges also differ in how sensitive they are to changes in that surface.
 

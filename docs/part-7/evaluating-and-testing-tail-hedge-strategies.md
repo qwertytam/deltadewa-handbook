@@ -26,7 +26,7 @@ Estimate these three quantities:
 
 Notes:
 
-- See [Crash Payoff Ratio Metric](../part-6/crash-payoff-ratio-tail-hedge-effectiveness.md) in See [PART VI](../part-6/index.md) for details on the calculation for item 2. above
+- See [Crash Payoff Ratio Metric](../part-6/crash-payoff-ratio-tail-hedge-effectiveness.md#crash-payoff-ratio-metric) in See [PART VI](../part-6/index.md) for details on the calculation for item 2. above
 - $\text{Carry-to-Convexity}$ measures crash protection per unit of annual cost.
 
 Those three metrics tell the investor, respectively:
@@ -147,7 +147,7 @@ Tail hedges should **not** be evaluated solely on **stand-alone option P&L**. Se
 
 #### Investment Committee Reporting
 
-For a long-only portfolio, computing CVaR precisely requires either a historical simulation or a Monte Carlo model with realistic vol surface dynamics. As a practical starting point, the crash scenario table (see See Crash Scenario Table) provides the inputs needed to estimate CVaR reduction: the hedge payoffs across scenarios can be used to directly compute expected shortfall if combined with historical or assumed return probabilities for each scenario.
+For a long-only portfolio, computing CVaR precisely requires either a historical simulation or a Monte Carlo model with realistic vol surface dynamics. As a practical starting point, the crash scenario table (see [Crash Scenario Table](../part-10/tier-1-core-hedge-metrics.md#2-crash-scenario-table-payoff-ratio)) provides the inputs needed to estimate CVaR reduction: the hedge payoffs across scenarios can be used to directly compute expected shortfall if combined with historical or assumed return probabilities for each scenario.
 
 The key governance implication: if the investment committee or board uses VaR as a portfolio risk reporting standard, it should be supplemented with CVaR for any mandate that includes a tail-hedge program, because VaR will systematically understate the hedge's contribution.
 

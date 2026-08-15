@@ -28,7 +28,7 @@ See [example strike ladder](strike-selection.md#the-strike-ladder-concept).
 | -30%     | \$1.3M        |
 | -40%     | \$3M+         |
 
-See also See [Example tail hedge payoff structure](../part-10/tier-1-core-hedge-metrics.md#2-crash-scenario-table-payoff-ratio).
+See also See [Example tail hedge payoff structure](../part-5/convexity.md#example-tail-hedge-payoff-structure).
 
 The hedge doesn't eliminate losses, but it **dramatically reduces drawdown**.
 

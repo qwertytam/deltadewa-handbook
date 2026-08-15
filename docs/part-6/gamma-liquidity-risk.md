@@ -70,5 +70,7 @@ dealer gamma negative
 
 Because this increases crash probability.
 
-Note: Tail hedge allocation decisions are driven primarily by volatility regime, skew levels, and the volatility term structure rather than by Gamma liquidity risk.
+!!! note
+
+    Tail hedge allocation decisions are driven primarily by volatility regime, skew levels, and the volatility term structure rather than by Gamma liquidity risk.
 

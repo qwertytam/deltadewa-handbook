@@ -77,5 +77,9 @@ low spreads
 
 **State tax treatment:** Section 1256 treatment applies at the federal level. State tax treatment of derivatives varies; some states do not conform to the 60/40 split and may tax all gains as ordinary income.
 
-**All tax sections are for general orientation only.** Specific treatment should be confirmed with qualified tax counsel before implementing any hedging strategy.
+!!! warning "Not tax advice"
+
+    All tax sections are for general orientation only. Specific treatment
+    should be confirmed with qualified tax counsel before implementing any
+    hedging strategy.
 
