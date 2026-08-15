@@ -30,15 +30,15 @@ $0.50
 
     In many option models vega is defined per unit volatility change ($\Delta\sigma = 1.00$). Traders typically quote vega per 1 volatility point ($\Delta\sigma = 0.01$).
 
-#### Algebraic Definition for Vega
+## Algebraic Definition for Vega
 
 $\nu = \frac{\partial V}{\partial \sigma}$
 
-#### Black-Scholes expression for Vega
+## Black-Scholes expression for Vega
 
 $\nu = S e^{-qT} \sqrt{T} N'(d_1)$
 
-#### Practical Interpretation for Vega
+## Practical Interpretation for Vega
 
 Vega measures exposure to volatility.
 
@@ -64,4 +64,3 @@ Low vega:
 ```text
 price move helps but vol spike doesn't
 ```
-

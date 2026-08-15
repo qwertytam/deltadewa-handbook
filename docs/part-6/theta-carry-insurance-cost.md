@@ -4,7 +4,7 @@ title: "Theta Carry / Insurance Cost"
 
 Theta carry measures how much money the hedge costs to hold over time due to time decay. It is essentially the insurance premium paid to maintain protection.
 
-#### Algebraic Framing of Theta Carry
+## Algebraic Framing of Theta Carry
 
 Theta:
 
@@ -38,7 +38,7 @@ Annualized cost:
 
     See [Theta Day Convention](../part-2/theta.md#theta-day-convention)
 
-#### Portfolio Interpretation
+## Portfolio Interpretation
 
 Good hedges try to balance:
 
@@ -48,4 +48,3 @@ minimize theta carry
 ```
 
 See [Typical institutional targets](../part-7/typical-hedge-program-targets.md#typical-institutional-targets).
-

@@ -11,4 +11,3 @@ Designing a systematic tail-hedge program involves decisions across seven dimens
 - maturity selection,
 - rolling rules, and
 - ongoing evaluation
-

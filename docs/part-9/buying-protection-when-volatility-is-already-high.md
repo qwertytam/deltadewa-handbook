@@ -4,7 +4,7 @@ title: "Buying Protection When Volatility Is Already High"
 
 Most investors buy puts after markets start falling, when fear is high and options are expensive.
 
-#### Why This Is A Problem
+## Why This Is A Problem
 
 When implied volatility $\sigma$ is high:
 
@@ -22,7 +22,7 @@ Example:
 
 Buying during stress locks in terrible carry.
 
-#### Professional Approach
+## Professional Approach
 
 Tail funds prefer to buy when:
 
@@ -32,4 +32,3 @@ skew moderate
 ```
 
 Low-vol regimes historically provide the best hedge economics.
-

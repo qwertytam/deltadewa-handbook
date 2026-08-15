@@ -47,7 +47,7 @@ Typical maturity:
 12 to 24 months
 ```
 
-#### Characteristics
+## Characteristics
 
 | Feature      | Value |
 | ------------ | ----- |
@@ -55,10 +55,9 @@ Typical maturity:
 | Carry cost   | high  |
 | Complexity   | low   |
 
-#### Typical Users
+## Typical Users
 
 ```text
 large university endowments
 many institutional tail funds
 ```
-

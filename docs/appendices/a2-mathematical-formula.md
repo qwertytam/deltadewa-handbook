@@ -2,7 +2,7 @@
 title: "A2 Mathematical Formula"
 ---
 
-#### Black–Scholes Option Pricing
+## Black–Scholes Option Pricing
 
 Call option price:
 
@@ -29,7 +29,7 @@ Variables:
 | $r$      | risk‑free rate   |
 | $q$      | dividend yield   |
 
-#### Greeks Summary
+## Greeks Summary
 
 | w.r.t.                | 1st derivative                                       | 2nd                                                                                                                                                                         | 3rd                                                                                                                                          |
 | --------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -45,7 +45,7 @@ Notes:
 
 - See [Charm](../part-2/charm.md) for differences between $t$ and $\tau$
 
-#### Greeks Interpretation Summary
+## Greeks Interpretation Summary
 
 | Greek    | Range    | Factor           |
 | -------- | -------- | ---------------- |
@@ -55,7 +55,7 @@ Notes:
 | $\nu$    | Varies   | Volatility       |
 | $\rho$   | Varies   | Interest Rate    |
 
-##### Delta
+### Delta
 
 | Value           | Moneyness     | Interpretation                                                              | Example                     |
 | --------------- | ------------- | --------------------------------------------------------------------------- | --------------------------- |
@@ -69,4 +69,3 @@ Notes:
 !!! note
 
     Delta is a continuous value - these ranges are guidelines, not fixed buckets. See discussions on See [the Greeks](../part-2/index.md) for a fuller explanation on drivers of moneyness.
-

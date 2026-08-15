@@ -2,7 +2,7 @@
 title: "Convexity"
 ---
 
-#### Convexity Definition
+## Convexity Definition
 
 Convexity describes **non-linear payoff behavior** where gains accelerate as the underlying moves further.
 
@@ -24,7 +24,7 @@ Convexity in tail hedging is primarily a portfolio-level concept rather than a l
 
 Convex strategies benefit from extreme moves in the benchmark index [[Informa Connect]](../footnotes/index.md#informaconnect).
 
-##### Example Tail Hedge Payoff Structure
+### Example Tail Hedge Payoff Structure
 
 | Market move | Hedge P&L     |
 | ----------- | ------------- |
@@ -35,7 +35,7 @@ Convex strategies benefit from extreme moves in the benchmark index [[Informa Co
 
 Editing note: Similar table also in [Tier 1 Core Hedge Metrics](../part-10/tier-1-core-hedge-metrics.md) - to decide which content to keep/prune.
 
-#### Convexity in Tail-Hedging
+## Convexity in Tail-Hedging
 
 Convexity can be defined in two different ways:
 
@@ -48,7 +48,7 @@ Convexity can be defined in two different ways:
 In tail-hedging practice, convexity usually refers to the second concept
 because investors care about crisis payoff rather than instantaneous gamma.
 
-#### Sources of Convexity
+## Sources of Convexity
 
 In options portfolios, convexity arises primarily from **gamma**, which causes delta exposure to increase as the underlying moves.
 
@@ -64,7 +64,7 @@ Because of these interacting effects, the performance of crash hedges is not det
 
 Skew contributes to convexity, but convexity is **not the same thing as skew**.
 
-#### Convexity versus Skew
+## Convexity versus Skew
 
 | Concept   | Meaning                                   |
 | --------- | ----------------------------------------- |
@@ -72,7 +72,7 @@ Skew contributes to convexity, but convexity is **not the same thing as skew**.
 | Skew      | relative price of downside options        |
 | Skew beta | hedge sensitivity to skew changes         |
 
-#### Convexity Budget
+## Convexity Budget
 
 Many institutional tail-hedge programs manage hedges using a
 convexity budget rather than a fixed notional allocation.
@@ -86,7 +86,7 @@ arbitrary premium spending.
 
 For how convexity targets are used to size hedge programs, see [Convexity Budget and Premium Budget](../part-7/convexity-budget-and-premium-budget.md) in PART VII.
 
-#### Practical Value of Convexity
+## Practical Value of Convexity
 
 For a tail-hedge program, convexity is what allows the hedge to:
 
@@ -105,4 +105,3 @@ fund rebalancing into cheap assets
 
 In practice, convexity is not measured using instantaneous gamma.
 Instead, hedge programs evaluate **crash convexity** using scenario analysis, which estimates hedge performance under large market declines.
-

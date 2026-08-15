@@ -2,7 +2,7 @@
 title: "Research Papers on Tail Hedging"
 ---
 
-#### AQR
+## AQR
 
 Search for:
 
@@ -10,7 +10,7 @@ Search for:
 AQR tail risk hedging paper
 ```
 
-#### CBOE research
+## CBOE research
 
 Excellent data on:
 
@@ -18,7 +18,7 @@ Excellent data on:
 - VIX
 - tail risk
 
-#### Other Areas to Search For
+## Other Areas to Search For
 
 Look for papers on:
 
@@ -33,4 +33,3 @@ Key topics:
 - volatility risk premium capture
 
 For example, research shows that rolling long puts provides direct protection against equity drawdowns, though it can have negative carry over time [[Alpha Architect]](../footnotes/index.md#alpha-arch).
-

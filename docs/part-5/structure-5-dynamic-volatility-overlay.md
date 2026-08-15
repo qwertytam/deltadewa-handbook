@@ -23,4 +23,3 @@ Disadvantage:
 ```text
 more active management
 ```
-

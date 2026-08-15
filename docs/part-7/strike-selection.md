@@ -6,7 +6,7 @@ The **“strike ladder” (multi-strike hedge) across downside skew** is one of 
 
 Strike ladder design is influenced by both skew level and skew slope. When **skew is steep**, deeper strikes become relatively more expensive and ladder weighting may shift slightly toward nearer strikes.
 
-#### Why a Single-Strike Hedge Is Inefficient
+## Why a Single-Strike Hedge Is Inefficient
 
 Suppose the market is:
 
@@ -20,7 +20,7 @@ A single deep OTM put has the following payoff profile:
 Strike = 3500  (30% OTM)
 ```
 
-##### Payoff behavior
+### Payoff behavior
 
 | SPX move | Put payoff     |
 | -------- | -------------- |
@@ -36,7 +36,7 @@ The problem:
 
 The investor ends up with **“gap risk” between protection layers**.
 
-#### The Strike Ladder Concept
+## The Strike Ladder Concept
 
 Instead of one strike, funds build **layers of protection across multiple strikes**.
 
@@ -58,7 +58,7 @@ Why this weighting works:
 - stronger skew beta
 - massive convex payoff in crashes
 
-##### How the Payoff Changes
+### How the Payoff Changes
 
 | SPX move | 20% put  | 30% put | 40% put  |
 | -------- | -------- | ------- | -------- |
@@ -69,11 +69,11 @@ Why this weighting works:
 
 Now the hedge works **across the entire crash spectrum**.
 
-#### Why Funds Use Multiple Strikes
+## Why Funds Use Multiple Strikes
 
 There are three primary reasons.
 
-##### 1. Smoother hedge payoff
+### 1. Smoother hedge payoff
 
 A ladder creates a **continuous convex payoff curve**.
 
@@ -89,7 +89,7 @@ The investor gets:
 small gain → medium gain → large gain
 ```
 
-##### 2. Better skew exposure
+### 2. Better skew exposure
 
 OTM skew increases as strike decreases. Example typical SPX skew:
 
@@ -102,7 +102,7 @@ OTM skew increases as strike decreases. Example typical SPX skew:
 
 Deep strikes benefit **most from skew expansion during crashes**.
 
-##### 3. Better carry efficiency
+### 3. Better carry efficiency
 
 Different strikes have different theta.
 
@@ -116,9 +116,8 @@ Different strikes have different theta.
 
 Blending them reduces overall carry cost.
 
-#### Selecting Strikes
+## Selecting Strikes
 
 Most tail-hedge funds allocate across **three to five strikes using 20 to 40% OTM puts**.
 
 See [example allocation ladder](#the-strike-ladder-concept).
-

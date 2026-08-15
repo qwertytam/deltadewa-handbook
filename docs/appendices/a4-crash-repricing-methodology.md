@@ -17,7 +17,7 @@ The normative specification, its acceptance tests, and the full derivation live 
 [`docs/repricing-methodology.md`](https://github.com/qwertytam/deltadewa/blob/main/docs/repricing-methodology.md); where a number
 appears in both, that document is the reference and this one is the summary.
 
-#### The three properties that pin $V_{crash}$
+## The three properties that pin $V_{crash}$
 
 - **Hedge-only.** $V$ counts the **option legs only**. The underlying equity
   position is excluded from both terms. Convexity measures what the hedge does;
@@ -32,14 +32,14 @@ appears in both, that document is the reference and this one is the summary.
   to maturity does not change and the valuation date does not advance. A crash
   and a month of decay are separate questions and are kept separate.
 
-#### The crash state
+## The crash state
 
 From today's state — spot $S_0$, each leg's own $\sigma_i$, rate $r$, dividend
 yield $q$, valuation date $t_0$ — the crash state is built as:
 
 | Quantity             | Rule                                                                |
 | -------------------- | ------------------------------------------------------------------- |
-| Crash spot           | $S_{crash} = S_0 (1 + m)$, $m$ signed (e.g. $-0.25$)              |
+| Crash spot           | $S_{crash} = S_0 (1 + m)$, $m$ signed (e.g. $-0.25$)                |
 | Crash vol, per leg   | $\sigma_{i,crash} = \sigma_{i} + \Delta\sigma + \kappa\, w_i$       |
 | Rate, dividend yield | held at today's values                                              |
 | Time to maturity     | unchanged                                                           |
@@ -49,7 +49,7 @@ Rates typically fall in a crash and dividends are usually cut; both effects are
 second-order for long puts against the spot and volatility moves, and both are
 deliberately out of scope here.
 
-#### Skew treatment — why the vol shock is not flat
+## Skew treatment — why the vol shock is not flat
 
 The first implementation bumped every leg by the same $\Delta\sigma$. That is
 wrong in the direction that matters: in a real sell-off deep out-of-the-money
@@ -93,7 +93,7 @@ under-states protection — the safe direction of error for a tail program.
 Setting $\kappa = 0$ recovers the flat bump exactly and solves no wing at all, so
 the knob can be turned off without changing any other number.
 
-#### Formula
+## Formula
 
 $$V_{today} = \sum_i \text{price}\big(S_0,\,K_i,\,\sigma_i,\,r,\,q,\,T_i\big)\cdot q_i \cdot c_i$$
 
@@ -111,7 +111,7 @@ $$V_{crash}^{floor} = \sum_i \max\big(K_i - S_{crash},\,0\big)\cdot q_i \cdot c_
 It is a labelled secondary figure and must never be the headline. The worked
 example below shows why: it reads 2.5× where the repriced value reads 17.5×.
 
-#### Worked example
+## Worked example
 
 A \$20M book hedged with a three-rung ladder at 20/30/40% out of the money,
 18-month tenor, 23/26/16 contracts, European puts. Spot 6600, today-volatility
@@ -124,7 +124,7 @@ $K_{ref} \approx 5213$ — about 21% out of the money. The 20% rung sits just
 *shallower* than its wing and so reaches $w = 0.95$; the 30% and 40% rungs sit
 *past* it and cap at the full $\kappa$:
 
-| Leg       | Strike | Qty | $w$ | Crash vol | Value today   | Value in crash  |
+| Leg       | Strike | Qty | $w$  | Crash vol | Value today   | Value in crash  |
 | --------- | ------ | --- | ---- | --------- | ------------- | --------------- |
 | 20% OTM   | 5280   | 23  | 0.95 | 44.5%     | \$219,392     | \$2,524,349     |
 | 30% OTM   | 4620   | 26  | 1.00 | 45.0%     | \$70,696      | \$1,961,615     |
@@ -152,7 +152,7 @@ Black–Scholes table in the normative document to within its stated ~0.5%
 tolerance; the residual is day-count and calendar convention, not a
 disagreement.
 
-#### Reproducibility — how the basis reaches the pricer
+## Reproducibility — how the basis reaches the pricer
 
 The methodology above is only reproducible if every surface prices against the
 same basis. Two structural decisions in the implementation are what make that
@@ -186,7 +186,7 @@ anchor is absolute, the crash number is the same across every surface at equal
 depth — gauge, scenario table, payoff ladder, sizing workbench, strike ladder,
 roll trigger. Disagreement between two panels is a bug, not a modelling choice.
 
-#### Policy keys
+## Policy keys
 
 All of these live in the `convexity:` section of `config/ips.yaml`. They are
 policy, not presentation, and belong in the IPS rather than in dashboard config.
@@ -218,7 +218,7 @@ convexity land inside its target band** — a shock calibrated to the answer you
 want measures nothing. Understating either errs toward less apparent protection,
 which is the correct direction to be wrong in.
 
-#### What this model does not do
+## What this model does not do
 
 - **No term structure of skew.** The steepening is one cross-sectional slope. Each
   leg's *own* tenor is already captured, since its wing is solved at that tenor
@@ -232,4 +232,3 @@ which is the correct direction to be wrong in.
   reads a live volatility surface; $\Delta\sigma$ and $\kappa$ are policy
   parameters expressing a view about crash conditions. The output is only as good
   as that view, and it should be revisited when the view changes.
-

@@ -2,7 +2,7 @@
 title: "Books"
 ---
 
-#### Trading Volatility – Colin Bennett
+## Trading Volatility – Colin Bennett
 
 Probably the best practitioner book on volatility surface dynamics and skew.
 
@@ -13,7 +13,7 @@ Topics:
 - hedging
 - market maker thinking
 
-#### Option Volatility and Pricing – Sheldon Natenberg
+## Option Volatility and Pricing – Sheldon Natenberg
 
 Industry classic covering:
 
@@ -25,7 +25,7 @@ Industry classic covering:
 
 Widely recommended by traders as a foundational text [[Mutiny Fund]](../footnotes/index.md#mutinyfund).
 
-#### Dynamic Hedging – Nassim Taleb
+## Dynamic Hedging – Nassim Taleb
 
 Advanced but essential. Professional-level treatment of:
 
@@ -34,7 +34,7 @@ Advanced but essential. Professional-level treatment of:
 - crash hedging
 - option hedging
 
-#### Volatility Trading – Euan Sinclair
+## Volatility Trading – Euan Sinclair
 
 Highly practical and quantitative, with the strongest treatment of volatility risk premium. Topics:
 
@@ -42,11 +42,11 @@ Highly practical and quantitative, with the strongest treatment of volatility ri
 - option portfolio management
 - volatility strategies
 
-#### Tail Risk Hedging — Vineer Bhansali
+## Tail Risk Hedging — Vineer Bhansali
 
 The most complete published framework for systematic crash protection and hedge payoff quantification [[Bhansali 2014]](../footnotes/index.md#bhansali), addressed directly at institutional investors and family offices.
 
-#### Universa / Mark Spitznagel
+## Universa / Mark Spitznagel
 
 ```text
 Safe Haven
@@ -57,4 +57,3 @@ Topics:
 
 - tail-risk hedging
 - convex payoff structures
-

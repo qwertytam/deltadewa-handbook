@@ -6,7 +6,7 @@ Volatility regime refers to the **general level and behavior of volatility in th
 
 **Volatility level and skew typically interact**. When volatility rises sharply during crises, downside skew often steepens simultaneously as demand for crash protection increases.
 
-#### Algebraic Framing of Vol Regime
+## Algebraic Framing of Vol Regime
 
 Often measured using:
 
@@ -39,7 +39,7 @@ Crisis vol regime: VIX > 40
 | 2020 crash | extreme   | 80  |
 | 2022       | elevated  | 30  |
 
-#### Portfolio Interpretation of Vol Regime
+## Portfolio Interpretation of Vol Regime
 
 Volatility regimes influence:
 
@@ -63,4 +63,3 @@ In high-vol regimes:
 options expensive
 carry high
 ```
-

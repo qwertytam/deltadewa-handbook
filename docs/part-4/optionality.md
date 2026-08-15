@@ -17,4 +17,3 @@ buying a call
 Loss limited to premium, but upside potentially unlimited.
 
 *Example:* “Buying downside optionality.”
-

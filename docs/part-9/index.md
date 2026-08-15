@@ -13,4 +13,3 @@ Professional programs instead:
 ```
 
 This **systematic approach** is what turns tail hedging from an expensive insurance policy into a **long-term portfolio stabilizer**.
-

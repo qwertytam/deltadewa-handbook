@@ -32,4 +32,3 @@ Navigation:
 - Monitoring dashboard → See [PART X — Institutional Hedge Dashboards](../part-10/index.md)
 - What to do in a crisis → See [PART VIII — Monetization and Re-Risk Rules](../part-8/index.md)
 - Tax and governance → See [A3 Tax Considerations](../appendices/a3-tax-considerations-for-hedging-instruments.md) and See [Program Constraints and Governance](../part-7/program-constraints-and-governance.md)
-

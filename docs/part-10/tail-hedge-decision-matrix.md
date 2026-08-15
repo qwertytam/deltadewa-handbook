@@ -55,7 +55,7 @@ This framework helps prevent the most common mistake:
 buying protection after markets already fall
 ```
 
-#### Entry Timing Decision Tree
+## Entry Timing Decision Tree
 
 The matrix above can be converted into sequential decision rules:
 
@@ -90,4 +90,3 @@ Explicit rules derived from this tree:
 - **VIX < 15 + skew percentile < 30%: Increase allocation aggressively**
 - **VIX > 40: Monetize existing positions**
 - **Term structure inverted: Roll costs lower — consider refreshing ladder earlier**
-

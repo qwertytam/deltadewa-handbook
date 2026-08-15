@@ -19,4 +19,3 @@ VIX may move:
 ```
 
 This reflects high vol-of-vol.
-

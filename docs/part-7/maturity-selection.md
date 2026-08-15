@@ -28,7 +28,7 @@ See [LEAPS](../part-1/exercise-settlement.md#leaps) for further details.
 
     Long maturities have low theta on a relative or % basis, but the total absolute premium paid may be larger.
 
-#### Maturity / Time Ladder
+## Maturity / Time Ladder
 
 Instead of a **single maturity**, some funds use a **time ladder as well**.
 
@@ -39,4 +39,3 @@ Instead of a **single maturity**, some funds use a **time ladder as well**.
 | 24 months | 30%        |
 
 This smooths **roll risk**.
-

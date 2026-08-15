@@ -17,7 +17,7 @@ These options have:
 - moderate convexity
 - weaker skew exposure
 
-#### Why Funds Avoid This
+## Why Funds Avoid This
 
 ```text
 deep OTM puts reprice dramatically
@@ -37,4 +37,3 @@ price drop
 + volatility spike
 + skew steepening
 ```
-

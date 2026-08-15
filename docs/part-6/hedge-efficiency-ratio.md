@@ -9,7 +9,7 @@ It does not introduce new information beyond:
 - Crash Payoff Ratio
 - Theta Carry
 
-#### HER Metric
+## HER Metric
 
 $\text{Hedge Efficiency} = \frac{\text{Crash payoff}}{\text{Annual carry}}$
 
@@ -33,4 +33,3 @@ Result:
 ```text
 Efficiency = 1.5M / 300k = 5x payoff relative to cost
 ```
-

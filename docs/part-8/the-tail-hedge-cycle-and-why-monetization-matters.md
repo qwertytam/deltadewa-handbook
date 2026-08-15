@@ -13,4 +13,3 @@ Professional hedge programs often follow this cycle:
 ```
 
 This process allows tail hedges to function as **liquidity providers during crises**. This mechanism is one reason **tail hedging can improve long-term portfolio returns despite carry cost**.
-

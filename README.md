@@ -34,6 +34,7 @@ Requires Python 3.14+ and [Poetry](https://python-poetry.org/).
 poetry install --only dev     # install mkdocs-material and tooling
 poetry run mkdocs serve       # live-reload preview at http://127.0.0.1:8000
 poetry run mkdocs build --strict   # the exact build CI runs
+npx markdownlint-cli2         # the exact Markdown lint CI runs
 ```
 
 `--strict` promotes MkDocs warnings to errors. Broken internal links, missing
@@ -50,8 +51,15 @@ docs/                 # all handbook content, one directory per part
   footnotes/index.md  # central References page; cited via #anchor links
   javascripts/        # MathJax configuration for pymdownx.arithmatex
 mkdocs.yml            # site config, nav, and validation rules
-.github/workflows/    # ci.yml (PR build check), deploy.yml (Pages deploy)
+.markdownlint-cli2.jsonc  # Markdown lint rules, shared by CI and VS Code
+.github/workflows/    # ci.yml (lint + build check), deploy.yml (Pages deploy)
 ```
+
+### Heading levels
+
+Page bodies start at `##`. The `#` comes from the `title:` front matter, which
+Material renders as the page heading — so a page that opens with `##` produces
+a correct `h1 → h2 → h3` outline. Do not add an `#` heading to a page body.
 
 ## Authoring conventions
 

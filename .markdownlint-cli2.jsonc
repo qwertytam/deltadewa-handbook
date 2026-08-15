@@ -1,0 +1,51 @@
+// markdownlint configuration.
+//
+// Read by both `markdownlint-cli2` and the VS Code markdownlint extension, so
+// the editor and CI agree on what counts as a problem.
+//
+// This repository is a Material for MkDocs site, not a collection of
+// standalone README files. Two things follow from that, and they explain most
+// of the exclusions below:
+//
+//   1. Each page's H1 comes from the `title:` front matter, which Material
+//      renders. Page bodies therefore start at H2.
+//   2. Material adds syntax that markdownlint does not parse — admonitions
+//      (`!!! note`), attribute lists (`{ #anchor }`) and arithmatex maths.
+//      Rules that misread these are disabled rather than worked around,
+//      because contorting the source to satisfy them would make it worse.
+{
+  "globs": ["docs/**/*.md", "*.md"],
+  "ignores": ["node_modules", ".venv", "site", "**/.venv/**"],
+
+  "config": {
+    "default": true,
+
+    // MD013 line-length — off. The handbook is prose, and prose is not
+    // hard-wrapped consistently here (some pages wrap at 80, most do not).
+    // Enforcing a column limit on prose produces churn without improving
+    // the rendered output, and it cannot be satisfied at all by the wide
+    // reference tables in Part X and the appendices.
+    "MD013": false,
+
+    // MD046 code-block-style — off. False positive on admonitions: the
+    // four-space-indented body of `!!! note` is indistinguishable from an
+    // indented code block to markdownlint, so the rule flips between
+    // "expected fenced" and "expected indented" across the same file.
+    // All *real* code blocks in this repo are fenced.
+    "MD046": false,
+
+    // MD033 inline HTML — restricted rather than disabled. Explicit anchor
+    // targets are the only HTML the content needs; anything else should be
+    // done with Markdown or a Material extension.
+    "MD033": { "allowed_elements": ["a", "br", "sup", "sub"] },
+
+    // MD024 duplicate headings — siblings only. Repeated section names such
+    // as "Definition" or "Interpretation" are expected across the metric
+    // pages, and are unambiguous because they sit under different parents.
+    "MD024": { "siblings_only": true },
+
+    // MD029 ordered-list numbering — the content uses both "1. 2. 3." and
+    // repeated "1." in different places; either renders correctly.
+    "MD029": { "style": "one_or_ordered" }
+  }
+}

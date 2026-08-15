@@ -10,7 +10,7 @@ This sensitivity is called **skew exposure or skew beta**.
 
 Deep OTM puts typically have positive skew beta, meaning their implied volatility tends to rise faster than ATM volatility during market stress.
 
-#### Definition of Skew Exposure / Beta
+## Definition of Skew Exposure / Beta
 
 Skew beta measures how much the hedge value changes when downside skew steepens.
 
@@ -23,7 +23,7 @@ Where:
 - $V$ = hedge value
 - $Skew$ = difference between OTM put volatility and ATM volatility
 
-#### Why Skew Beta Matters
+## Why Skew Beta Matters
 
 During equity market crises, several things usually happen simultaneously:
 
@@ -44,7 +44,7 @@ Example:
 
 Because deeper OTM options experience larger volatility increases, hedges that hold those strikes benefit more. Deep OTM options typically have higher skew beta than ATM options.
 
-#### Skew Beta Across Hedge Structures
+## Skew Beta Across Hedge Structures
 
 Hedges have higher skew exposure when they hold:
 
@@ -75,7 +75,7 @@ skew beta
 carry cost
 ```
 
-#### Important Distinction
+## Important Distinction
 
 Skew exposure should **not be confused with skew level**.
 
@@ -89,7 +89,7 @@ cheap skew does not guarantee strong skew exposure
 
 Those are two different dimensions.
 
-#### Skew Convexity (Crisis Amplification of Skew Beta)
+## Skew Convexity (Crisis Amplification of Skew Beta)
 
 Skew convexity measures how much additional value a hedge gains when **downside skew steepens sharply during a crisis** — beyond what can be explained by the spot price falling or overall implied volatility rising.
 
@@ -107,7 +107,7 @@ Some hedge structures appear effective when modeled using parallel volatility sh
 
 Monitoring skew convexity helps investors understand whether the hedge will benefit from the **full volatility surface repricing** that usually occurs during market crashes.
 
-##### Key distinctions
+### Key distinctions
 
 These three concepts are often confused:
 
@@ -115,13 +115,13 @@ These three concepts are often confused:
 - Skew beta — how sensitive the hedge is to small changes in skew
 - Skew convexity — the additional, non-linear payoff produced by crisis-driven skew steepening
 
-##### What This Means for Hedge Design
+### What This Means for Hedge Design
 
 Skew convexity is an implicit property of the hedge structure, not typically tracked as a standalone dashboard metric. Programs that hold deep OTM strikes (30 to 40% OTM) with long maturities naturally have high skew convexity. Programs positioned nearer ATM have less, and may underperform their modelled payoffs in a genuine panic precisely because the model assumed parallel volatility shifts rather than the steep skew repricing that actually occurs.
 
 The practical takeaway: **owning deep strikes is the primary mechanism for capturing skew convexity** — the crash scenario table will reflect it automatically if the ladder is structured correctly.
 
-##### Skew Convexity as a Metric
+### Skew Convexity as a Metric
 
 In practice, many institutional dashboards do not track skew convexity explicitly. Instead they monitor:
 
@@ -131,7 +131,7 @@ In practice, many institutional dashboards do not track skew convexity explicitl
 
 These implicitly determine skew convexity.
 
-##### Skew Convexity in Planning Scenarios
+### Skew Convexity in Planning Scenarios
 
 A practical way to evaluate skew convexity is through surface shock scenarios.
 
@@ -143,4 +143,3 @@ ATM volatility:      20% → 26%
 ```
 
 The increase in hedge value produced specifically by the larger volatility change in lower strikes represents skew convexity.
-

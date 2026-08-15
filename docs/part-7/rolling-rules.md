@@ -8,7 +8,7 @@ Most programs roll on **time or moneyness triggers**. Hedge programs rarely hold
 
 Most institutional programs use time-based rolling as the primary rule.
 
-#### Rule 1 — Time-Based Roll
+## Rule 1 — Time-Based Roll
 
 Rolling early preserves **convexity per dollar of cost**.
 
@@ -37,7 +37,7 @@ This avoids rolling just before theta acceleration in the final weeks of option 
 
 Note on the gamma-theta trade-off: the standard time-based roll rule is designed for puts that are still deep OTM. However, if the market has declined modestly during the holding period and the puts have moved closer to the money, the position accumulates favorable gamma — meaning the hedge is becoming more responsive to further declines. In this specific case, rolling mechanically at the 9-month trigger may sacrifice a valuable gamma position. Investors may reasonably choose to delay the roll by several weeks if (a) the time trigger is not yet urgent and (b) the put has moved meaningfully nearer to the money. The key check is whether crash convexity at current spot still meets the IPS target; if it does, the hold decision has a logical basis.
 
-#### Rule 2 — Market Rally Rebalance Trigger
+## Rule 2 — Market Rally Rebalance Trigger
 
 See [Hedge Rebalance Triggers](../part-10/tier-3-structural-and-operational-metrics.md#11-hedge-rebalance-triggers) in Part X for how this trigger integrates with the dashboard monitoring framework.
 
@@ -66,7 +66,7 @@ Note that rolling up after a rally realizes the carry loss on the original posit
 
 Rebalancing should be gradual to avoid excessive trading costs.
 
-##### Cost of a Roll-Up: Worked Example
+### Cost of a Roll-Up: Worked Example
 
 Rolling up after a 15% market rally involves selling puts that have lost most of their value and buying new puts at a higher strike that are more expensive. The combined cost often exceeds the original premium paid:
 
@@ -90,7 +90,7 @@ Net cost of the roll-up:
 
 This effectively doubles the carry cost relative to the original hedge entry. Before executing, the investor should confirm this total cost is within the IPS carry budget. If it is not, a partial roll-up (rolling only the nearest-to-money tranche of the ladder) or switching to a put spread for the new position can reduce the cash outlay.
 
-##### IPS Exception Clause for Roll-Up Budget Overruns
+### IPS Exception Clause for Roll-Up Budget Overruns
 
 A strict 1–2% annual premium cap can be breached mid-year by a single roll-up after a large equity rally. The IPS should include an explicit exception clause to handle this, so the decision is governed rather than improvised under time pressure.
 
@@ -100,17 +100,17 @@ Suggested IPS language:
 
 The key principle: the family office has generated meaningful equity profits in a 15%+ rally. Funding the roll-up from a small portion of those profits is economically coherent — it is the cost of resetting protection on a more valuable portfolio, not an unrelated expense.
 
-##### Entry Conditions After a Rally
+### Entry Conditions After a Rally
 
 A practical benefit that partially offsets the higher roll-up cost: a market that has rallied 15% is typically accompanied by lower VIX and, often, lower skew percentile. This means the **conditions for re-establishing protection may be favorable** — precisely the market environment the See [Entry Timing Decision Tree](../part-10/tail-hedge-decision-matrix.md#entry-timing-decision-tree) identifies as ideal for accumulating hedges. Investors should check VIX and skew percentile before executing the roll-up. If VIX has fallen below 15 and skew is below the 30th percentile, the cost of the new position may be lower per unit of crash convexity than the original entry, partially compensating for the realized loss on the old hedge.
 
-#### Rule 3 — Crash Monetization
+## Rule 3 — Crash Monetization
 
 See [Monetizing crashes](../part-8/typical-monetization-triggers.md) for detail.
 
-#### Alternative Rules
+## Alternative Rules
 
-##### Delta-Based Rolling
+### Delta-Based Rolling
 
 Example rule:
 
@@ -120,7 +120,7 @@ Roll if the absolute value of option delta exceeds 0.60
 
 This prevents hedges from turning into **deep ITM positions**.
 
-##### Volatility-Regime Rolling
+### Volatility-Regime Rolling
 
 Example rule:
 
@@ -133,7 +133,7 @@ If VIX > 40 → look to liquidate hedge in full
 
 This rule helps control the long-term carry cost of the hedge program.
 
-##### What to Do When Skew Is Expensive
+### What to Do When Skew Is Expensive
 
 Rolling hedges when skew is elevated (skew percentile above 70%) can significantly increase effective carry cost. Several approaches can mitigate this:
 
@@ -143,4 +143,3 @@ Rolling hedges when skew is elevated (skew percentile above 70%) can significant
 4. **Roll only part of the position** — if the program has a time ladder across multiple maturities, only roll the tranches that must be rolled and defer the rest.
 
 The guiding principle: a systematic program does not need to roll mechanically on a fixed calendar date. A range of several weeks on either side of the target roll date is acceptable and can save meaningful premium cost when markets are stressed.
-

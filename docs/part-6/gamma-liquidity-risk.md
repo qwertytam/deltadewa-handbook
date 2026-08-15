@@ -6,7 +6,7 @@ Gamma measures how much delta changes when the market moves. Dealer positioning 
 
 Dealer gamma is mostly a **short-dated flow indicator**, not a structural tail-hedging signal.
 
-#### Concept
+## Concept
 
 Market makers hedge option exposure.
 
@@ -37,7 +37,7 @@ Result:
 amplified volatility
 ```
 
-#### Portfolio Metric Definition of Gamma Exposure
+## Portfolio Metric Definition of Gamma Exposure
 
 $\text{Gamma Exposure} = \sum_i \Gamma_i N_i$
 
@@ -51,7 +51,7 @@ $GEX \approx Gamma \times OI \times contract size \times spot^2 \times 0.01$
 
 Many sites publish estimates.
 
-#### Interpretation of Results
+## Interpretation of Results
 
 Dealer gamma positioning describes market-maker hedging flows rather than the hedge portfolio itself.
 
@@ -60,7 +60,7 @@ Dealer gamma positioning describes market-maker hedging flows rather than the he
 | positive     | suppressed volatility |
 | negative     | unstable market       |
 
-#### Hedge Decision Rule for Gamma Liquidity
+## Hedge Decision Rule for Gamma Liquidity
 
 Tail funds look at dealer gamma usually as a secondary or tactical overlay, not a core allocation trigger. If they consider it, they may add hedges when:
 
@@ -73,4 +73,3 @@ Because this increases crash probability.
 !!! note
 
     Tail hedge allocation decisions are driven primarily by volatility regime, skew levels, and the volatility term structure rather than by Gamma liquidity risk.
-

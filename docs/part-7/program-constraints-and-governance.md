@@ -10,7 +10,7 @@ The investment mandate for a family office may need to be explicitly amended to 
 
 Typical institutional constraints include:
 
-#### Allowed Instruments
+## Allowed Instruments
 
 Investment mandates often restrict which instruments can be used.
 
@@ -29,7 +29,7 @@ These restrictions may prevent the use of certain strategies such as:
 
 As a result, many institutional investors implement tail hedges **using only long index puts**.
 
-#### Margin and Leverage Limits
+## Margin and Leverage Limits
 
 Some portfolios face strict constraints on:
 
@@ -45,7 +45,7 @@ These constraints affect:
 
 For example, if short options are prohibited, the program cannot use **put spreads or collars** to reduce carry cost.
 
-#### Liquidity and Execution Constraints
+## Liquidity and Execution Constraints
 
 Operational considerations also matter.
 
@@ -57,7 +57,7 @@ Questions include:
 
 Because crash periods often involve **extreme liquidity deterioration**, the hedge program should prioritize instruments with **deep and reliable liquidity.**
 
-#### Execution Best Practices for Deep OTM and Long-Dated Options
+## Execution Best Practices for Deep OTM and Long-Dated Options
 
 Deep OTM puts and long-dated options often have wider bid-ask spreads than near-the-money, front-month options. For a systematic program, cumulative transaction costs from poor execution can materially increase the effective carry cost.
 
@@ -69,7 +69,7 @@ Practical execution guidelines:
 - **Monitor open interest and daily volume** at target strikes before executing. SPX 20–30% OTM puts with 12–18 month maturities typically have adequate institutional liquidity; 40% OTM strikes at 24 months can be thinly traded and may require larger spread concessions.
 - **Work through an experienced options desk** rather than a retail platform for trades above \$1M notional.
 
-#### Governance and Rebalancing Authority
+## Governance and Rebalancing Authority
 
 A successful hedge program requires clear governance rules defining:
 
@@ -81,7 +81,7 @@ Without predefined rules, investors may fail to monetize hedges during crises or
 
 Most institutional programs therefore define **explicit monetization and re-risk frameworks before crises occur.**
 
-#### Investment Policy Statement (IPS) Integration
+## Investment Policy Statement (IPS) Integration
 
 The hedge program should be explicitly documented in the Investment Policy Statement or equivalent governing document. An undocumented program is vulnerable to ad hoc modification under pressure — precisely when discipline matters most.
 
@@ -103,9 +103,8 @@ Embedding these parameters in the IPS removes discretion from the decision frame
 
 In addition to quarterly operational reviews, conduct a comprehensive annual review of the hedge program parameters themselves - including premium budget, strike range, maturity range, and monetization triggers - to ensure they remain aligned with the family's current risk tolerance, portfolio composition, and financial circumstances.
 
-#### Position Documentation and Counterparty Risk
+## Position Documentation and Counterparty Risk
 
 Each option position should be documented with the underlying instrument and exchange, strike, maturity, notional, number of contracts, entry date, premium paid, and current mark-to-market.
 
 For programs using a single prime broker, counterparty concentration risk should be considered. During a 2008-style liquidity crisis, broker operational capacity can become constrained. Where program size warrants it, distributing positions across two prime brokers reduces single-point-of-failure risk in execution, margining, and position access. For smaller programs, it is typically practical to only use *one* highly rated institutional broker, with a secondary cash/custody account elsewhere for emergency liquidity.
-

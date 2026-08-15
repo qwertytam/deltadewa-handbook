@@ -14,7 +14,7 @@ Because of this, many institutional hedge programs measure performance primarily
 
 The primary quantitative tool for measuring drawdown is maximum drawdown.
 
-#### Maximum Drawdown Formula
+## Maximum Drawdown Formula
 
 Maximum drawdown:
 
@@ -30,7 +30,7 @@ Portfolio trough = $7M
 Drawdown = 30%
 ```
 
-#### Hedged Portfolio Example
+## Hedged Portfolio Example
 
 Without hedge:
 
@@ -48,7 +48,7 @@ net drawdown = −15%
 
 The hedge cut the drawdown **in half**.
 
-#### Compound Return Improvement
+## Compound Return Improvement
 
 Reducing drawdowns improves long-term growth because the portfolio needs smaller recoveries.
 
@@ -61,4 +61,3 @@ Example:
 | −50%     | +100%             |
 
 Tail hedging can therefore improve **compound portfolio returns** even if hedges lose money individually.
-

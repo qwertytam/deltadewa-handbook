@@ -27,7 +27,7 @@ If the stock rises again:
 New delta = 0.40
 ```
 
-#### Algebraic Definition for Gamma
+## Algebraic Definition for Gamma
 
 $\Gamma = \frac{\partial^2 V}{\partial S^2}$
 
@@ -35,7 +35,7 @@ or equivalently
 
 $\Gamma = \frac{\partial \Delta}{\partial S}$
 
-#### Black-Scholes expression
+## Black-Scholes expression
 
 $\Gamma = \frac{e^{-qT} N'(d_1)}{S \sigma \sqrt{T}}$
 
@@ -43,7 +43,7 @@ Where:
 
 - $N'(d_1)$ is the normal probability density function.
 
-#### Practical Interpretation for Gamma
+## Practical Interpretation for Gamma
 
 Gamma describes **convexity**.
 
@@ -56,4 +56,3 @@ Properties:
 
 - Highest ATM
 - Highest short maturity
-

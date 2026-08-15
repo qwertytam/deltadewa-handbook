@@ -8,7 +8,7 @@ $\Delta = \frac{\partial V}{\partial S}$
 
 **Net Delta** measures directional exposure of the entire portfolio to the underlying.
 
-#### Portfolio Metric
+## Portfolio Metric
 
 $\text{Net Delta} = \sum_i \Delta_i \times N_i$
 
@@ -36,11 +36,10 @@ Dollar effective exposure:
 $10M × 0.80 = $8M
 ```
 
-#### Interpretation of Net Delta
+## Interpretation of Net Delta
 
 | Value | Meaning        |
 | ----- | -------------- |
 | 1.0   | fully exposed  |
 | 0.8   | 20% hedge      |
 | 0.0   | market neutral |
-

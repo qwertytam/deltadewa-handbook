@@ -4,19 +4,19 @@ title: "Evaluating and Testing Tail Hedge Strategies"
 
 The investor can use three lenses at once to evaluate a long-dated downside hedge program.
 
-#### 1. Anchor to public strategy indexes
+## 1. Anchor to public strategy indexes
 
 Cboe’s **PPUT** index holds the S&P 500 and buys a **monthly 5% OTM SPX put**, while **PPUT3M** buys **10% OTM quarterly-cycle SPX puts**. Those are useful “expensive / less expensive” public reference points for protective-put style hedging [[Cboe: Put Protection Indices]](../footnotes/index.md#cobe-pp-indices).
 
-#### 2. Bottom-up price the intended hedge today
+## 2. Bottom-up price the intended hedge today
 
 Use the live SPX option surface and price the exact ladder under examination: strikes, maturities, roll dates, and sizing. For USD discounting, use a Treasury or SOFR-style term structure rather than a flat hand-waved rate. The VIX methodology and Cboe volatility materials are useful references for how the market thinks about implied variance and term structure [[Cboe: VIX Methodology]](../footnotes/index.md#cboe-vix-maths).
 
-#### 3. Historical simulation
+## 3. Historical simulation
 
 Replay the roll rules through history using SPX returns plus a proxy for long-vol pricing. This is the most informative estimate because hedge cost depends heavily on the volatility regime and skew when the roll is initiated. Cboe’s protective-put and options-based benchmark materials are good sanity checks for what protective strategies have looked like historically [[Cboe: Put Protection Indices]](../footnotes/index.md#cobe-pp-indices).
 
-#### Metrics to Track During Testing
+## Metrics to Track During Testing
 
 Estimate these three quantities:
 
@@ -35,7 +35,7 @@ Those three metrics tell the investor, respectively:
 - what it might be worth in a crash,
 - if the cost-to-protection trade-off is attractive
 
-##### Advanced Testing Metrics:  VaR, CVaR and Tail Loss Reduction
+### Advanced Testing Metrics:  VaR, CVaR and Tail Loss Reduction
 
 Traditional hedge evaluation often focuses on:
 
@@ -47,7 +47,7 @@ While these metrics are useful, institutional investors increasingly evaluate he
 
 Three commonly used measures are **Value-at-Risk (VaR), Conditional Value-at-Risk (CVaR), and Tail Loss Reduction**.
 
-###### Value-at-Risk (VaR)
+#### Value-at-Risk (VaR)
 
 Value-at-Risk measures the loss threshold exceeded only with probability (1−α) at a given confidence level.
 
@@ -65,7 +65,7 @@ Interpretation: there is a 95% probability that the portfolio will not lose more
 
 VaR is widely reported by risk systems and is a standard regulatory metric for banks and funds. It is easy to communicate to boards and investment committees.
 
-###### Why VaR is Insufficient for Tail Hedge Evaluation
+#### Why VaR is Insufficient for Tail Hedge Evaluation
 
 VaR has a critical structural limitation for tail-hedging purposes: **it says nothing about the magnitude of losses beyond the threshold**.
 
@@ -73,14 +73,14 @@ Two portfolios can have identical VaR but very different tail outcomes:
 
 | Portfolio | 95% VaR | Average loss in worst 5% |
 | --------- | ------- | ------------------------ |
-| Unhedged  | \$350k   | \$1.5M                    |
-| Hedged    | \$350k   | \$600k                    |
+| Unhedged  | \$350k  | \$1.5M                   |
+| Hedged    | \$350k  | \$600k                   |
 
 The VaR is the same. The tail outcome is radically different. A hedging program that appears to offer no VaR improvement may still be doing exactly what it is designed to do: reducing severity in the worst scenarios.
 
 This is why **VaR alone is a misleading** metric for evaluating tail-hedge effectiveness, and why institutional programs use CVaR instead.
 
-###### Conditional Value-at-Risk (CVaR)
+#### Conditional Value-at-Risk (CVaR)
 
 CVaR (also called Expected Shortfall)  measures the **expected loss in the worst tail outcomes** of a return distribution [[Artzner et al. 1999]](../footnotes/index.md#artzner).
 
@@ -94,7 +94,7 @@ CVaR(95%) = average loss of the worst 5% of outcomes = $900k
 
 Unlike VaR, CVaR captures the full severity of tail events. It is sensitive to both the probability and the magnitude of extreme losses, which is precisely what a tail hedge is designed to reduce.
 
-###### Comparing Unhedged vs. Hedged Portfolios
+#### Comparing Unhedged vs. Hedged Portfolios
 
 When evaluating a hedge strategy, investors compare:
 
@@ -108,14 +108,14 @@ Example:
 
 | Metric   | Unhedged | Hedged | Reduction |
 | -------- | -------- | ------ | --------- |
-| 95% VaR  | \$350k    | \$340k  | 3%        |
-| 95% CVaR | \$1.5M    | \$650k  | 57%       |
+| 95% VaR  | \$350k   | \$340k | 3%        |
+| 95% CVaR | \$1.5M   | \$650k | 57%       |
 
 The VaR improvement appears negligible. The CVaR improvement is substantial — this is the correct way to read the hedge's contribution.
 
 A successful tail hedge should **meaningfully reduce portfolio CVaR** even if it introduces a modest carry cost during normal market environments.
 
-###### Tail Loss Reduction
+#### Tail Loss Reduction
 
 Tail Loss Reduction measures how much a hedge reduces extreme portfolio losses.
 
@@ -141,17 +141,17 @@ Tail Loss Reduction = 12 percentage points
 
 This metric captures the **total impact of the hedge on portfolio drawdowns**, rather than evaluating the hedge in isolation.
 
-#### Why These Metrics Matter
+## Why These Metrics Matter
 
 Tail hedges should **not** be evaluated solely on **stand-alone option P&L**. See [Portfolio Drawdown Reduction Modeling](../part-6/portfolio-drawdown-reduction-modeling.md) for further discussion on this point.
 
-#### Investment Committee Reporting
+## Investment Committee Reporting
 
 For a long-only portfolio, computing CVaR precisely requires either a historical simulation or a Monte Carlo model with realistic vol surface dynamics. As a practical starting point, the crash scenario table (see [Crash Scenario Table](../part-10/tier-1-core-hedge-metrics.md#2-crash-scenario-table-payoff-ratio)) provides the inputs needed to estimate CVaR reduction: the hedge payoffs across scenarios can be used to directly compute expected shortfall if combined with historical or assumed return probabilities for each scenario.
 
 The key governance implication: if the investment committee or board uses VaR as a portfolio risk reporting standard, it should be supplemented with CVaR for any mandate that includes a tail-hedge program, because VaR will systematically understate the hedge's contribution.
 
-#### Quarterly Hedge Program Reporting Format
+## Quarterly Hedge Program Reporting Format
 
 Presenting hedge costs clearly to stakeholders is as important as designing the program correctly. A simple quarterly report format that separates hedge costs from portfolio performance prevents the program from appearing as unexplained performance drag.
 
@@ -195,7 +195,7 @@ Net hedge programme P&L YTD:    +$572k
 
 Netting monetization gains against carry costs obscures both the cost of protection in normal years and the value of the payoff in crisis years — making it impossible for stakeholders to understand either number in isolation. Showing them separately preserves the insurance framing: the carry is the premium paid, the monetization gain is the insurance claim received.
 
-#### Practical First Pass Estimate
+## Practical First Pass Estimate
 
 For a **systematic long-dated OTM put program** on a broad equity portfolio, a reasonable first-pass expectation is usually:
 
@@ -205,7 +205,7 @@ For a **systematic long-dated OTM put program** on a broad equity portfolio, a r
 
 That is a heuristic, not a law. The cost depends mainly on moneyness, tenor, roll frequency, and whether to monetize into spikes. Public Cboe protective-put indexes are a useful reminder that nearer-strike, frequent-roll protection is meaningfully costlier than deeper-OTM tail structures [[Cboe: Put Protection Indices]](../footnotes/index.md#cobe-pp-indices).
 
-#### Suggested Starting Point
+## Suggested Starting Point
 
 A practical starting point is a strike ladder structured as follows:
 
@@ -230,7 +230,7 @@ $\text{Estimated Annual Cost} = \$225k / \$10M = 2.25\%$
 
 That is the **starting carry estimate before monetization gains**.
 
-#### Including Monetization in the Estimate
+## Including Monetization in the Estimate
 
 Pure premium spend overstates long-run cost if the plan is to harvest gains in stress.
 
@@ -246,7 +246,7 @@ $\text{Net Annual Cost} = \frac{\text{Premiums Paid} - \text{Crisis Monetization
 
 This distinction matters a lot. Tail-hedge funds are usually not just “buy and bleed”; they often **buy systematically and harvest opportunistically**.
 
-#### Historical Backtesting Methodology
+## Historical Backtesting Methodology
 
 Run this monthly across as long a history as the data supports:
 
@@ -271,7 +271,7 @@ The outputs should be:
 
 That gives the answer the investor actually needs: not “what does it cost,” but “what does it cost across regimes?”
 
-#### Public Data Available for Use
+## Public Data Available for Use
 
 For a clean public-data version:
 
@@ -280,7 +280,7 @@ For a clean public-data version:
 - **Treasury yields** for discounting and carry assumptions. FRED is a practical public source for Treasury curve points [[FRED]](../footnotes/index.md#fred).
 - **PPUT / PPUT3M methodology** for public benchmark protective-put structures to compare against [[Cboe: Put Protection Indices]](../footnotes/index.md#cobe-pp-indices).
 
-#### Usable Approximation in the Absence of Full Historical Option Chains
+## Usable Approximation in the Absence of Full Historical Option Chains
 
 Use a regime-based mapping:
 
@@ -301,23 +301,23 @@ Then assign a rough premium multiple by strike depth:
 
 The precise numbers should come from current market quotes or a chain dataset, but this regime approach is often good enough to decide whether the budget should be 1.5%, 2.5%, or 4%.
 
-#### Starting Recommendations
+## Starting Recommendations
 
 For the goal of **economic downside protection with long-dated OTM puts while keeping carry under control**, the investor can start by testing three candidate programs:
 
-##### Program A: Lean Tail
+### Program A: Lean Tail
 
 - 20% / 30% / 40% OTM
 - weights 25% / 45% / 30%
 - 18 months, roll at 9 months
 
-##### Program B: Balanced
+### Program B: Balanced
 
 - 15% / 25% / 35% OTM
 - weights 35% / 40% / 25%
 - 18 months, roll at 12 months
 
-##### Program C: Richer
+### Program C: Richer
 
 - 10% / 20% / 30% OTM
 - weights 40% / 35% / 25%
@@ -331,7 +331,7 @@ Then compare:
 - $\text{Offset Ratio}$
 - $\text{Carry-to-Convexity}$
 
-#### A Good Sanity-Check Benchmark
+## A Good Sanity-Check Benchmark
 
 If the backtest shows:
 
@@ -341,7 +341,7 @@ If the backtest shows:
 
 That kind of sanity check is where comparing to public protective-put benchmarks like PPUT and PPUT3M helps [[Cboe: Put Protection Indices]](../footnotes/index.md#cobe-pp-indices).
 
-#### Suggested Recording Structure for the Evaluation and Testing
+## Suggested Recording Structure for the Evaluation and Testing
 
 A comparison table structured as follows is useful for each candidate structure:
 
@@ -352,4 +352,3 @@ A comparison table structured as follows is useful for each candidate structure:
 | Richer    |              |                  |               |               |                     |                  |
 
 Once the analyst populates the table, the decision usually becomes obvious.
-

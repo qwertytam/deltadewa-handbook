@@ -23,4 +23,3 @@ $\Gamma \propto \frac{1}{\sqrt{T}}$
 for ATM options under Black-Scholes.
 
 Tail funds typically **roll hedges before this decay phase**.
-

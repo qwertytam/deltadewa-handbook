@@ -22,4 +22,3 @@ add remaining when volatility stabilizes and skew reduces
 ```
 
 This cycle is what allows systematic tail-hedging programs to remain sustainable over long horizons.
-

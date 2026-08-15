@@ -16,7 +16,7 @@ buy 3500 put
 sell 2500 put
 ```
 
-#### Purpose
+## Purpose
 
 Reduce cost. Carry becomes:
 
@@ -29,4 +29,3 @@ Trade-off:
 ```text
 cap extreme crash payoff
 ```
-

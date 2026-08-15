@@ -2,7 +2,7 @@
 title: "Best Websites for Data"
 ---
 
-#### Volatility Data
+## Volatility Data
 
 ```text
 spotgamma.com
@@ -11,10 +11,9 @@ Quantpedia
 Alpha Architect
 ```
 
-#### Academic Volatility Research
+## Academic Volatility Research
 
 ```text
 SSRN
 arXiv
 ```
-

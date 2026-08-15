@@ -22,11 +22,10 @@ vol
 
 *Example:* "FX markets have a volatility smile.”
 
-#### Interpretation of Volatility Smile
+## Interpretation of Volatility Smile
 
 Markets assign higher probability to **extreme outcomes** than predicted by Black-Scholes.
 
 !!! note
 
     In equity markets, the volatility smile is skewed (see [Volatility Skew](volatility-skew.md)) due to crash risk aversion and demand imbalance.
-

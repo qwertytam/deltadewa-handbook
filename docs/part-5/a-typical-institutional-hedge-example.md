@@ -19,4 +19,3 @@ See [example strike ladder](../part-7/strike-selection.md#the-strike-ladder-conc
 Crash scenario:
 
 See [Example tail hedge payoff structure](convexity.md#example-tail-hedge-payoff-structure)
-

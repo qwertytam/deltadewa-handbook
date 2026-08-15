@@ -13,7 +13,7 @@ hedge convexity
 carry budget
 ```
 
-#### Drawdown Protection Model
+## Drawdown Protection Model
 
 Let:
 
@@ -41,7 +41,7 @@ Net loss = −$1.0M
 
 The hedge reduced the drawdown from **25% to 10%**.
 
-#### Hedge Notional Guidelines
+## Hedge Notional Guidelines
 
 Institutional programs often target:
 
@@ -59,7 +59,7 @@ Many tail-risk funds operate around:
 
 because convexity amplifies hedge payoff in extreme scenarios. Said another way, convexity means hedge notional does not need to equal portfolio value.
 
-#### Sizing to the Risk Budget
+## Sizing to the Risk Budget
 
 A systematic approach to determining optimal hedge size:
 
@@ -90,4 +90,3 @@ Hedge Notional = (15% / 25%) × $10M = $6M = 60% of portfolio
 Confirm the premium spend implied by the hedge notional is within the annual carry budget. If it exceeds the budget, reduce hedge notional or shift to deeper OTM strikes to reduce cost.
 
 This five-step process ties hedge sizing directly to the investor's stated loss tolerance rather than to an arbitrary percentage of premium spend.
-

@@ -15,7 +15,7 @@ So good hedges should benefit from both:
 1. price drop
 2. volatility spike
 
-#### Portfolio Metric Definition
+## Portfolio Metric Definition
 
 Let:
 
@@ -36,7 +36,7 @@ vega / 1% underlying move
 vega / expected variance shock
 ```
 
-#### Common Metrics for Vega Sufficiency
+## Common Metrics for Vega Sufficiency
 
 Primary metric:
 
@@ -90,7 +90,7 @@ $15,000 × 20 = $300,000
 
 For example, in March 2020, the VIX rose from a starting level of approximately 12 to 14, reaching a peak of approximately 82 to 85 at the height of the crisis.
 
-#### Portfolio Interpretation of Vega Sufficiency
+## Portfolio Interpretation of Vega Sufficiency
 
 If vega is too small:
 
@@ -102,4 +102,3 @@ vol spike doesn't
 Effective crash hedges typically rely heavily on vega exposure.
 
 Long-dated options typically provide stronger vega.
-

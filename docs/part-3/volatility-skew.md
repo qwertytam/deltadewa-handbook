@@ -2,7 +2,7 @@
 title: "Volatility Skew"
 ---
 
-#### Definition of Volatility Skew
+## Definition of Volatility Skew
 
 In equity options markets, implied volatility varies across strikes.
 This variation is called **volatility skew**.
@@ -38,7 +38,7 @@ Where:
 
 *Example:* “Equity puts have downside skew.”
 
-#### Why Skew Exists
+## Why Skew Exists
 
 In equity markets, investors have strong demand for **downside protection**, particularly from:
 
@@ -55,7 +55,7 @@ As a result:
 OTM puts therefore trade at structurally higher implied volatility than ATM options.
 ```
 
-#### Practical Skew Metrics
+## Practical Skew Metrics
 
 Traders rarely measure skew using raw strike derivatives.
 Instead they use **delta-based metrics**, which are more stable across maturities.
@@ -84,7 +84,7 @@ Result:
 Skew = 27 − 20 = 7 vol points
 ```
 
-#### Interpretation of Volatility Skew
+## Interpretation of Volatility Skew
 
 Skew represents the *market price of crash protection* aka *crash insurance*
 
@@ -98,7 +98,7 @@ High
 
 Because skew varies through time, tail-hedge programs often track **skew percentiles** relative to historical ranges when deciding when to add or reduce protection.
 
-#### Skew Percentile
+## Skew Percentile
 
 Because skew varies over time, institutional desks often evaluate skew relative to history.
 
@@ -122,4 +122,3 @@ Interpretation: protection cheap
 ```
 
 Most institutional dashboards measure skew using a 25$\Delta$ risk reversal (25$\Delta$ put IV minus 25$\Delta$ call IV) or the difference between the 25$\Delta$ put and ATM volatility.
-

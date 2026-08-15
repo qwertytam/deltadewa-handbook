@@ -4,7 +4,7 @@ title: "A3 Tax Considerations for Hedging Instruments"
 
 Different derivatives instruments have different tax treatments.
 
-#### SPX Index Options
+## SPX Index Options
 
 Characteristics:
 
@@ -22,11 +22,11 @@ Tax treatment in the United States:
 mark-to-market annually
 ```
 
-#### XSP Index Options
+## XSP Index Options
 
 Same as See [SPX index options](#spx-index-options)
 
-#### SPY Options
+## SPY Options
 
 Characteristics:
 
@@ -42,7 +42,7 @@ standard capital gains
 holding period dependent
 ```
 
-#### Futures and Futures Options
+## Futures and Futures Options
 
 Index futures and options on futures also typically fall under:
 
@@ -58,7 +58,7 @@ high liquidity
 low spreads
 ```
 
-#### Summary Comparison Table
+## Summary Comparison Table
 
 | Instrument                     | Tax Treatment          | Section 1256? | Mark-to-Market at Year-End | Holding Period                 |
 | ------------------------------ | ---------------------- | ------------- | -------------------------- | ------------------------------ |
@@ -69,7 +69,7 @@ low spreads
 | Single-stock puts              | Standard capital gains | No            | No                         | Based on actual holding period |
 | E-mini S&P 500 futures options | 60% LT / 40% ST        | Yes           | Yes                        | N/A                            |
 
-#### Additional Tax Considerations
+## Additional Tax Considerations
 
 **Wash sale rules:** When rolling options at a loss, the wash sale rule (IRC Section 1091) can apply if a substantially identical option is purchased within 30 days before or after the sale. Broad index options have additional complexity under mixed straddle rules; consult tax counsel before establishing a roll schedule that generates consistent short-term losses.
 
@@ -82,4 +82,3 @@ low spreads
     All tax sections are for general orientation only. Specific treatment
     should be confirmed with qualified tax counsel before implementing any
     hedging strategy.
-

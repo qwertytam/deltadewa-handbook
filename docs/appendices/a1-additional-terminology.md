@@ -2,13 +2,13 @@
 title: "A1 Additional Terminology"
 ---
 
-#### Covered Call
+## Covered Call
 
 Short call against long stock.
 
 *Example:* “Generate income while holding shares.”
 
-#### Straddle
+## Straddle
 
 Buy call + put same strike.
 
@@ -18,7 +18,7 @@ Buy call + put same strike.
 
     This is more of a volatility strategy rather than downside hedging.
 
-#### Strangle
+## Strangle
 
 OTM call + OTM put.
 
@@ -28,13 +28,13 @@ OTM call + OTM put.
 
     This is more of a volatility strategy rather than downside hedging.
 
-#### Calendar Spread
+## Calendar Spread
 
 Same strike, different expiries.
 
 *Example:* Sell front-month, buy longer-dated.
 
-#### Pin Risk
+## Pin Risk
 
 Pin risk occurs when the underlying closes **very close to a strike price at expiration**.
 
@@ -49,7 +49,7 @@ strike = 100
 
     This is relevant mainly to short options or expiry trading. Not important for long-dated tail hedges.
 
-#### Gamma Scalping
+## Gamma Scalping
 
 Gamma scalping is a trading strategy that profits from volatility.
 
@@ -68,4 +68,3 @@ This captures realized volatility.
 !!! note
 
     This is more relevant to market making or volatility trading, not portfolio hedging.
-

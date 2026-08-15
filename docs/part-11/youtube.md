@@ -2,7 +2,7 @@
 title: "Youtube"
 ---
 
-#### Cem Karsan / Kai Volatility
+## Cem Karsan / Kai Volatility
 
 Probably the **best volatility discussion online**.
 
@@ -15,7 +15,7 @@ Topics:
 - volatility cycles
 - tail risk
 
-#### SpotGamma
+## SpotGamma
 
 Great for:
 
@@ -23,9 +23,8 @@ Great for:
 - gamma flows
 - volatility regime analysis
 
-#### Kris Sidial (Ambrus Group)
+## Kris Sidial (Ambrus Group)
 
 Very clear explanations of **carry-neutral tail hedging strategies**.
 
 [Youtube: Hedging Against Market Crashes w/ Kris Sidial (TIP702)](https://youtu.be/iVAM9vShYno)
-

@@ -16,4 +16,3 @@ Key trade-offs:
 - **Put spreads** reduce carry but cap the payoff in extreme crashes — the short put limits gains below its strike.
 - **Collars** are approximately cost-neutral but sacrifice rally participation and create tax complexity; unsuitable as a permanent overlay.
 - **VIX derivatives** can outperform in rapid crashes but have persistent roll costs in contango and high basis risk relative to portfolio losses.
-

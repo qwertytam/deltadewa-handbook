@@ -4,7 +4,7 @@ title: "Typical Monetization Triggers"
 
 Institutional programs often monetize hedges when any of **three conditions occur**.
 
-#### 1. Volatility Spike
+## 1. Volatility Spike
 
 Example rule:
 
@@ -30,7 +30,7 @@ Reason:
 volatility spikes often reverse quickly
 ```
 
-#### 2. Market Drawdown
+## 2. Market Drawdown
 
 Example rule:
 
@@ -42,7 +42,7 @@ SPX −35% → monetize most remaining protection
 
 This locks in gains while retaining protection.
 
-#### 3. Hedge Value Trigger
+## 3. Hedge Value Trigger
 
 Example rule:
 
@@ -62,4 +62,3 @@ When hedge value rises to
 | +100%      | sell 25%         |
 | +200%      | sell another 25% |
 | +400%      | sell another 25% |
-

@@ -26,19 +26,18 @@ Risks:
 - See [margin/collateral pressure in a crisis](#margincollateral-pressure)
 - See [volatility carry reversal](#volatility-carry-reversal)
 
-#### Timing Mismatch
+## Timing Mismatch
 
 The hedge's income and protection components can be out of sync during a volatility spike, causing a timing mismatch.
 
-#### Short Gamma Risk
+## Short Gamma Risk
 
 The short options may be squeezed first in a volatility spike, generating losses before the long puts have moved sufficiently into profit.
 
-#### Margin/Collateral Pressure
+## Margin/Collateral Pressure
 
 Even if the trade is ultimately profitable, short options can require additional margin exactly when liquidity is most constrained.
 
-#### Volatility Carry Reversal
+## Volatility Carry Reversal
 
 The See [Volatility Risk Premium](../part-4/volatility-risk-premium.md) that funds the hedge can compress or reverse, making the income side unreliable in certain regimes.
-

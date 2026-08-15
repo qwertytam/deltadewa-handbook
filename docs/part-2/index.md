@@ -18,4 +18,3 @@ Where:
 - $q$ = dividend yield
 
 Greeks are derivatives of (V) with respect to these variables [[Wikipedia: Greeks]](../footnotes/index.md#wiki-greeks). They measure **how $V$ changes when one of these variables changes**.
-

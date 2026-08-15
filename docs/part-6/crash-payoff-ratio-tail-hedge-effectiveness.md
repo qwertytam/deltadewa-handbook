@@ -2,14 +2,14 @@
 title: "Crash Payoff Ratio / Tail Hedge Effectiveness"
 ---
 
-#### Definition of Crash Payoff Ratio
+## Definition of Crash Payoff Ratio
 
-Crash payoff ratio measures how much of the portfolio loss is offset by the hedge during a crash. This metric evaluates hedge effectiveness, not convexity [[Bhansali 2014]](../footnotes/index.md#bhansali)[[Meketa 2019]](../footnotes/index.md#meketa)[[Cambridge Associates 2025]](../footnotes/index.md#cambridge)[[CAIA 2021]](../footnotes/index.md#caia).
+Crash payoff ratio measures how much of the portfolio loss is offset by the hedge during a crash. This metric evaluates hedge effectiveness, not convexity [[Bhansali 2014]](../footnotes/index.md#bhansali), [[Meketa 2019]](../footnotes/index.md#meketa), [[Cambridge Associates 2025]](../footnotes/index.md#cambridge), [[CAIA 2021]](../footnotes/index.md#caia).
 
 It answers:
 > If markets crash, how much of the loss does the hedge absorb?
 
-#### Crash Payoff Ratio Metric
+## Crash Payoff Ratio Metric
 
 Let:
 
@@ -38,7 +38,7 @@ Crash Payoff Ratio = 800k / 2.5M = 32%
 
 *Interpretation:* 32% of the equity drawdown is offset by the hedge at a −25% SPX decline
 
-#### Interpretation of Crash Payoff Ratio
+## Interpretation of Crash Payoff Ratio
 
 Typical ranges:
 
@@ -57,7 +57,6 @@ Most long-equity hedge programs aim for:
 
 This provides liquidity to rebalance portfolios during crises.
 
-#### Important Caveat
+## Important Caveat
 
 The ratio is only meaningful when stated alongside its explicit scenario assumptions — the assumed market decline, the vol spike applied, and whether skew steepening is modelled. A ratio stated without these inputs cannot be compared across programs or structures.
-

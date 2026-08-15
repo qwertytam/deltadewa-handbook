@@ -18,12 +18,12 @@ where:
 
     Portfolio beta should be recalculated at least annually, or whenever significant portfolio changes occur — for example, when positions representing more than 10% of portfolio value are added or removed. Beta drift of 0.10 or more warrants resizing the hedge at the next scheduled roll to avoid persistent over- or under-hedging. A portfolio that shifts toward more defensive names over time (beta drifts from 1.00 to 0.85) with an unchanged hedge notional is overhedged by approximately 18%, paying unnecessary carry for protection that exceeds the actual market exposure.
 
-#### Worked Example — Multi-Position Portfolio
+## Worked Example — Multi-Position Portfolio
 
 A portfolio holds the following positions:
 
-| Position               | Value    | Beta vs SPX |
-| ---------------------- | -------- | ----------- |
+| Position               | Value     | Beta vs SPX |
+| ---------------------- | --------- | ----------- |
 | Large-cap US equities  | \$6M      | 1.05        |
 | Mid-cap US equities    | \$2M      | 1.15        |
 | International equities | \$2M      | 0.70        |
@@ -45,7 +45,7 @@ $N_{XSP} = 20 \times 10 = 200 \ \text{XSP contracts}$
 
 If portfolio beta were instead 0.85, the hedge notional would be \$8.5M, requiring only 17 SPX contracts. Buying 20 contracts in that case would overhedge by approximately 18% — a meaningful structural error in a systematic program.
 
-#### XSP Strike Ladder Distribution
+## XSP Strike Ladder Distribution
 
 For investors using XSP for finer granularity, the 200 XSP contracts computed above would be distributed across a strike ladder and maturity buckets as follows. Using the standard 3-strike, 2-maturity allocation:
 
@@ -53,9 +53,9 @@ Strike allocations (consistent with See [the typical tail hedge structure](typic
 
 | Strike  | Allocation % | XSP Contracts | Notional |
 | ------- | ------------ | ------------- | -------- |
-| 20% OTM | 35%          | 70            | \$3.5M    |
-| 30% OTM | 40%          | 80            | \$4.0M    |
-| 40% OTM | 25%          | 50            | \$2.5M    |
+| 20% OTM | 35%          | 70            | \$3.5M   |
+| 30% OTM | 40%          | 80            | \$4.0M   |
+| 40% OTM | 25%          | 50            | \$2.5M   |
 
 Split across two maturity buckets (e.g., 12 months and 18 months, weighted 40% / 60%):
 
@@ -67,4 +67,3 @@ Split across two maturity buckets (e.g., 12 months and 18 months, weighted 40% /
 | **Total** | **80**       | **120**      |
 
 This structure gives 200 XSP contracts total distributed across six positions, each sized to approximately \$400k–\$700k notional — fine enough granularity to adjust individual legs without large step changes in exposure.
-

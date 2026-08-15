@@ -14,6 +14,22 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  markdown:
+    name: Lint Markdown
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # Rules and exclusions live in .markdownlint-cli2.jsonc, which the VS
+      # Code markdownlint extension reads too, so the editor and CI agree.
+      # Pinned so a new rule in a future release cannot fail an unrelated PR.
+      - name: Run markdownlint
+        run: npx --yes markdownlint-cli2@0.23.2
+
   build:
     name: Build docs (strict)
     runs-on: ubuntu-latest

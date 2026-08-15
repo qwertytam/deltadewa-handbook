@@ -29,4 +29,3 @@ Other relevant events can include:
 - CPI prints
 - non-farm payrolls
 - resolution of geopolitical events
-

@@ -6,7 +6,7 @@ Vomma measures how vega changes when volatility changes.
 
 $\text{Vomma} = \frac{\partial^2 V}{\partial \sigma^2}$
 
-#### Interpretation
+## Interpretation
 
 It captures convexity with respect to volatility.
 

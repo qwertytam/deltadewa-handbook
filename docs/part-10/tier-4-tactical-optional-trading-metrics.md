@@ -4,15 +4,15 @@ title: "Tier 4 — Tactical / Optional Trading Metrics"
 
 These are not really tail-hedging metrics. For example, dealer gamma is short-term flow information, not structural hedge design. Most institutional tail programs do not include it on core dashboards.
 
-#### 12. Liquidity Risk
+## 12. Liquidity Risk
 
 See [Liquidity Risk / Spread](../part-4/liquidity-risk-spread.md) for definition details.
 
-##### Liquidity Risk Metrics
+### Liquidity Risk Metrics
 
 Common liquidity indicators:
 
-###### Bid-ask spread
+#### Bid-ask spread
 
 ```text
 Spread % = (Ask − Bid) / Mid
@@ -29,23 +29,23 @@ Spread:
 0.20
 ```
 
-###### Market depth
+#### Market depth
 
 Contracts available near the mid price.
 
-###### Open interest
+#### Open interest
 
 ```text
 OI per strike
 ```
 
-###### Trading volume
+#### Trading volume
 
 ```text
 Average daily volume
 ```
 
-##### Liquidity Risk Interpretation
+### Liquidity Risk Interpretation
 
 Warning signs:
 
@@ -63,16 +63,16 @@ rolling positions
 scaling hedge size
 ```
 
-#### 13. Delta Drift
+## 13. Delta Drift
 
-##### Delta Drift Definition
+### Delta Drift Definition
 
 Delta drift measures how quickly the hedge’s delta becomes more negative as markets fall. This captures early-stage protection before a full crash occurs.
 
 It answers:
 > How quickly does the hedge begin offsetting losses?
 
-##### Delta Drift Metric
+### Delta Drift Metric
 
 Compute the change in hedge delta across small price moves.
 
@@ -97,7 +97,7 @@ Delta if SPX −5% = −0.18
 Delta Drift = −0.10
 ```
 
-##### Delta Drift Interpretation
+### Delta Drift Interpretation
 
 | Drift magnitude | Meaning                                |
 | --------------- | -------------------------------------- |
@@ -107,16 +107,16 @@ Delta Drift = −0.10
 
 Tail-risk strategies often accept slower delta drift in exchange for cheaper carry.
 
-#### 14. Vega Term Exposure
+## 14. Vega Term Exposure
 
-##### Vega Term Exposure Definition
+### Vega Term Exposure Definition
 
 Vega term exposure measures how hedge sensitivity to volatility is distributed across maturities. Volatility spikes often affect multiple parts of the term structure, so hedge exposure across maturities matters.
 
 It answers:
 > Which part of the volatility curve does the hedge benefit from?
 
-##### Vega Term Exposure Metric
+### Vega Term Exposure Metric
 
 Aggregate vega by maturity bucket:
 
@@ -134,7 +134,7 @@ Or normalize by portfolio:
 Vega Exposure = Portfolio Vega / Portfolio Value
 ```
 
-##### Vega Term Exposure Interpretation
+### Vega Term Exposure Interpretation
 
 Different structures produce different exposures:
 
@@ -152,7 +152,6 @@ long-dated vega exposure
 
 This is because crisis volatility often lifts long-dated implied volatility as well.
 
-#### 15. Hedge Efficiency Ratio
+## 15. Hedge Efficiency Ratio
 
 See [Hedge Efficiency Ratio](../part-6/hedge-efficiency-ratio.md) for details.
-

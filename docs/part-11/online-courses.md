@@ -2,19 +2,18 @@
 title: "Online Courses"
 ---
 
-#### Option Alpha (free)
+## Option Alpha (free)
 
 Good fundamentals.
 
-#### CME Institute
+## CME Institute
 
 Free institutional-level content.
 
-#### Coursera
+## Coursera
 
 Search:
 
 ```text
 Options, Futures, and Derivatives
 ```
-

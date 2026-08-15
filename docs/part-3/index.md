@@ -28,4 +28,3 @@ volatility
    +-----------------> strike
         maturity
 ```
-

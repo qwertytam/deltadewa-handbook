@@ -27,4 +27,3 @@ Example (March 2020)
 ```
 
 This inversion dramatically increases the value of near-dated options and affects roll decisions. See [Volatility Roll Yield](../part-7/volatility-roll-yield.md) for how term structure shape determines the cost or benefit of rolling long-dated positions.
-

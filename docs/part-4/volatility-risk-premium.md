@@ -27,4 +27,3 @@ Premium:
 ```
 
 Option sellers capture this on average.
-

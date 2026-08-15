@@ -9,7 +9,7 @@ The second step is **re-risking the portfolio** once markets have fallen and ass
 
 Institutional investors therefore often define a **scenario-based re-risk framework** in advance.
 
-#### Example Crisis Playbook
+## Example Crisis Playbook
 
 | Market Move   | Typical Hedge Action    | Typical Portfolio Action               |
 | ------------- | ----------------------- | -------------------------------------- |
@@ -24,7 +24,7 @@ The exact thresholds vary by program, but the principle remains the same:
 crash → hedge gains → realized liquidity → reinvest into risk assets
 ```
 
-#### Why Re-Risking Matters
+## Why Re-Risking Matters
 
 Crises often follow a common pattern:
 
@@ -36,9 +36,8 @@ If hedge gains are not redeployed during the crisis, investors may miss the oppo
 
 Therefore, the value of a tail hedge often comes not only from offsetting losses but also from **enabling opportunistic rebalancing.**
 
-#### Gradual Re-Entry into Protection
+## Gradual Re-Entry into Protection
 
 After a crash stabilizes and volatility declines, the hedge program is typically **rebuilt gradually**.
 
 See [Re-Risking Rules](re-risking-rules.md) for further details.
-

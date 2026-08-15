@@ -11,4 +11,3 @@ title: "Important Limitations"
 
     Tax sections are for general orientation only and do not constitute tax
     advice; specific treatment should be confirmed with qualified counsel.
-

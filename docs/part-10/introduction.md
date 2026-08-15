@@ -6,7 +6,7 @@ These are the kinds of metrics volatility funds and institutional portfolio hedg
 
 These metrics help investors maintain **constant protection while controlling cost**, since tail-risk hedging aims to cushion severe drawdowns while preserving long-term portfolio growth [[Resonanz Capital]](../footnotes/index.md#resonanzcapital).
 
-#### Metric Prioritization
+## Metric Prioritization
 
 There are many possible metrics to include. The full list below is prioritized by *Tier*.
 
@@ -19,7 +19,7 @@ An alternative take is this list of six:
 5. Volatility Regime
 6. Hedge Efficiency
 
-#### Example of a Full Dashboard
+## Example of a Full Dashboard
 
 ```text
 TAIL HEDGE DASHBOARD
@@ -44,7 +44,7 @@ Conclusion:
 increase hedge allocation
 ```
 
-#### Key Driver of the Dashboard
+## Key Driver of the Dashboard
 
 The **best opportunities to buy crash protection** typically occur when:
 
@@ -55,4 +55,3 @@ skew moderate
 ```
 
 Investor's instinct is to hedge **after markets fall**, but that is when hedges are **most expensive**.
-

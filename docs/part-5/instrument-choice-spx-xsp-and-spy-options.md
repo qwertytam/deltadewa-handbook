@@ -12,7 +12,7 @@ When implementing a long-equity downside hedge program, the choice of **underlyi
 
 Institutional tail-hedge programs most commonly use **index options**, particularly SPX.
 
-#### SPX Options (S&P 500 Index Options)
+## SPX Options (S&P 500 Index Options)
 
 SPX options are typically the preferred instrument for institutional downside hedging.
 
@@ -37,7 +37,7 @@ Because there is no physical delivery of shares, SPX options avoid complications
 
 As a result, **most institutional tail-hedge funds implement crash protection using SPX options.**
 
-#### XSP Options (Mini SPX)
+## XSP Options (Mini SPX)
 
 XSP options track the same S&P 500 index but at **1/10 the size of SPX**.
 
@@ -59,7 +59,7 @@ XSP is often used by investors who want index-style hedging but require **more g
 
     While XSP tracks the same underlying as SPX, its options market is smaller. Bid-ask spreads and open interest in XSP can be thinner than in SPX, particularly for deep OTM and long-dated strikes. Investors should check OI and recent volume at target strikes before committing to XSP for large notional trades, and should use limit orders to avoid paying inflated spreads. Using XSP requires execution patience to avoid paying a 10% spread premium.
 
-#### SPY Options (ETF Options)
+## SPY Options (ETF Options)
 
 SPY options are based on the **SPDR S&P 500 ETF** rather than the index.
 
@@ -83,7 +83,7 @@ Despite these limitations, SPY options are extremely liquid and may be preferred
 
 However, because of the assignment risk and operational complexity, **SPY is usually not the first choice for systematic tail-hedging programs.**
 
-#### Practical Rule of Thumb
+## Practical Rule of Thumb
 
 Typical preference hierarchy for institutional hedging:
 
@@ -92,4 +92,3 @@ SPX → preferred for institutional programs
 XSP → useful for smaller portfolios or fine sizing
 SPY → acceptable but operationally more complex
 ```
-
