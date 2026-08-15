@@ -10,6 +10,11 @@ theme:
   features:
     - navigation.expand
     - navigation.indexes
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search
 
 nav:
   - 'Table of Contents':
