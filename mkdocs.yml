@@ -21,7 +21,7 @@ markdown_extensions:
   - footnotes
 
 nav:
-  - 'Home': 'index.md'
+  - 'index.md'
   - 'Preface':
     - 'Philosophy': 'preface/philosophy.md'
     - 'Scope and Assumptions': 'preface/scope-and-assumptions.md'
@@ -36,12 +36,12 @@ nav:
     - 'Exercise & Settlement': 'part-1/exercise-settlement.md'
   - 'PART II — The Greeks':
     -  'part-2/index.md'
-    - 'Delta (Δ)': 'part-2/delta-δ.md'
-    - 'Gamma (Γ)': 'part-2/gamma-γ.md'
-    - 'Vega (ν)': 'part-2/vega-ν.md'
-    - 'Theta (Θ)': 'part-2/theta-θ.md'
-    - 'Rho (ρ)': 'part-2/rho-ρ.md'
-    - 'Volatility of Volatility (Vol-of-Vol)': 'part-2/volatility-of-volatility-vol-of-vol.md'
+    - 'Delta (Δ)': 'part-2/delta.md'
+    - 'Gamma (Γ)': 'part-2/gamma.md'
+    - 'Vega (ν)': 'part-2/vega.md'
+    - 'Theta (Θ)': 'part-2/theta.md'
+    - 'Rho (ρ)': 'part-2/rho.md'
+    - 'Volatility of Volatility (Vol-of-Vol)': 'part-2/volatility-of-volatility.md'
     - 'Vanna': 'part-2/vanna.md'
     - 'Charm': 'part-2/charm.md'
     - 'Vomma': 'part-2/vomma.md'
