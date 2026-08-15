@@ -28,21 +28,21 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
-  - 'index.md'
   - 'Preface':
-    - 'Philosophy': 'preface/philosophy.md'
+    - 'preface/index.md'
     - 'Scope and Assumptions': 'preface/scope-and-assumptions.md'
     - 'Important Limitations': 'preface/important-limitations.md'
   - 'Quick Start — Five Key Decisions':
-    -  'quick-start-five-key-decisions/index.md'
+    - 'quick-start-five-key-decisions/index.md'
   - 'PART I — Options Fundamentals':
+    - 'part-1/index.md'
     - 'The Basics': 'part-1/the-basics.md'
     - 'Pricing & Carry': 'part-1/pricing-carry.md'
     - 'Moneyness': 'part-1/moneyness.md'
     - 'Position Types': 'part-1/position-types.md'
     - 'Exercise & Settlement': 'part-1/exercise-settlement.md'
   - 'PART II — The Greeks':
-    -  'part-2/index.md'
+    - 'part-2/index.md'
     - 'Delta (Δ)': 'part-2/delta.md'
     - 'Gamma (Γ)': 'part-2/gamma.md'
     - 'Vega (ν)': 'part-2/vega.md'
@@ -53,20 +53,20 @@ nav:
     - 'Charm': 'part-2/charm.md'
     - 'Vomma': 'part-2/vomma.md'
   - 'PART III — Volatility and the Vol Surface':
-    -  'part-3/index.md'
+    - 'part-3/index.md'
     - 'Summary Relationship Between Volatility, Skew and Convexity': 'part-3/summary-relationship-between-volatility-skew-and-convexity.md'
     - 'Volatility Smile': 'part-3/volatility-smile.md'
     - 'Volatility Skew': 'part-3/volatility-skew.md'
     - 'Volatility Term Structure': 'part-3/volatility-term-structure.md'
     - 'Volatility Crush': 'part-3/volatility-crush.md'
   - 'PART IV — Trading Terminology':
-    -  'part-4/index.md'
+    - 'part-4/index.md'
     - 'Optionality': 'part-4/optionality.md'
     - 'Open Interest (OI)': 'part-4/open-interest-oi.md'
     - 'Liquidity Risk / Spread': 'part-4/liquidity-risk-spread.md'
     - 'Volatility Risk Premium': 'part-4/volatility-risk-premium.md'
   - 'PART V — Tail-Hedging Concepts and Structures':
-    -  'part-5/index.md'
+    - 'part-5/index.md'
     - 'Convexity': 'part-5/convexity.md'
     - 'Structure Examples Introduction': 'part-5/structure-examples-introduction.md'
     - 'Structure 1 — Long OTM Puts (Pure Tail Hedge)': 'part-5/structure-1-long-otm-puts-pure-tail-hedge.md'
@@ -80,7 +80,7 @@ nav:
     - 'Instrument Choice: SPX, XSP, and SPY Options': 'part-5/instrument-choice-spx-xsp-and-spy-options.md'
     - 'A Typical Institutional Hedge Example': 'part-5/a-typical-institutional-hedge-example.md'
   - 'PART VI — Tail-Hedging Metrics':
-    -  'part-6/index.md'
+    - 'part-6/index.md'
     - 'Net Delta': 'part-6/net-delta.md'
     - 'Crash Convexity': 'part-6/crash-convexity.md'
     - 'Crash Payoff Ratio / Tail Hedge Effectiveness': 'part-6/crash-payoff-ratio-tail-hedge-effectiveness.md'
@@ -93,7 +93,7 @@ nav:
     - 'Gamma Liquidity Risk': 'part-6/gamma-liquidity-risk.md'
     - 'Forward Variance Level': 'part-6/forward-variance-level.md'
   - 'PART VII — Designing a Tail-Hedge Program':
-    -  'part-7/index.md'
+    - 'part-7/index.md'
     - 'Program Constraints and Governance': 'part-7/program-constraints-and-governance.md'
     - 'Beta-Adjusted Hedge Sizing': 'part-7/beta-adjusted-hedge-sizing.md'
     - 'Basis Risk': 'part-7/basis-risk.md'
@@ -110,6 +110,7 @@ nav:
     - 'Historical Crash Analysis': 'part-7/historical-crash-analysis.md'
     - 'Implementation Checklist': 'part-7/implementation-checklist.md'
   - 'PART VIII — Monetization and Re-Risk Rules':
+    - 'part-8/index.md'
     - 'Monetization Philosophy': 'part-8/monetization-philosophy.md'
     - 'The Tail Hedge Cycle and Why Monetization Matters': 'part-8/the-tail-hedge-cycle-and-why-monetization-matters.md'
     - 'Typical Monetization Triggers': 'part-8/typical-monetization-triggers.md'
@@ -118,7 +119,7 @@ nav:
     - 'Scenario-Based Re-Risk Playbook': 'part-8/scenario-based-re-risk-playbook.md'
     - 'Crisis Execution Guidance': 'part-8/crisis-execution-guidance.md'
   - 'PART IX — Common Structural Mistakes':
-    -  'part-9/index.md'
+    - 'part-9/index.md'
     - 'Long-Term Return Drag': 'part-9/long-term-return-drag.md'
     - 'Buying Protection When Volatility Is Already High': 'part-9/buying-protection-when-volatility-is-already-high.md'
     - 'Buying Puts That Are Not Far Enough OTM': 'part-9/buying-puts-that-are-not-far-enough-otm.md'
@@ -126,6 +127,7 @@ nav:
     - 'Ignoring Tax Interactions': 'part-9/ignoring-tax-interactions.md'
     - 'Behavioral Risks — Abandoning the Program': 'part-9/behavioral-risks-abandoning-the-program.md'
   - 'PART X — Institutional Hedge Dashboards':
+    - 'part-10/index.md'
     - 'Introduction': 'part-10/introduction.md'
     - 'Tail Hedge Decision Matrix': 'part-10/tail-hedge-decision-matrix.md'
     - 'Tier 1 — Core Hedge Metrics': 'part-10/tier-1-core-hedge-metrics.md'
@@ -133,15 +135,17 @@ nav:
     - 'Tier 3 — Structural and Operational Metrics': 'part-10/tier-3-structural-and-operational-metrics.md'
     - 'Tier 4 — Tactical / Optional Trading Metrics': 'part-10/tier-4-tactical-optional-trading-metrics.md'
   - 'PART XI — Educational Resources':
+    - 'part-11/index.md'
     - 'Books': 'part-11/books.md'
     - 'Research Papers on Tail Hedging': 'part-11/research-papers-on-tail-hedging.md'
     - 'Online Courses': 'part-11/online-courses.md'
     - 'Youtube': 'part-11/youtube.md'
     - 'Best Websites for Data': 'part-11/best-websites-for-data.md'
   - 'APPENDICES':
+    - 'appendices/index.md'
     - 'A1 Additional Terminology': 'appendices/a1-additional-terminology.md'
     - 'A2 Mathematical Formula': 'appendices/a2-mathematical-formula.md'
     - 'A3 Tax Considerations for Hedging Instruments': 'appendices/a3-tax-considerations-for-hedging-instruments.md'
     - 'A4 Crash Repricing Methodology': 'appendices/a4-crash-repricing-methodology.md'
   - 'FOOTNOTES':
-    -  'footnotes/index.md'
+    - 'footnotes/index.md'

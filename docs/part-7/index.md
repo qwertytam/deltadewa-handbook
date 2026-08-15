@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: "Designing a Tail-Hedge Program"
 ---
 
 Designing a systematic tail-hedge program involves decisions across seven dimensions:

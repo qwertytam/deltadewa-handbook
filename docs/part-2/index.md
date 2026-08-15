@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: "The Greeks"
 ---
 
 The Greeks are partial derivatives of the option price with respect to different inputs in an option pricing model (typically Black-Scholes or a related model).

@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: "Five Key Decisions"
 ---
 
 For a reader who needs to orient quickly before diving into the full document:

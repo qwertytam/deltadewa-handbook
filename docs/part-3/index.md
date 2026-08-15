@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: "Volatility and the Vol Surface"
 ---
 
 Options markets quote implied volatility instead of price.

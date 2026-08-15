@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: "Footnotes"
 ---
 
 [^bhansali]: Bhansali, V. (2014) "Tail Risk Hedging: Creating Robust Portfolios for Volatile Markets"

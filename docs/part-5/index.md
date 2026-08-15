@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: "Tail-Hedging Concepts and Structures"
 ---
 
 The goal of tail hedging is **not to eliminate volatility or offset small drawdowns**. The goal is to create **liquidity during crises**. This liquidity allows the investor to rebalance by buying heavily sold equities and avoid forced selling.

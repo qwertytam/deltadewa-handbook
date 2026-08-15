@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: "Common Structural Mistakes"
 ---
 
 The most common mistakes in tail hedge programs are buying protection too late and buying when volatility is already high — often the same event.
