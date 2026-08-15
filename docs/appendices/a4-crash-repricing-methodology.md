@@ -14,7 +14,7 @@ gap by stating exactly how \$V_{crash}$ is formed.
 It is a **description of the shipped engine**, written against
 `deltadewa/analysis/crash_repricing.py` and `deltadewa/analysis/repricing.py`.
 The normative specification, its acceptance tests, and the full derivation live in
-[`docs/repricing-methodology.md`](repricing-methodology.md); where a number
+[`docs/repricing-methodology.md`](https://github.com/qwertytam/deltadewa/blob/main/docs/repricing-methodology.md); where a number
 appears in both, that document is the reference and this one is the summary.
 
 #### The three properties that pin \$V_{crash}$
@@ -37,13 +37,13 @@ appears in both, that document is the reference and this one is the summary.
 From today's state — spot \$S_0$, each leg's own $\sigma_i$, rate \$r$, dividend
 yield \$q$, valuation date \$t_0$ — the crash state is built as:
 
-| Quantity | Rule |
-| --- | --- |
-| Crash spot | \$S_{crash} = S_0 (1 + m)$, \$m$ signed (e.g. $-0.25$) |
-| Crash vol, per leg | $\sigma_{i,crash} = \sigma_{i} + \Delta\sigma + \kappa\, w_i$ |
-| Rate, dividend yield | held at today's values |
-| Time to maturity | unchanged |
-| Engine | European analytic Black–Scholes (QuantLib `AnalyticEuropeanEngine`) |
+| Quantity             | Rule                                                                |
+| -------------------- | ------------------------------------------------------------------- |
+| Crash spot           | \$S_{crash} = S_0 (1 + m)$, \$m$ signed (e.g. $-0.25$)              |
+| Crash vol, per leg   | $\sigma_{i,crash} = \sigma_{i} + \Delta\sigma + \kappa\, w_i$       |
+| Rate, dividend yield | held at today's values                                              |
+| Time to maturity     | unchanged                                                           |
+| Engine               | European analytic Black–Scholes (QuantLib `AnalyticEuropeanEngine`) |
 
 Rates typically fall in a crash and dividends are usually cut; both effects are
 second-order for long puts against the spot and volatility moves, and both are
@@ -124,12 +124,12 @@ At this common tenor and today-volatility all three rungs share a wing at
 *shallower* than its wing and so reaches \$w = 0.95$; the 30% and 40% rungs sit
 *past* it and cap at the full $\kappa$:
 
-| Leg | Strike | Qty | \$w$ | Crash vol | Value today | Value in crash |
-| --- | --- | --- | --- | --- | --- | --- |
-| 20% OTM | 5280 | 23 | 0.95 | 44.5% | \$219,392 | \$2,524,349 |
-| 30% OTM | 4620 | 26 | 1.00 | 45.0% | \$70,696 | \$1,961,615 |
-| 40% OTM | 3960 | 16 | 1.00 | 45.0% | \$7,627 | \$740,040 |
-| **Hedge** | | | | | **\$298,099** | **\$5,226,004** |
+| Leg       | Strike | Qty | \$w$ | Crash vol | Value today   | Value in crash  |
+| --------- | ------ | --- | ---- | --------- | ------------- | --------------- |
+| 20% OTM   | 5280   | 23  | 0.95 | 44.5%     | \$219,392     | \$2,524,349     |
+| 30% OTM   | 4620   | 26  | 1.00 | 45.0%     | \$70,696      | \$1,961,615     |
+| 40% OTM   | 3960   | 16  | 1.00 | 45.0%     | \$7,627       | \$740,040       |
+| **Hedge** |        |     |      |           | **\$298,099** | **\$5,226,004** |
 
 - Hedge value today ≈ **\$298,099** — about 1.49% of the book, roughly 1%/yr of
   carry. The skew is a crash-state effect, so this figure is unchanged by it.
@@ -191,12 +191,12 @@ roll trigger. Disagreement between two panels is a bug, not a modelling choice.
 All of these live in the `convexity:` section of `config/ips.yaml`. They are
 policy, not presentation, and belong in the IPS rather than in dashboard config.
 
-| Key | Meaning |
-| --- | --- |
-| `crash_scenario_pct` | Signed crash move as a **percent** (e.g. `-25.0`). Required — the single source of the crash depth for every panel. |
-| `crash_vol_shock` | Flat additive volatility bump as a decimal (e.g. `0.15`). |
-| `skew_steepening` | Extra volatility reached at each leg's own wing, on top of the flat bump. `0.0` recovers the flat bump. |
-| `skew_reference_delta` | Put-delta magnitude of the wing the steepening is anchored to (e.g. `0.10`). Only consulted when `skew_steepening` is non-zero. |
+| Key                    | Meaning                                                                                                                            |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `crash_scenario_pct`   | Signed crash move as a **percent** (e.g. `-25.0`). Required — the single source of the crash depth for every panel.                |
+| `crash_vol_shock`      | Flat additive volatility bump as a decimal (e.g. `0.15`).                                                                          |
+| `skew_steepening`      | Extra volatility reached at each leg's own wing, on top of the flat bump. `0.0` recovers the flat bump.                            |
+| `skew_reference_delta` | Put-delta magnitude of the wing the steepening is anchored to (e.g. `0.10`). Only consulted when `skew_steepening` is non-zero.    |
 | `crash_floor_reported` | Whether to surface the intrinsic-floor column. Presentation of a computed figure, not a pricing input — it stays off `CrashShock`. |
 
 > **The floor is an opt-out.** `crash_floor_reported: false` removes the

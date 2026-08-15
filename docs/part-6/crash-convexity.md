@@ -32,7 +32,7 @@ $\text{Crash Convexity}_x = \frac{V_{crash} − V_{today}}{Portfolio}$
 > See A4 Crash Repricing Methodology for how the
 > implementation forms it — hedge-only, repriced rather than intrinsic,
 > instantaneous, on a skew-aware volatility shock — and
-> [`docs/repricing-methodology.md`](repricing-methodology.md) for the normative
+> [`docs/repricing-methodology.md`](https://github.com/qwertytam/deltadewa/blob/main/docs/repricing-methodology.md) for the normative
 > specification and its acceptance tests.
 
 Where:
@@ -144,9 +144,9 @@ The most important practical point is that crash convexity is only meaningful wh
 
 | Scenario (SPX move) | Vol assumption | Hedge gain | Crash Convexity |
 | ------------------- | -------------- | ---------- | --------------- |
-| −15%                | +8 vol pts     | \$180k      | 1.8%            |
-| −20%                | +15 vol pts    | \$500k      | 5.0%            |
-| −25%                | +25 vol pts    | \$1.05M     | 10.5%           |
-| −30%                | +35 vol pts    | \$2.1M      | 21.0%           |
-| −40%                | +50 vol pts    | \$4.8M      | 48.0%           |
+| −15%                | +8 vol pts     | \$180k     | 1.8%            |
+| −20%                | +15 vol pts    | \$500k     | 5.0%            |
+| −25%                | +25 vol pts    | \$1.05M    | 10.5%           |
+| −30%                | +35 vol pts    | \$2.1M     | 21.0%           |
+| −40%                | +50 vol pts    | \$4.8M     | 48.0%           |
 
