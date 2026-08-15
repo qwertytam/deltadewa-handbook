@@ -17,8 +17,6 @@ plugins:
   - search
 
 nav:
-  - 'Table of Contents':
-    -  'table-of-contents/index.md'
   - 'Preface':
     -  'preface/index.md'
     - 'Philosophy': 'preface/philosophy.md'
