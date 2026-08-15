@@ -1,0 +1,16 @@
+version: 2
+updates:
+  # Keeps mkdocs-material patched. Docs dependencies render untrusted-ish
+  # third-party content into a public site, so security updates matter even
+  # though nothing here is a runtime service.
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 5
