@@ -4,6 +4,7 @@ site_description: A comprehensive guide to hedging strategies and risk managemen
 
 repo_url: https://github.com/qwertytam/deltadewa-handbook
 repo_name: qwertytam/deltadewa-handbook
+edit_uri: edit/main/docs/
 
 theme:
   name: material
@@ -16,9 +17,12 @@ theme:
 plugins:
   - search
 
+markdown_extensions:
+  - footnotes
+
 nav:
+  - 'Home': 'index.md'
   - 'Preface':
-    -  'preface/index.md'
     - 'Philosophy': 'preface/philosophy.md'
     - 'Scope and Assumptions': 'preface/scope-and-assumptions.md'
     - 'Important Limitations': 'preface/important-limitations.md'
