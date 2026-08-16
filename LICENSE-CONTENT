@@ -1,0 +1,34 @@
+Hedging Handbook — handbook content
+Copyright (c) 2025 Tom Marshall
+
+The written content of this handbook (everything under docs/, excluding
+docs/javascripts/) is licensed under the Creative Commons
+Attribution-NoDerivatives 4.0 International License (CC BY-ND 4.0).
+
+You are free to:
+
+  Share — copy and redistribute the material in any medium or format,
+  for any purpose, including commercially.
+
+Under the following terms:
+
+  Attribution — You must give appropriate credit to Tom Marshall, provide
+  a link to https://qwertytam.github.io/deltadewa-handbook/, and indicate
+  if changes were made. You may do so in any reasonable manner, but not in
+  any way that suggests the licensor endorses you or your use.
+
+  NoDerivatives — If you remix, transform, or build upon the material, you
+  may not distribute the modified material. In particular, do not
+  redistribute this content with the disclaimers on
+  docs/preface/important-limitations.md removed or altered.
+
+No additional restrictions — You may not apply legal terms or technological
+measures that legally restrict others from doing anything the license
+permits.
+
+This is a human-readable summary of, and not a substitute for, the full
+license text: https://creativecommons.org/licenses/by-nd/4.0/legalcode
+
+Code and configuration in this repository (mkdocs.yml, docs/javascripts/,
+.github/, and all other non-docs files) are licensed separately under the
+MIT License — see LICENSE.

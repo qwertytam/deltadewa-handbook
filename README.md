@@ -134,4 +134,13 @@ they can be restored if lost:
 
 ## Licence
 
-Code and configuration are MIT licensed — see [LICENSE](LICENSE).
+Code and configuration (`mkdocs.yml`, `docs/javascripts/`, `.github/`, and
+all other non-docs files) are MIT licensed — see [LICENSE](LICENSE).
+
+Handbook content (everything under `docs/`, except `docs/javascripts/`) is
+licensed [CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/) —
+see [LICENSE-CONTENT](LICENSE-CONTENT). Share it freely, including
+commercially, with attribution; don't redistribute it modified — in
+particular, not with the disclaimers on
+[Important Limitations](docs/preface/important-limitations.md) removed or
+altered.

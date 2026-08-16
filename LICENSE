@@ -1,5 +1,9 @@
 MIT License
 
+This license covers code and configuration only — mkdocs.yml,
+docs/javascripts/, .github/, and all other non-docs files. The handbook
+content under docs/ is licensed separately; see LICENSE-CONTENT.
+
 Copyright (c) 2025 Tom Marshall
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
