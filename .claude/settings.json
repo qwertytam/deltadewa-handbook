@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(poetry install --only dev*)",
+      "Bash(poetry run mkdocs build*)",
+      "Bash(poetry run mkdocs serve*)",
+      "Bash(npx --yes markdownlint-cli2*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(git checkout -b *)",
+      "Bash(git switch*)",
+      "Bash(git push -u origin *)",
+      "Bash(gh issue view*)",
+      "Bash(gh issue list*)",
+      "Bash(gh pr create*)",
+      "Bash(gh pr view*)",
+      "Bash(gh pr checks*)",
+      "Bash(grep*)",
+      "Bash(rg*)",
+      "WebFetch(cdn.cboe.com)",
+      "WebFetch(www.cboe.com)",
+      "WebFetch(cboe.com)",
+      "WebFetch(*.github.com)",
+      "WebFetch(github.com)"
+    ],
+    "ask": [
+      "Bash(gh pr merge*)",
+      "Bash(gh issue close*)",
+      "Bash(gh issue create*)"
+    ],
+    "deny": [
+      "Bash(git push*--force*)",
+      "Bash(git push origin main*)",
+      "Bash(git commit*--no-verify*)",
+      "Write(./site/**)",
+      "Write(./poetry.lock)"
+    ]
+  }
+}
