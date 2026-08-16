@@ -1,10 +1,16 @@
 name: CI
 
+# `pull_request` covers every branch on its way in. `push` is scoped to `main`
+# only so that commits which bypass a pull request (Dependabot auto-merge, an
+# admin pushing directly) are still verified. Listing other branches under
+# `push` would double-fire: a same-repo branch would run once for the push and
+# again for the pull request.
 on:
   pull_request:
   push:
-    branches-ignore:
+    branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read

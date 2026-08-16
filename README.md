@@ -42,6 +42,11 @@ heading anchors, and pages absent from the nav all fail the build, so run it
 before opening a pull request. `mkdocs serve` deliberately leaves these as
 warnings so that drafting is not blocked.
 
+`--strict` only validates links *within* the handbook. Outbound links to
+exchange methodology documents, research papers and data sources are checked
+separately by a monthly scheduled workflow, since those break without anything
+in the repository changing.
+
 ## Repository layout
 
 ```text
@@ -52,7 +57,9 @@ docs/                 # all handbook content, one directory per part
   javascripts/        # MathJax configuration for pymdownx.arithmatex
 mkdocs.yml            # site config, nav, and validation rules
 .markdownlint-cli2.jsonc  # Markdown lint rules, shared by CI and VS Code
-.github/workflows/    # ci.yml (lint + build check), deploy.yml (Pages deploy)
+.github/workflows/    # ci.yml    - lint + strict build, on every pull request
+                      # deploy.yml - builds and publishes Pages on push to main
+                      # links.yml  - monthly check of outbound links
 ```
 
 ### Heading levels
@@ -93,6 +100,28 @@ a correct `h1 → h2 → h3` outline. Do not add an `#` heading to a page body.
 Every push to `main` builds the site and publishes it to GitHub Pages via
 OIDC (`actions/deploy-pages`). The workflow holds `contents: read` only — it
 has no write access to the repository.
+
+The Pages source must be set to **GitHub Actions**, not "Deploy from a
+branch". The site was originally published by `mkdocs gh-deploy` pushing to a
+`gh-pages` branch; that branch is gone and nothing should recreate it. If a
+branch source is ever re-selected, a legacy Pages build will silently overwrite
+whatever the workflow deployed.
+
+## Repository settings
+
+These live in GitHub rather than in the repository, and are recorded here so
+they can be restored if lost:
+
+- **Pages source:** GitHub Actions.
+- **Ruleset on `main`:** blocks force pushes and deletion, requires a pull
+  request, and requires the `Lint Markdown` and `Build docs (strict)` checks.
+  Repository admins are on the bypass list, so the maintainer can still push
+  directly; everything else, including Dependabot, goes through a gated pull
+  request.
+- **Automatically delete head branches:** on, so merged Dependabot branches do
+  not accumulate.
+- **Allow auto-merge:** on, so a green Dependabot pull request can merge itself
+  once its checks pass.
 
 ## Licence
 

@@ -8,9 +8,27 @@ updates:
     schedule:
       interval: monthly
     open-pull-requests-limit: 5
+    # Everything here is a dev dependency for building the site, so a single
+    # combined pull request is easier to review and merge than one per package.
+    groups:
+      python-dev:
+        patterns:
+          - "*"
+    ignore:
+      # mkdocs-material is pinned below 10 on purpose. MkDocs 2.0 removes the
+      # plugin system and rewrites theming with no migration path, and a future
+      # major of Material may be built against it. Dependabot would otherwise
+      # offer to raise the ceiling in pyproject.toml as a routine bump; moving
+      # off 9.x has to be a deliberate migration, so it is excluded here.
+      - dependency-name: mkdocs-material
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: monthly
     open-pull-requests-limit: 5
+    groups:
+      github-actions:
+        patterns:
+          - "*"

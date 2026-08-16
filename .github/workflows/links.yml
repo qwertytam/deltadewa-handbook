@@ -1,0 +1,43 @@
+name: Link Check
+
+# `mkdocs build --strict` already validates every internal cross-reference and
+# heading anchor, so this job exists purely for the outbound links: exchange
+# methodology PDFs, institutional research and data sources that rot over time
+# without anything in the repository changing. That is why it runs on a
+# schedule rather than per pull request — nothing a contributor does causes a
+# failure here, and a dead third-party link should not block an unrelated
+# change from merging.
+on:
+  schedule:
+    # 06:00 UTC on the 1st of each month, matching the Dependabot cadence.
+    - cron: '0 6 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lychee:
+    name: Check external links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # 403 and 429 are accepted because several cited sources (S&P, Cboe,
+          # Investopedia) sit behind bot protection that rejects CI traffic
+          # while serving the page fine to a reader. The links this job is
+          # meant to catch fail with 404, 410 or DNS errors instead.
+          args: >-
+            --no-progress
+            --accept 200..=299,403,429
+            --max-concurrency 4
+            --max-retries 3
+            --exclude '^http://127\.0\.0\.1'
+            --exclude '^https://qwertytam\.github\.io/deltadewa-handbook'
+            --exclude '^https://fred\.stlouisfed\.org'
+            'docs/**/*.md'
+            'README.md'
+          fail: true
