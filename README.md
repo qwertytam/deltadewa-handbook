@@ -60,6 +60,8 @@ mkdocs.yml            # site config, nav, and validation rules
 .github/workflows/    # ci.yml    - lint + strict build, on every pull request
                       # deploy.yml - builds and publishes Pages on push to main
                       # links.yml  - monthly check of outbound links
+.github/actions/build-site/   # toolchain + strict build, shared by ci & deploy
+.github/rulesets/main.json    # branch ruleset, importable in repo settings
 ```
 
 ### Heading levels
@@ -106,6 +108,13 @@ branch". The site was originally published by `mkdocs gh-deploy` pushing to a
 `gh-pages` branch; that branch is gone and nothing should recreate it. If a
 branch source is ever re-selected, a legacy Pages build will silently overwrite
 whatever the workflow deployed.
+
+The deployment path is covered by CI rather than only being tested in
+production. `ci.yml` runs the same shared build action as `deploy.yml` and then
+packages the Pages artifact, so a dependency bump to `configure-pages` or
+`upload-pages-artifact` fails on the pull request instead of after it merges.
+Only `actions/deploy-pages` itself is untestable outside a real deployment,
+since running it *is* the deployment.
 
 ## Repository settings
 

@@ -1,0 +1,41 @@
+name: Build site
+description: >-
+  Install the documentation toolchain and build the site with --strict.
+  Shared by ci.yml and deploy.yml so the pull request check and the published
+  build cannot drift apart.
+
+# Deliberately a composite action rather than a reusable workflow. A reusable
+# workflow would rename the resulting status checks to "<caller> / <callee>",
+# which would silently stop matching the contexts required by the branch
+# ruleset. Composite actions are steps, so job names are unaffected.
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v7
+      with:
+        python-version: '3.14'
+
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        virtualenvs-create: true
+        virtualenvs-in-project: true
+
+    - name: Cache virtualenv
+      uses: actions/cache@v6
+      with:
+        path: .venv
+        key: venv-${{ runner.os }}-py3.14-${{ hashFiles('poetry.lock') }}
+
+    - name: Install dependencies
+      shell: bash
+      run: poetry install --only dev --no-interaction
+
+    # --strict promotes MkDocs warnings to errors, so broken internal links,
+    # missing anchors and orphaned pages fail the build instead of shipping
+    # silently.
+    - name: Build site
+      shell: bash
+      run: poetry run mkdocs build --strict
