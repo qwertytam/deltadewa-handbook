@@ -164,7 +164,7 @@ Portfolio value:                $10.2M
 Portfolio beta vs. SPX:         0.95  (no resizing required)
 Hedge premium spent YTD:        $48k  (0.47% annualized)
 Crash convexity at −25% SPX:    18.2% (target: 15–25%)
-Carry-to-convexity ratio:       8.4x  (target: >6)
+Hedge efficiency ratio:         8.4x  (target: >6)
 Skew percentile:                24%   (protection cheap)
 Roll status:                    Next roll due Aug 2026
 Program status:                 WITHIN PARAMETERS

@@ -33,8 +33,6 @@ Convex strategies benefit from extreme moves in the benchmark index [[Informa Co
 | −30%        | large gain    |
 | -40%        | very large    |
 
-Editing note: Similar table also in [Tier 1 Core Hedge Metrics](../part-10/tier-1-core-hedge-metrics.md) - to decide which content to keep/prune.
-
 ## Convexity in Tail-Hedging
 
 Convexity can be defined in two different ways:

@@ -36,6 +36,18 @@ jobs:
       - name: Run markdownlint
         run: npx --yes markdownlint-cli2@0.23.2
 
+      # `docs/` publishes on every push to main, so an editorial note left in a
+      # page ships to readers. markdownlint has no rule that expresses this, so
+      # it is its own step rather than a custom rule. Runs even if markdownlint
+      # failed, so one PR surfaces both classes of problem at once.
+      - name: No editorial notes in docs
+        if: '!cancelled()'
+        run: |
+          if grep -rInE '(TODO|TBD|FIXME|Editing note)' docs/; then
+            echo "::error::Editorial note found in docs/ — remove it or move it to an issue."
+            exit 1
+          fi
+
   build:
     name: Build docs (strict)
     runs-on: ubuntu-latest

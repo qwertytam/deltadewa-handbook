@@ -67,34 +67,7 @@ minimize carry
 
 See [Crash Convexity](../part-6/crash-convexity.md) and See [Theta Carry](../part-6/theta-carry-insurance-cost.md) for definitions of convexity and carry.
 
-### Mathematical Definition of the Ratio
-
-$\text{Carry-Convexity Ratio} = \frac{\text{Convexity}}{\text{Carry}}$
-
-<a id="convexity-carry-worked-example"></a>
-
-If crash convexity at −25% SPX is 22% and annual carry is 3%, then the ratio is:
-
-```text
-22% / 3% = 7.3
-```
-
-### Interpretation of the Ratio
-
-| Ratio  | Meaning    |
-| ------ | ---------- |
-| < 3    | poor hedge |
-| 3 to 6 | acceptable |
-| > 6    | attractive |
-
-Tail funds prefer **high convexity relative to cost**.
-
-Typical values:
-
-| Metric          | Typical hedge    |
-| --------------- | ---------------- |
-| Carry           | 1 to 3% per year |
-| Crash convexity | 15 to 40%        |
+The ratio plotted here is defined in [Hedge Efficiency Ratio](../part-6/hedge-efficiency-ratio.md) in PART VI, where it is also called the Carry-Convexity Ratio. Its formula, worked example, interpretation bands and typical values live there; this page covers only how the trade-off is displayed.
 
 ### Dashboard Visualization
 
