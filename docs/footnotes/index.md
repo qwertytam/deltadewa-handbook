@@ -179,6 +179,59 @@ Bondarenko, O. "Historical performance of put-writing strategies".
 
 [spglobal.com — S&P 500](https://www.spglobal.com/spdji/en/indices/equity/sp-500/)
 
+## Regulatory and Legal Sources
+
+### Federal Reserve Board — Regulation T, Options Margin { #cfr-220-12-options }
+
+12 CFR 220.12(f)(1), "Supplement: margin requirements" (Regulation T, Credit by
+Brokers and Dealers).
+
+[govinfo.gov — 12 CFR Part 220 (Regulation T)](https://www.govinfo.gov/content/pkg/CFR-2023-title12-vol3/xml/CFR-2023-title12-vol3-part220.xml)
+
+Establishes that for exchange-listed options the margin amount is the one
+specified by the rules of the registered exchange or securities association on
+which the option trades, subject to SEC approval. This is the authority for
+describing listed-option margin as set by exchange and SRO rules rather than by a
+Regulation T percentage.
+
+### FINRA — Rule 4210, Margin Requirements { #finra-4210 }
+
+FINRA Rule 4210, "Margin Requirements", including 4210(f)(2)(E) on uncovered
+short index options and 4210(f)(2)(H) on spreads.
+
+[finra.org — 4210. Margin Requirements](https://www.finra.org/rules-guidance/rulebooks/finra-rules/4210)
+
+The strategy-based margin rule for FINRA member firms. Sets the premium-plus-
+percentage formula for uncovered short broad-based index options — 15% of the
+underlying index value less the out-of-the-money amount, floored at 10% — and the
+treatment of spreads, where the long leg is paid for in full and the short leg is
+margined at the lesser of the uncovered requirement or the maximum potential
+loss.
+
+### FINRA — Interpretations of Rule 4210, Portfolio Margin { #finra-4210-interps }
+
+FINRA, "Interpretations of Rule 4210", portfolio margin sections under 4210(g).
+
+[finra.org — Interpretations of Rule 4210](https://www.finra.org/rules-guidance/guidance/interps-4210)
+
+States the theoretical-pricing-model stress ranges used to compute portfolio
+margin — −8% to +6% for a high-capitalisation broad-based index and −10% to +10%
+for a non-high-capitalisation broad-based index — and the minimum account equity
+tiers, which depend on whether the firm has full real-time intraday monitoring
+capability.
+
+### Cboe — Complex Orders (Rules 1.1 and 5.33) { #cboe-complex-orders }
+
+Cboe Exchange, Inc. *Rules of Cboe Exchange, Inc.*, Rule 1.1 (definition of
+"complex order") and Rule 5.33 (complex orders).
+
+[cboe.com — Rules of Cboe Exchange, Inc. (PDF)](https://cdn.cboe.com/resources/regulation/rule_book/C1_Exchange_Rule_Book.pdf)
+
+Defines a complex order as the concurrent execution of two or more series in the
+same underlying security or index, for the same account, to accomplish a
+particular strategy, and governs execution of such orders as a single net-priced
+package rather than as separately worked legs.
+
 ## Data Sources
 
 ### FRED — Treasury Constant Maturity Yields { #fred }

@@ -20,6 +20,11 @@ Selling a call against a long equity position can create a "constructive sale" o
 
 Unlike a simple long put, the collar has two legs to roll, and the relative cost of each leg changes across volatility regimes.
 
+The short call also has to be collateralised while it is open, and an index call
+sold against a portfolio of individual equities is not covered by that portfolio
+in the way a single-stock covered call is covered by its shares. See
+[Running Structures with Sold Legs](running-structures-with-sold-legs.md).
+
 ## Long-Term Compounding Impact
 
 The upside cap of a collar can have a substantial compounding effect that is often underestimated. In a strong bull market, the short call captures most of the upside beyond the call strike, systematically preventing the portfolio from participating in full rallies.

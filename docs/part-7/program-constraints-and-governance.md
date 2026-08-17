@@ -45,6 +45,11 @@ These constraints affect:
 
 For example, if short options are prohibited, the program cannot use **put spreads or collars** to reduce carry cost.
 
+Where they are permitted, the constraint becomes quantitative rather than binary:
+a sold leg consumes collateral for as long as it is open, and how much depends on
+which margin regime applies. See
+[Running Structures with Sold Legs](../part-5/running-structures-with-sold-legs.md).
+
 ## Liquidity and Execution Constraints
 
 Operational considerations also matter.
