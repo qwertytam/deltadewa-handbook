@@ -26,12 +26,7 @@ Tail hedges are rarely static; they require systematic rebalancing rules.
 
 #### 1. Time-based roll
 
-Example:
-
-```text
-buy 18-month puts
-roll when maturity < 9 months
-```
+See [Rule 1 — Time-Based Roll](../part-7/rolling-rules.md#rule-1-time-based-roll) for the canonical roll-timing rule and worked reasoning.
 
 Avoids entering the high theta decay zone.
 
