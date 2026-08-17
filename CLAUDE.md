@@ -119,10 +119,18 @@ Do not re-litigate these; change only on explicit instruction.
 - **Judgement calls.** Complete everything unambiguous first, then present all
   open calls at once, as one numbered list with options and a recommendation,
   and stop. One interruption per batch, not one per question.
-- **Cross-repo.** The crash-repricing spec in `docs/appendices/
-  a4-crash-repricing-methodology.md` and the one in `deltadewa/docs/
-  repricing-methodology.md` share worked-example figures. Changing a figure in
-  one requires the matching change in the other, in a separate PR in that repo.
+- **Cross-repo.** Two specs are duplicated in `deltadewa` and must move
+  together. Changing a figure in either half requires the matching change in
+  the other, in a separate PR in that repo.
+    1. The crash-repricing spec in
+       `docs/appendices/a4-crash-repricing-methodology.md` and
+       `deltadewa/docs/repricing-methodology.md` share worked-example figures.
+    2. The hedge-efficiency ratio in `docs/part-6/hedge-efficiency-ratio.md`
+       is pinned in deltadewa code: `ips_config.py` hardcodes the
+       interpretation band (`3.0` / `6.0`) against that page's table, and
+       `tests/test_analysis/test_hedge_efficiency.py` asserts the page's
+       worked example (`22 / 3 = 7.3333`). Changing the band or the worked
+       example breaks that test.
 
 ## Canonical sources
 
