@@ -11,7 +11,7 @@ Crash convexity:     10 to 25% @ -25% SPX
 Offset ratio:        20 to 35%
 Vega exposure:       \$1k to \$3k per \$1M portfolio
 Skew exposure:       positive
-Roll interval:       9 to 12 months
+Roll interval:       9 to 12 months remaining
 
 ## Typical Tail Hedge Structure
 

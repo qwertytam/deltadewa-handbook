@@ -59,7 +59,7 @@ See [Forward Variance Level](../part-6/forward-variance-level.md) for the full d
 
 ## Practical Impact on a Tail Hedge Program
 
-For a systematic long-dated put program (e.g., 18-month puts rolled at 9 to 12 months), the total carry cost over time is not just theta. It includes:
+For a systematic long-dated put program (e.g., 18-month puts rolled at 9 to 12 months remaining), the total carry cost over time is not just theta. It includes:
 
 ```text
 Total carry = Theta decay

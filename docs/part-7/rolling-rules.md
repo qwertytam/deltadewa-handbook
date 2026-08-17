@@ -16,7 +16,7 @@ Typical roll rule:
 
 ```text
 buy 18-month puts
-roll after 9 to 12 months
+roll when 9 to 12 months remain
 ```
 
 Alternatively:
@@ -35,7 +35,13 @@ predictable carry
 
 This avoids rolling just before theta acceleration in the final weeks of option life. As time decreases, decay increases rapidly.
 
-Note on the gamma-theta trade-off: the standard time-based roll rule is designed for puts that are still deep OTM. However, if the market has declined modestly during the holding period and the puts have moved closer to the money, the position accumulates favorable gamma — meaning the hedge is becoming more responsive to further declines. In this specific case, rolling mechanically at the 9-month trigger may sacrifice a valuable gamma position. Investors may reasonably choose to delay the roll by several weeks if (a) the time trigger is not yet urgent and (b) the put has moved meaningfully nearer to the money. The key check is whether crash convexity at current spot still meets the IPS target; if it does, the hold decision has a logical basis.
+Note on the gamma-theta trade-off: the standard time-based roll rule is designed for puts that are still deep OTM. However, if the market has declined modestly during the holding period and the puts have moved closer to the money, the position accumulates favorable gamma — meaning the hedge is becoming more responsive to further declines. In this specific case, rolling mechanically at the 9-months-remaining trigger may sacrifice a valuable gamma position. Investors may reasonably choose to delay the roll by several weeks if (a) the time trigger is not yet urgent and (b) the put has moved meaningfully nearer to the money. The key check is whether crash convexity at current spot still meets the IPS target; if it does, the hold decision has a logical basis.
+
+!!! note
+    Roll timing here is expressed as **remaining** maturity, not elapsed time
+    since purchase. Any tool or dashboard that automates this rule should
+    confirm its own trigger measures time-to-maturity, not time held, before
+    relying on it.
 
 ## Rule 2 — Market Rally Rebalance Trigger
 
