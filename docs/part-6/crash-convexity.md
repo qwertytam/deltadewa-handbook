@@ -2,7 +2,9 @@
 title: "Crash Convexity"
 ---
 
-See [Convexity](../part-5/convexity.md) for additional detail on convexity.
+See [Convexity](../part-5/convexity.md) for additional detail on convexity, and
+[Ratio Disambiguation](ratio-disambiguation.md) for how this metric differs from
+the Crash Payoff Ratio, with which it is often confused.
 
 Crash convexity incorporates three drivers discussed earlier:
 

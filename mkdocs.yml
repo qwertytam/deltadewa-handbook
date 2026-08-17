@@ -151,6 +151,7 @@ nav:
     - 'A Typical Institutional Hedge Example': 'part-5/a-typical-institutional-hedge-example.md'
   - 'PART VI — Tail-Hedging Metrics':
     - 'part-6/index.md'
+    - 'Ratio Disambiguation': 'part-6/ratio-disambiguation.md'
     - 'Net Delta': 'part-6/net-delta.md'
     - 'Crash Convexity': 'part-6/crash-convexity.md'
     - 'Crash Payoff Ratio / Tail Hedge Effectiveness': 'part-6/crash-payoff-ratio-tail-hedge-effectiveness.md'

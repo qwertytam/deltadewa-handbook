@@ -128,11 +128,9 @@ Example:
 3-year vega = $6k / vol point
 ```
 
-Or normalize by portfolio:
-
-```text
-Vega Exposure = Portfolio Vega / Portfolio Value
-```
+The same buckets can be normalised by portfolio value, which is the metric
+defined as [Vega Sufficiency](../part-6/vega-sufficiency.md) in PART VI. What
+this panel adds is the distribution across maturities, not a second definition.
 
 ### Vega Term Exposure Interpretation
 

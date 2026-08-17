@@ -2,6 +2,9 @@
 title: "Crash Payoff Ratio / Tail Hedge Effectiveness"
 ---
 
+See [Ratio Disambiguation](ratio-disambiguation.md) for how this metric differs
+from Crash Convexity, which shares its numerator but not its denominator.
+
 ## Definition of Crash Payoff Ratio
 
 Crash payoff ratio measures how much of the portfolio loss is offset by the hedge during a crash. This metric evaluates hedge effectiveness, not convexity [[Bhansali 2014]](../footnotes/index.md#bhansali), [[Meketa 2019]](../footnotes/index.md#meketa), [[Cambridge Associates 2025]](../footnotes/index.md#cambridge), [[CAIA 2021]](../footnotes/index.md#caia).
