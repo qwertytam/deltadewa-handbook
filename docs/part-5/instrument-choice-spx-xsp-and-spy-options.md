@@ -57,7 +57,7 @@ XSP is often used by investors who want index-style hedging but require **more g
 
 !!! note
 
-    While XSP tracks the same underlying as SPX, its options market is smaller. Bid-ask spreads and open interest in XSP can be thinner than in SPX, particularly for deep OTM and long-dated strikes. Investors should check OI and recent volume at target strikes before committing to XSP for large notional trades, and should use limit orders to avoid paying inflated spreads. Using XSP requires execution patience to avoid paying a 10% spread premium.
+    While XSP tracks the same underlying as SPX, its options market is smaller. Bid-ask spreads and open interest in XSP can be thinner than in SPX, particularly for deep OTM and long-dated strikes. Investors should check OI and recent volume at target strikes before committing to XSP for large notional trades, and should use limit orders to avoid paying inflated spreads. Using XSP requires execution patience. A quoted spread of a given size is a larger fraction of the premium on a contract one-tenth the notional, so the comparison that matters between SPX and XSP is execution cost per unit of exposure, not the quoted tick itself.
 
 ## SPY Options (ETF Options)
 

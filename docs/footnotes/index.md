@@ -114,7 +114,7 @@ time.
 
 ### Cboe — VIX Historical Data { #cboe-vix-historical }
 
-"Historical Price Data for VIX Index".
+"Historical Price Data for VIX Index". Daily open/high/low/close for the VIX Index since 1990, published by Cboe as `VIX_History.csv` and updated daily. The High and Close columns are distinct figures and should not be conflated when citing a single-day peak.
 
 [cboe.com — VIX Historical Data](https://www.cboe.com/en/tradable-products/vix/vix-historical-data/)
 
