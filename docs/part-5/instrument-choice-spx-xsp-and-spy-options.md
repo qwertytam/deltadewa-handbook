@@ -18,13 +18,14 @@ SPX options are typically the preferred instrument for institutional downside he
 
 Key characteristics:
 
-| Feature            | Description                    |
-| ------------------ | ------------------------------ |
-| Settlement         | Cash settled                   |
-| Exercise style     | European                       |
-| Underlying         | S&P 500 index                  |
-| Contract size      | Large notional                 |
-| Tax treatment (US) | Section 1256 (60/40 treatment) |
+| Feature            | Description                                        |
+| ------------------ | -------------------------------------------------- |
+| Settlement         | Cash settled                                       |
+| Settlement timing  | AM for standard monthlies; PM for SPXW Weeklys/EOM |
+| Exercise style     | European                                           |
+| Underlying         | S&P 500 index                                      |
+| Contract size      | Large notional                                     |
+| Tax treatment (US) | Section 1256 (60/40 treatment)                     |
 
 Advantages:
 
@@ -41,17 +42,25 @@ As a result, **most institutional tail-hedge funds implement crash protection us
 
 XSP options track the same S&P 500 index but at **1/10 the size of SPX**.
 
-| Feature        | Description  |
-| -------------- | ------------ |
-| Settlement     | Cash settled |
-| Exercise style | European     |
-| Contract size  | ~1/10 SPX    |
+| Feature           | Description                          |
+| ----------------- | ------------------------------------ |
+| Settlement        | Cash settled                         |
+| Settlement timing | PM — official closing level of index |
+| Exercise style    | European                             |
+| Contract size     | ~1/10 SPX                            |
 
 Advantages:
 
 - Allows **finer position sizing**
 - Useful for **smaller portfolios**
-- Maintains the **same structural advantages as SPX**
+- Maintains the **same cash settlement and European exercise as SPX**
+
+One structural difference is worth noting rather than assuming away: every XSP
+series is **PM-settled**, whereas the standard monthly SPX contract is
+AM-settled against the opening rotation. An XSP position therefore trades right
+up to the close that determines its settlement value, and does not raise the
+overnight-gap question that standard SPX series do. See
+[Settlement Mechanics](../part-1/exercise-settlement.md#settlement-mechanics).
 
 XSP is often used by investors who want index-style hedging but require **more granular hedge sizing**.
 
@@ -63,17 +72,24 @@ XSP is often used by investors who want index-style hedging but require **more g
 
 SPY options are based on the **SPDR S&P 500 ETF** rather than the index.
 
-| Feature        | Description |
-| -------------- | ----------- |
-| Settlement     | Physical    |
-| Exercise style | American    |
-| Underlying     | SPY ETF     |
+| Feature           | Description                    |
+| ----------------- | ------------------------------ |
+| Settlement        | Physical                       |
+| Settlement timing | PM, on the expiration date     |
+| Exercise style    | American                       |
+| Underlying        | SPY ETF                        |
 
 Key differences:
 
 - **American exercise introduces assignment risk**
 - Deep ITM options may be exercised early
 - Positions can result in **delivery of ETF shares**
+
+Settlement timing means something different here. Because SPY options are
+American, they can be exercised on any business day, so "PM" describes only what
+happens to a contract still open at the expiration close — not a single
+scheduled settlement event of the kind SET represents for AM-settled index
+series [[Cboe: Settlement Style]](../footnotes/index.md#cboe-settlement-style).
 
 Despite these limitations, SPY options are extremely liquid and may be preferred when:
 

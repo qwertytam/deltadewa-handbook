@@ -29,3 +29,8 @@ Trade-off:
 ```text
 cap extreme crash payoff
 ```
+
+The capped payoff is the visible trade-off. The sold leg also consumes
+collateral for as long as the position is open, must be bought back to monetise
+the structure, and gives back part of the crash repricing that the long leg
+earns. See [Running Structures with Sold Legs](running-structures-with-sold-legs.md).

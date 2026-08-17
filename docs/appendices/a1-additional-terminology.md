@@ -2,6 +2,10 @@
 title: "A1 Additional Terminology"
 ---
 
+Terms a reader is likely to meet in passing. Where a term has a full treatment
+in one of the Parts, the entry below says what it means and points there rather
+than repeating the explanation.
+
 ## Covered Call
 
 Short call against long stock.
@@ -68,3 +72,81 @@ This captures realized volatility.
 !!! note
 
     This is more relevant to market making or volatility trading, not portfolio hedging.
+
+## IPS (Investment Policy Statement)
+
+The governing document that states what a portfolio may and may not do. A hedge program's mandate, budget and constraints live in it.
+
+*Example:* “The IPS caps annual hedge premium.”
+
+See [Investment Policy Statement (IPS) Integration](../part-7/program-constraints-and-governance.md#investment-policy-statement-ips-integration).
+
+## SET
+
+The ticker under which the exchange publishes the settlement value of AM-settled SPX options — a Special Opening Quotation (SOQ) built from component opening prices, not the index's own opening level.
+
+*Example:* “The contract settled against SET, not against Friday's open.”
+
+See [SET and the Special Opening Quotation](../part-1/exercise-settlement.md#set-and-the-special-opening-quotation).
+
+## AM and PM Settlement
+
+Whether an option's settlement value is struck from opening prices on the expiration morning or from closing prices on the expiration date. Standard monthly SPX contracts are AM-settled; SPXW and XSP are PM-settled.
+
+*Example:* “Check the settlement flavour before holding into expiration.”
+
+See [AM and PM Settled Series](../part-1/exercise-settlement.md#am-and-pm-settled-series).
+
+## SPXW
+
+The ticker root for Cboe's PM-settled S&P 500 index option series — the Weeklys and the end-of-month contracts — as distinct from the standard AM-settled monthly.
+
+*Example:* “Rolled into an SPXW series to avoid AM settlement.”
+
+## Reg T
+
+Shorthand for Regulation T. For exchange-listed options it does not set the margin amount itself; it defers to the exchange and SRO rules, which apply a separate formula to each recognised position type.
+
+*Example:* “Under Reg T rules the debit spread is simply paid for in full.”
+
+See [Strategy-Based Margin](../part-5/running-structures-with-sold-legs.md#strategy-based-margin).
+
+## Portfolio Margin
+
+A margin regime that computes the requirement by revaluing positions across a range of hypothetical market moves, rather than by applying a formula to each position type.
+
+*Example:* “Under portfolio margin the offsetting legs are recognised.”
+
+See [Portfolio Margin](../part-5/running-structures-with-sold-legs.md#portfolio-margin).
+
+## Buying Power
+
+The capital an account has available to open new positions. A sold option consumes it for as long as the position stays open, and it is returned when the position closes.
+
+*Example:* “The short leg ties up buying power all year.”
+
+See [How a Sold Leg Consumes Buying Power](../part-5/running-structures-with-sold-legs.md#how-a-sold-leg-consumes-buying-power).
+
+## Legging In
+
+Working each leg of a multi-leg structure as its own order, rather than sending the structure as one order at a net price.
+
+*Example:* “Legged into the spread and got caught by the second leg.”
+
+See [Executing the Legs](../part-5/running-structures-with-sold-legs.md#executing-the-legs).
+
+## Monetization
+
+Realising a hedge's gain by closing or reducing it, as opposed to holding it to expiration.
+
+*Example:* “Monetized a third of the position at −20%.”
+
+See [Monetization Philosophy](../part-8/monetization-philosophy.md).
+
+## 25-Delta Risk Reversal
+
+A measure of skew: the implied volatility of the 25-delta put less that of the 25-delta call.
+
+*Example:* “The 25-delta risk reversal widened into the sell-off.”
+
+See [Practical Skew Metrics](../part-3/volatility-skew.md#practical-skew-metrics).

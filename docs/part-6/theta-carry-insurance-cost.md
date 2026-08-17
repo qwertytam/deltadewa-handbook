@@ -4,6 +4,9 @@ title: "Theta Carry / Insurance Cost"
 
 Theta carry measures how much money the hedge costs to hold over time due to time decay. It is essentially the insurance premium paid to maintain protection.
 
+See [Ratio Disambiguation](ratio-disambiguation.md) for how it differs from the
+annual carry budget used in backtesting.
+
 ## Algebraic Framing of Theta Carry
 
 Theta:

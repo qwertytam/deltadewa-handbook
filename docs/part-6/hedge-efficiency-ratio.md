@@ -4,20 +4,30 @@ title: "Hedge Efficiency Ratio"
 
 Measures how much downside risk the hedge offsets relative to cost. It is a summary statistic rather than a standalone risk metric.
 
-It is also called the **Carry-Convexity Ratio**, particularly in a dashboard context. The two names describe the same quantity — crash payoff divided by annual carry — and this page is the single definition for both.
+It is also called the **Carry-Convexity Ratio**, particularly in a dashboard context. The two names describe the same quantity — the hedge's crash gain divided by its annual carry — and this page is the single definition for both. See [Ratio Disambiguation](ratio-disambiguation.md) for how this ratio differs from the similarly named ones.
 
 It does not introduce new information beyond:
 
-- Crash Payoff Ratio
+- Crash Convexity
 - Theta Carry
 
 ## HER Metric
 
-$\text{Hedge Efficiency} = \frac{\text{Crash payoff}}{\text{Annual carry}}$
+In dollar terms, the numerator is the hedge's gain in the crash and the denominator its annual cost to hold:
 
-or using percentage terms
+$\text{Hedge Efficiency} = \frac{\text{Crash payoff \$}}{\text{Annual carry \$}}$
 
-$\text{Hedge Efficiency} = \frac{\text{Crash payoff \%}}{\text{Annual carry \%}}$
+Dividing both by portfolio value leaves the ratio unchanged and gives the percentage form, in which the numerator is crash convexity:
+
+$\text{Hedge Efficiency} = \frac{\text{Crash convexity \%}}{\text{Annual carry \%}}$
+
+!!! warning
+
+    The numerator is crash convexity — hedge gain over **portfolio value** — and
+    not the Crash Payoff Ratio, whose denominator is the portfolio's **equity
+    loss**. The two are easily confused because both are percentages describing
+    the same crash. Substituting one for the other changes the result and
+    invalidates the bands below.
 
 <a id="hedge-efficiency-dollar-worked-example"></a>
 

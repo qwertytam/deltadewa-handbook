@@ -4,6 +4,9 @@ title: "Vega Sufficiency"
 
 Vega sufficiency measures whether the hedge has **enough volatility exposure** to benefit from the **volatility spike that usually accompanies a market crash**. Vega sufficiency is typically **scenario based**, not a static ratio.
 
+See [Ratio Disambiguation](ratio-disambiguation.md) for the alternative
+normalisations in use and the names they travel under.
+
 In equity markets:
 
 ```text

@@ -29,6 +29,17 @@ Notes:
 - See [Crash Payoff Ratio Metric](../part-6/crash-payoff-ratio-tail-hedge-effectiveness.md#crash-payoff-ratio-metric) in See [PART VI](../part-6/index.md) for details on the calculation for item 2. above
 - $\text{Carry-to-Convexity}$ measures crash protection per unit of annual cost.
 
+!!! warning
+
+    The two quantities above are **backtest measures and are not the Part VI
+    metrics of similar name**. Annual Carry Budget nets monetization gains out
+    of premiums paid, where Theta Carry is a forward-looking accrual.
+    Carry-to-Convexity divides by portfolio *equity loss*, where the
+    [Hedge Efficiency Ratio](../part-6/hedge-efficiency-ratio.md) divides by
+    portfolio *value*. Values computed here will not match values computed
+    there, and should not be read against the Part VI bands. See
+    [Ratio Disambiguation](../part-6/ratio-disambiguation.md).
+
 Those three metrics tell the investor, respectively:
 
 - what it costs in normal years,

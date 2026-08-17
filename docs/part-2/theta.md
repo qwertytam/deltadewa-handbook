@@ -28,7 +28,9 @@ $\Theta = -\frac{\partial V}{\partial t}$
 
 where $t$ is calendar time.
 
-$\text{Annual Carry} = \frac{-\Theta_{daily} \times 252}{Portfolio}$
+Annualising daily theta uses the day convention below. Dividing that annualised
+figure by portfolio value gives **Theta Carry**, the program-level cost metric
+defined in [Theta Carry / Insurance Cost](../part-6/theta-carry-insurance-cost.md).
 
 ### Theta Day Convention
 

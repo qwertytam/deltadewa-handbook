@@ -91,6 +91,55 @@ Portfolios".
 
 ## Exchange and Index Methodology
 
+### Cboe — SPX Index Options Product Specifications { #cboe-spx-spec }
+
+Cboe Exchange, Inc. "SPX Index Options" (summary product specifications fact
+sheet).
+
+[cdn.cboe.com — SPX Index Options Fact Sheet (PDF)](https://cdn.cboe.com/resources/spx/spx-fact-sheet.pdf)
+
+Cboe's own contract specification for SPX and SPXW: European exercise, cash
+settlement, the AM (opening-price) versus PM (closing-price) calculation of the
+exercise-settlement value, the rule that trading in standard series ceases the
+business day before expiration, and cash delivery on the following business day.
+Its comparison table also classifies SPY options as American-style, physically
+settled and PM-settled at expiration.
+
+### Cboe — Settlement of Standard, AM-Settled S&P 500 Index Options { #cboe-spx-am-settlement }
+
+Cboe Exchange, Inc. "Settlement of Standard, A.M.-Settled S&P 500 Index
+Options", version 2, 17 July 2024.
+
+[cdn.cboe.com — Settlement of Standard AM-Settled SPX Options (PDF)](https://cdn.cboe.com/resources/spx/Settlement_of_Standard_AM_Settled_SP_500_Index_Options.pdf)
+
+Cboe's explanation of the Special Opening Quotation: that the AM settlement
+value is published under the ticker SET, how it is assembled from component
+opening trade prices, the fallback to the prior session's last trade for a
+component that does not open, and the historical dispersion of the SOQ against
+the opening level and the day's traded range.
+
+### Cboe — XSP (Mini-SPX) Index Options Product Specifications { #cboe-xsp-spec }
+
+Cboe Exchange, Inc. "XSP Index Options" (summary product specifications fact
+sheet).
+
+[cdn.cboe.com — XSP Index Options Fact Sheet (PDF)](https://cdn.cboe.com/resources/xsp/XSP_Options_Fact_Sheet.pdf)
+
+Cboe's own contract specification for Mini-SPX: European exercise, cash
+settlement, PM settlement against one-tenth the official closing level of the
+index on the last trading day, and third-Friday standard expirations alongside
+Weeklys and end-of-month series.
+
+### Cboe — Why Option Settlement Style Matters { #cboe-settlement-style }
+
+Cboe Exchange, Inc. "Why Option Settlement Style Matters".
+
+[cboe.com — Why Option Settlement Style Matters](https://www.cboe.com/insights/posts/why-option-settlement-style-matters)
+
+Cboe's statement that equity and ETF options, SPY among them, deliver shares
+physically when exercised or assigned, in contrast to the cash settlement of SPX
+and XSP.
+
 ### Cboe — VIX Term Structure { #cboe-vix-term-structures }
 
 *Note:* While focused on VIX futures, the Cboe's published term structure data
@@ -129,6 +178,59 @@ Bondarenko, O. "Historical performance of put-writing strategies".
 "S&P 500® | S&P Dow Jones Indices".
 
 [spglobal.com — S&P 500](https://www.spglobal.com/spdji/en/indices/equity/sp-500/)
+
+## Regulatory and Legal Sources
+
+### Federal Reserve Board — Regulation T, Options Margin { #cfr-220-12-options }
+
+12 CFR 220.12(f)(1), "Supplement: margin requirements" (Regulation T, Credit by
+Brokers and Dealers).
+
+[govinfo.gov — 12 CFR Part 220 (Regulation T)](https://www.govinfo.gov/content/pkg/CFR-2023-title12-vol3/xml/CFR-2023-title12-vol3-part220.xml)
+
+Establishes that for exchange-listed options the margin amount is the one
+specified by the rules of the registered exchange or securities association on
+which the option trades, subject to SEC approval. This is the authority for
+describing listed-option margin as set by exchange and SRO rules rather than by a
+Regulation T percentage.
+
+### FINRA — Rule 4210, Margin Requirements { #finra-4210 }
+
+FINRA Rule 4210, "Margin Requirements", including 4210(f)(2)(E) on uncovered
+short index options and 4210(f)(2)(H) on spreads.
+
+[finra.org — 4210. Margin Requirements](https://www.finra.org/rules-guidance/rulebooks/finra-rules/4210)
+
+The strategy-based margin rule for FINRA member firms. Sets the premium-plus-
+percentage formula for uncovered short broad-based index options — 15% of the
+underlying index value less the out-of-the-money amount, floored at 10% — and the
+treatment of spreads, where the long leg is paid for in full and the short leg is
+margined at the lesser of the uncovered requirement or the maximum potential
+loss.
+
+### FINRA — Interpretations of Rule 4210, Portfolio Margin { #finra-4210-interps }
+
+FINRA, "Interpretations of Rule 4210", portfolio margin sections under 4210(g).
+
+[finra.org — Interpretations of Rule 4210](https://www.finra.org/rules-guidance/guidance/interps-4210)
+
+States the theoretical-pricing-model stress ranges used to compute portfolio
+margin — −8% to +6% for a high-capitalisation broad-based index and −10% to +10%
+for a non-high-capitalisation broad-based index — and the minimum account equity
+tiers, which depend on whether the firm has full real-time intraday monitoring
+capability.
+
+### Cboe — Complex Orders (Rules 1.1 and 5.33) { #cboe-complex-orders }
+
+Cboe Exchange, Inc. *Rules of Cboe Exchange, Inc.*, Rule 1.1 (definition of
+"complex order") and Rule 5.33 (complex orders).
+
+[cboe.com — Rules of Cboe Exchange, Inc. (PDF)](https://cdn.cboe.com/resources/regulation/rule_book/C1_Exchange_Rule_Book.pdf)
+
+Defines a complex order as the concurrent execution of two or more series in the
+same underlying security or index, for the same account, to accomplish a
+particular strategy, and governs execution of such orders as a single net-priced
+package rather than as separately worked legs.
 
 ## Data Sources
 

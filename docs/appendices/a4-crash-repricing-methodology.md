@@ -93,6 +93,34 @@ under-states protection — the safe direction of error for a tail program.
 Setting $\kappa = 0$ recovers the flat bump exactly and solves no wing at all, so
 the knob can be turned off without changing any other number.
 
+### Sold legs invert the direction of the error
+
+The argument for capping the steepening rests on a claim about which way it is
+safe to be wrong: holding the add-on flat past the wing understates deep-tail
+implied volatility, understates protection, and so errs conservatively. That
+claim holds **only while every leg is long**.
+
+A structure with a sold leg — a put spread, a collar's short call — enters
+$V_{crash}$ with $q_i < 0$. Understating that leg's crash implied volatility
+understates its crash value, and a leg carrying a negative quantity contributes
+its value as a subtraction. The error therefore raises $V_{crash}$ rather than
+lowering it, and **overstates** convexity. The safe direction of error for a
+long-only ladder is the unsafe direction for a book containing sold legs.
+
+The cap makes this worse rather than better, because of where the sold leg sits.
+In a put spread the sold strike is the *deeper* of the two, so it is the leg most
+likely to lie past its own wing, where the $\min$ binds and the add-on holds flat
+at $\kappa$. The leg whose implied volatility is most likely to be understated is
+precisely the leg on which understatement is unsafe. A wide spread with a deep
+sold strike is the configuration in which the two effects compound.
+
+Nothing in the model needs to change for this: the mapping is per-leg and the
+signed quantity already carries through. What changes is the interpretation. A
+convexity figure produced for a book with sold legs should not be read as a
+conservative lower bound, and the margin by which it may be optimistic grows with
+the depth of the sold strike. See
+[Running Structures with Sold Legs](../part-5/running-structures-with-sold-legs.md).
+
 ## Formula
 
 $$V_{today} = \sum_i \text{price}\big(S_0,\,K_i,\,\sigma_i,\,r,\,q,\,T_i\big)\cdot q_i \cdot c_i$$
