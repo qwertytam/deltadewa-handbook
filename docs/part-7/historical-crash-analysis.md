@@ -31,10 +31,19 @@ Long-dated put hedges performed strongly.
 ```text
 SPX decline ≈ −34%
 fastest bear market in history
-VIX ≈ 85
+VIX closing high 82.69 (16 March 2020)
+VIX intraday high 85.47 (18 March 2020)
 ```
 
 Short-dated options increased in value dramatically.
+
+!!! note
+
+    The two peaks fell on different sessions, and only one of them is a
+    record. The 82.69 close on 16 March 2020 is the highest VIX close on
+    record, surpassing the 80.86 close of 20 November 2008. The highest
+    *intraday* VIX print remains 89.53, set on 24 October 2008 — 2020 did not
+    exceed it. [[Cboe: VIX Historical Data]](../footnotes/index.md#cboe-vix-historical)
 
 ## 2022 Bear Market
 

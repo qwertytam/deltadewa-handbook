@@ -87,17 +87,17 @@ The hedge program should be explicitly documented in the Investment Policy State
 
 Minimum IPS provisions for a hedge program:
 
-| Parameter              | Example                                                  |
-| ---------------------- | -------------------------------------------------------- |
-| Annual premium budget  | 1–2% of AUM                                              |
-| Approved instruments   | Listed SPX / XSP puts only                               |
-| Strike range           | 15–40% OTM                                               |
-| Maturity range         | 12–24 months                                             |
-| Roll trigger           | Maturity < 9 months remaining                            |
-| Monetization authority | CIO or Investment Committee                              |
-| Monetization triggers  | VIX > 40, SPX down > 15%, or hedge MTM > 5% of portfolio |
-| Re-risk criteria       | VIX < 15, skew percentile < 30%                          |
-| Review frequency       | Quarterly                                                |
+| Parameter              | Example                                                                                                  |
+| ---------------------- | -------------------------------------------------------------------------------------------------------- |
+| Annual premium budget  | One figure, chosen from the [budget bands](typical-hedge-program-targets.md#annual-premium-budget-bands) |
+| Approved instruments   | Listed SPX / XSP puts only                                                                               |
+| Strike range           | 15–40% OTM                                                                                               |
+| Maturity range         | 12–24 months                                                                                             |
+| Roll trigger           | Maturity < 9 months remaining                                                                            |
+| Monetization authority | CIO or Investment Committee                                                                              |
+| Monetization triggers  | VIX > 40, SPX down > 15%, or hedge MTM > 5% of portfolio                                                 |
+| Re-risk criteria       | VIX < 15, skew percentile < 30%                                                                          |
+| Review frequency       | Quarterly                                                                                                |
 
 Embedding these parameters in the IPS removes discretion from the decision framework during a crisis and ensures that governance does not become a bottleneck at the worst possible moment.
 

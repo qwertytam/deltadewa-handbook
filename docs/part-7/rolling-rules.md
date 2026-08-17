@@ -98,7 +98,7 @@ This effectively doubles the carry cost relative to the original hedge entry. Be
 
 ### IPS Exception Clause for Roll-Up Budget Overruns
 
-A strict 1–2% annual premium cap can be breached mid-year by a single roll-up after a large equity rally. The IPS should include an explicit exception clause to handle this, so the decision is governed rather than improvised under time pressure.
+A strict annual premium cap — whatever [band](typical-hedge-program-targets.md#annual-premium-budget-bands) the program has adopted — can be breached mid-year by a single roll-up after a large equity rally. The IPS should include an explicit exception clause to handle this, so the decision is governed rather than improvised under time pressure.
 
 Suggested IPS language:
 

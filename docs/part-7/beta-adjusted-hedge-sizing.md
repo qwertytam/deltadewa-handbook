@@ -2,7 +2,16 @@
 title: "Beta-Adjusted Hedge Sizing"
 ---
 
-A long-only equity portfolio with a mix of holdings rarely has a beta of exactly 1.0 to the SPX. If the portfolio has a beta of 0.85 to the S&P 500, buying SPX puts sized to 100% notional overhedges the market risk by roughly 15%.
+A long-only equity portfolio with a mix of holdings rarely has a beta of exactly 1.0 to the SPX. If the portfolio has a beta of 0.85 to the S&P 500, buying SPX puts sized to 100% notional overhedges the market risk by approximately 18%.
+
+!!! note
+
+    Overhedging is expressed throughout this handbook as a percentage of the
+    **correctly sized hedge**, not of portfolio value. In the example above,
+    the portfolio calls for a hedge of 85% of its value and receives 100%, so
+    the excess is 15 percentage points of portfolio value — which is
+    $15 / 85 = 18\%$ more hedge than required. The 18% figure is the one used
+    consistently below.
 
 Standard institutional practice is to beta-adjust the hedge sizing as follows:
 
@@ -16,7 +25,7 @@ where:
 
 !!! note
 
-    Portfolio beta should be recalculated at least annually, or whenever significant portfolio changes occur — for example, when positions representing more than 10% of portfolio value are added or removed. Beta drift of 0.10 or more warrants resizing the hedge at the next scheduled roll to avoid persistent over- or under-hedging. A portfolio that shifts toward more defensive names over time (beta drifts from 1.00 to 0.85) with an unchanged hedge notional is overhedged by approximately 18%, paying unnecessary carry for protection that exceeds the actual market exposure.
+    Portfolio beta should be recalculated at least annually, or whenever significant portfolio changes occur — for example, when positions representing more than 10% of portfolio value are added or removed. Beta drift of 0.10 or more warrants resizing the hedge at the next scheduled roll to avoid persistent over- or under-hedging. A portfolio that shifts toward more defensive names over time (beta drifts from 1.00 to 0.85) with an unchanged hedge notional is overhedged by approximately 18% relative to the correctly sized hedge, paying unnecessary carry for protection that exceeds the actual market exposure.
 
 ## Worked Example — Multi-Position Portfolio
 
@@ -43,7 +52,7 @@ If using XSP (1/10 the size):
 
 $N_{XSP} = 20 \times 10 = 200 \ \text{XSP contracts}$
 
-If portfolio beta were instead 0.85, the hedge notional would be \$8.5M, requiring only 17 SPX contracts. Buying 20 contracts in that case would overhedge by approximately 18% — a meaningful structural error in a systematic program.
+If portfolio beta were instead 0.85, the hedge notional would be \$8.5M, requiring only 17 SPX contracts. Buying 20 contracts in that case would overhedge by approximately 18% relative to the correctly sized 17-contract hedge — a meaningful structural error in a systematic program.
 
 ## XSP Strike Ladder Distribution
 

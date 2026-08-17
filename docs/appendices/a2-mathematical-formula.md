@@ -47,13 +47,29 @@ Notes:
 
 ## Greeks Interpretation Summary
 
-| Greek    | Range    | Factor           |
-| -------- | -------- | ---------------- |
-| $\Delta$ | -1 to +1 | Underlying Price |
-| $\Gamma$ | 0 to +1  | Delta            |
-| $\Theta$ | < 0      | Time             |
-| $\nu$    | Varies   | Volatility       |
-| $\rho$   | Varies   | Interest Rate    |
+The ranges below describe **long option positions** and typical behaviour. They are not hard bounds, and they do not hold for short positions.
+
+| Greek    | Range (long options, typical) | Factor           |
+| -------- | ----------------------------- | ---------------- |
+| $\Delta$ | -1 to +1                      | Underlying Price |
+| $\Gamma$ | $\geq 0$, no upper bound      | Delta            |
+| $\Theta$ | < 0 in almost all cases       | Time             |
+| $\nu$    | Varies                        | Volatility       |
+| $\rho$   | Varies                        | Interest Rate    |
+
+!!! note
+
+    Two qualifications on the table above. Gamma is non-negative for a long
+    vanilla option but is not bounded by 1 — it is largest for at-the-money
+    options close to expiry, where it routinely exceeds 1. Theta is negative
+    for almost every long option, but can be positive for a deep
+    in-the-money European put, where the interest earned on the discounted
+    strike outweighs the loss of time value.
+
+    Signs invert for short positions: a short option carries
+    $\Gamma \leq 0$ and, in the ordinary case, positive theta. Any structure
+    in this handbook with a sold leg — a put spread, a collar — has both
+    signs present in the same position.
 
 ### Delta
 

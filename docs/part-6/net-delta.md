@@ -10,31 +10,42 @@ $\Delta = \frac{\partial V}{\partial S}$
 
 ## Portfolio Metric
 
-$\text{Net Delta} = \sum_i \Delta_i \times N_i$
+Net delta is measured first in dollars of underlying exposure:
+
+$\text{Net Delta}_\$ = \sum_i \Delta_i \times N_i \times m$
 
 Where:
 
-- $N_i$ = number of contracts
+- $\Delta_i$ = delta of position $i$
+- $N_i$ = number of contracts in position $i$
+- $m$ = contract multiplier, typically 100
+
+Expressed as a fraction of portfolio value, this gives the blended portfolio delta used in the interpretation table below:
+
+$\text{Net Delta} = \frac{\text{Net Delta}_\$}{\text{Portfolio Value}}$
 
 *Example:*
 
-```text
-Equities: $10M
-Equity delta: +1.0
-Put hedge delta: -0.20
-```
-
-Net delta:
+A \$10M equity portfolio hedged with 20 SPX puts at a delta of −0.20, with SPX at 5,000:
 
 ```text
-1.0 - 0.20 = 0.80
+Equity dollar delta:     $10M × 1.0                  = +$10.0M
+Put hedge dollar delta:  -0.20 × 20 × 100 × 5,000    = -$2.0M
 ```
 
-Dollar effective exposure:
+Net delta in dollars:
 
 ```text
-$10M × 0.80 = $8M
+$10.0M - $2.0M = $8.0M
 ```
+
+As a fraction of portfolio value:
+
+```text
+$8M / $10M = 0.80
+```
+
+The 20-contract hedge is the same position sized in [Beta-Adjusted Hedge Sizing](../part-7/beta-adjusted-hedge-sizing.md), where each SPX contract covers \$500,000 of notional at SPX 5,000.
 
 ## Interpretation of Net Delta
 
