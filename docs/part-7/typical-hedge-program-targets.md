@@ -30,17 +30,28 @@ Tenor ladder:
 maintain 12 to 24 month maturity
 ```
 
-## Industry Context and Family Office Benchmarks
+## Annual Premium Budget Bands
 
-While the parameters above represent institutional tail fund practice, family office survey data suggests that in practice many family offices hedge at lower premium budgets.
+This section is the handbook's reference point for what a hedge program costs per year. Other pages link here rather than restating a range of their own.
 
-| Program Type                             | Typical Annual Premium |
-| ---------------------------------------- | ---------------------- |
-| Family office (cost-sensitive)           | 0.5–1.5% of AUM        |
-| Institutional tail program (deep OTM)    | 1.5–2.5%               |
-| Institutional (richer / closer-to-money) | 3–5%+                  |
+Several bands are in common use. They differ because of **who is running the program** and **how the hedge is structured** — not because one of them is the correct answer and the others are approximations of it.
 
-Many family offices consider 1% per year a practical ceiling given performance sensitivity to carry. The 1–3% range in this handbook represents a defensible institutional target, but programs should be calibrated to what the investor and their stakeholders will sustain across a multi-year bull market without abandoning the program.
+| Program Type                             | Typical Annual Premium | What distinguishes it                                                                                                                            |
+| ---------------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Family office (cost-sensitive)           | 0.5–1.5% of AUM        | Carry is a visible line item that must be defended annually; the binding constraint is what the investor will tolerate across a long bull market |
+| Institutional tail program (deep OTM)    | 1.5–2.5%               | Deep OTM ladder bought systematically; carry is budgeted as an insurance premium rather than judged year by year                                 |
+| Institutional (richer / closer-to-money) | 3–5%+                  | Strikes sit closer to spot, or notional is larger; buys protection against shallower declines at proportionally higher cost                      |
+
+The structural driver is strike distance. The further out of the money the ladder sits, the cheaper the program and the deeper the decline it needs before it pays anything. Moving the ladder toward spot raises the budget into the upper band and shortens the crash it protects against — the same trade-off as [Convexity Budget and Premium Budget](convexity-budget-and-premium-budget.md).
+
+Many family offices treat 1% per year as a practical ceiling given performance sensitivity to carry. The 1–3% range used as the institutional target above is defensible for that investor type, but a program should be calibrated to what the investor and their stakeholders will sustain across a multi-year bull market without abandoning it. A program abandoned in year four has paid its full premium and delivered none of its protection.
+
+!!! note
+
+    These bands describe observed practice across program types, not a survey
+    result. No public survey of family offices reports hedging premium as a
+    percentage of AUM, so the figures should be read as a range of common
+    practice rather than a measured distribution.
 
 ## Dynamic Calibration to the Volatility Regime
 

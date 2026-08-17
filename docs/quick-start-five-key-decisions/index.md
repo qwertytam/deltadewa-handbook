@@ -6,7 +6,7 @@ For a reader who needs to orient quickly before diving into the full document:
 
 ```text
 1. SET YOUR ANNUAL PREMIUM BUDGET
-   Typically 1–2% of AUM for family offices.
+   Pick a band for your investor type and structure.
    Document it in the IPS before placing the first trade.
 
 2. CHOOSE YOUR STRIKE LADDER
@@ -25,6 +25,8 @@ For a reader who needs to orient quickly before diving into the full document:
    IPS must specify: budget, instruments, strikes, maturities,
    roll rules, monetization triggers, and governance authority.
 ```
+
+On decision 1, the bands in common use and what distinguishes them are in [Annual Premium Budget Bands](../part-7/typical-hedge-program-targets.md#annual-premium-budget-bands).
 
 Navigation:
 

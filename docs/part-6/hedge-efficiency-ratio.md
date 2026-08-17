@@ -62,6 +62,6 @@ If crash convexity at −25% SPX is 22% and annual carry is 3%, then the ratio i
 
 Tail funds prefer **high convexity relative to cost**.
 
-Typical values for the two inputs are owned elsewhere: see [Typical Institutional Targets](../part-7/typical-hedge-program-targets.md#typical-institutional-targets) for annual carry, and [Crash Convexity](crash-convexity.md) for the crash-convexity band.
+Typical values for the two inputs are owned elsewhere: see [Annual Premium Budget Bands](../part-7/typical-hedge-program-targets.md#annual-premium-budget-bands) for annual carry, and [Crash Convexity](crash-convexity.md) for the crash-convexity band.
 
 See [Carry vs. Convexity Chart](../part-10/tier-1-core-hedge-metrics.md#5-carry-vs-convexity-chart) in PART X for how the trade-off is displayed on a dashboard.

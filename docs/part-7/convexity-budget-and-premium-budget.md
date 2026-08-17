@@ -11,9 +11,9 @@ Institutional tail hedge programs typically operate under two constraints:
 
 The premium budget defines the acceptable annual cost of maintaining the hedge program.
 
-Most institutional tail hedge programs target a premium budget in the range of 1% to 3%, with richer close-to-the-money programs reaching ~4%.
+The band a program should budget to depends on investor type and on how close to spot the ladder sits. See [Annual Premium Budget Bands](typical-hedge-program-targets.md#annual-premium-budget-bands) for the bands and what distinguishes them.
 
-Note on cash management: premium is typically paid in advance when options are purchased. The portion of the annual hedge budget not yet deployed — for example, budget reserved for future quarterly rolls — should be held in short-duration, high-quality instruments (money market funds or short-term Treasuries) rather than left idle. At current yields, a 1–2% carry budget held in short-term Treasuries for several months before deployment generates income that partially offsets the net theta cost of the program. This is a small but real benefit that improves the program's effective economics.
+Note on cash management: premium is typically paid in advance when options are purchased. The portion of the annual hedge budget not yet deployed — for example, budget reserved for future quarterly rolls — should be held in short-duration, high-quality instruments (money market funds or short-term Treasuries) rather than left idle. At prevailing yields, a hedge budget held in short-term Treasuries for several months before deployment generates income that partially offsets the net theta cost of the program. This is a small but real benefit that improves the program's effective economics.
 
 ## Convexity Target
 
