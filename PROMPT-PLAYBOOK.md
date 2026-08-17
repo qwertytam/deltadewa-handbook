@@ -13,8 +13,8 @@ in VS Code.
    should report PASS against a clean `main`. If it does not, fix that before
    touching any issue — you cannot tell your breakage from pre-existing
    breakage otherwise.
-3. Confirm `gh` is installed and authenticated (`gh auth status`). The `/issue`
-   command reads issues and opens PRs through it.
+3. `gh` is installed and authenticated — confirmed. The `/issue` command reads
+   issues and opens PRs through it.
 
 ## Batch order and why
 
@@ -26,10 +26,14 @@ in VS Code.
 | 4 | *(no branch)* | #18 | — runs any time; produces a private doc, not a commit |
 | 5 | `docs/cross-repo-seams` + a deltadewa PR | #20, #26, #25(a)(b) | PR3 — both touch Appendix A4 |
 
-Two ordering traps: #27 and #23 both rewrite
-`docs/part-7/typical-hedge-program-targets.md`, and #17 and #26 both edit
-`docs/appendices/a4-crash-repricing-methodology.md`. Sequencing avoids the
-merge conflict; running batches in parallel invites it.
+Three ordering traps. #27 and #23 both rewrite
+`docs/part-7/typical-hedge-program-targets.md`. #17 and #26 both edit
+`docs/appendices/a4-crash-repricing-methodology.md`. And PR2 moves the
+"Mathematical Definition of the Ratio" heading out of
+`docs/part-10/tier-1-core-hedge-metrics.md` — which is one of the nine anchors
+that #20 is repointing deltadewa's coverage doc at, so PR5 must resolve those
+links against the *final* headings, not today's. Sequencing avoids all three;
+running batches in parallel invites them.
 
 ## A conflict to resolve before PR3 and PR5
 
@@ -107,7 +111,10 @@ program-constraints, and convexity-budget should link to it instead of
 restating their own numbers. The "family office survey data" claim is
 unsourced: try source-verifier for a real survey; if there is no primary
 source, soften the wording so it no longer implies a citation, and list that
-in the PR body.
+in the PR body. Already checked (2026-08-16): the UBS Global Family Office
+Report — the largest such survey — quantifies allocation and derivative usage
+but gives no hedging premium budget as a percentage of AUM. Treat "family
+office survey data" as unsourceable unless you find something better.
 
 #24 — (a) pick one basis for the β=0.85 example and state it explicitly at
 both the 15% and 18% mentions; (b) align net-delta's formula and worked
@@ -115,16 +122,44 @@ example on the contract multiplier; (c) the "10% spread premium" on XSP gets
 sourced or softened, same rule as above; (d) VIX 2020 — say explicitly which
 of intraday 85 / closing 82.69 is meant, and prefer naming both.
 
+On (c), already checked (2026-08-16): Cboe's own Mini-SPX publication gives
+an absolute figure — a 3-cent ATM spread on roughly $31,000 of notional — but
+no comparison against SPX or SPY, so nothing supports "10%". Preferred fix is
+not just softening but stating the actual mechanism: a comparable quoted tick
+is a larger fraction of premium on a contract one-tenth the notional, so
+execution cost per unit of exposure is what to compare, not the tick. That is
+general, true, and needs no number.
+
 #22 — my preference is to scope the Greeks table to "long options, typical"
 rather than widen every range, unless you think the table is used as a
 general reference in a way that makes scoping misleading. Say which and why
 before editing.
 
-#21 — decide the overlap between docs/part-5/convexity.md and
-docs/part-10/tier-1-core-hedge-metrics.md, delete the editorial note, and
-propose the CI guard the issue asks for: a grep step that fails the build if
-TODO, TBD, FIXME or "Editing note" appears anywhere under docs/. Put the
-guard in .github/workflows/ci.yml as its own step, not a markdownlint rule.
+#21 — the split is decided: dashboard-related material stays in
+docs/part-10/tier-1-core-hedge-metrics.md; definitions of terms stay in
+docs/part-5/convexity.md and Part VI. Apply it:
+
+  - convexity.md:29–34 keeps its qualitative payoff-shape table — it
+    illustrates the definition. Delete the editing note at line 36.
+  - tier-1's dollar crash-scenario table (lines 19–26) and both ASCII
+    dashboard blocks stay where they are.
+  - tier-1 §5 currently holds a *definition*: the Carry-Convexity Ratio
+    formula (line 72), the worked example (74–80), the interpretation bands
+    (84–88) and the typical-values table (94–97). Under the rule that earlier
+    chapters own the material, all four move to Part VI, and tier-1 keeps the
+    dashboard visualisation plus a link.
+  - preserve the <a id="convexity-carry-worked-example"></a> anchor when the
+    worked example moves, and tell me every heading anchor the move changes —
+    deltadewa's coverage doc links to #mathematical-definition-of-the-ratio,
+    so #20 depends on where this lands.
+  - tier-1 line 96 states carry as "1 to 3% per year". That is a fifth
+    carry-budget location which #23 does not list — fold it into #23's fix.
+  - the typical crash-convexity band at tier-1 line 97 is 15–40%, but
+    evaluating-and-testing-tail-hedge-strategies.md:166 gives a target of
+    15–25%. Ask me which is the general band before publishing either.
+  - propose the CI guard the issue asks for: a grep step in
+    .github/workflows/ci.yml that fails if TODO, TBD, FIXME or "Editing note"
+    appears under docs/. Its own step, not a markdownlint rule.
 
 Start with /audit-claim on the carry-budget ranges and on the β=0.85
 overhedge figures before touching anything.
@@ -163,13 +198,36 @@ wing interacts with skew steepening in the A4 repricing methodology. No
 broker, no account type, no live-book composition — carve those out. A4 gets
 a note on capped wings, not a rewrite.
 
-#19 ratio table — six rows: crash convexity, crash payoff / offset ratio,
-payoff-vs-premium multiple, convexity/carry ratio (hedge efficiency), theta
-carry, vega sufficiency. Columns: primary name, synonyms in use, formula with
-numerator and denominator written out, target band. Drop the "which deltadewa
-surface shows it" column unless we agree otherwise — that is application
-detail. Propose Part VI or Part X and say why. Every metric page then links to
-its row instead of restating the definition.
+#19 ratio table — decided: it goes at the front of Part VI, as a new page
+listed early in that Part's nav, because definitions belong in the earliest
+Part that owns them and later Parts refer back. Drop the "which deltadewa
+surface shows it" column — that is application detail. Columns: primary name,
+synonyms in use, formula with numerator and denominator written out,
+interpretation band.
+
+Six rows, with where each currently lives:
+
+  1. Crash convexity — docs/part-6/crash-convexity.md:33 (and a second form
+     at :129); restated at docs/appendices/a4-crash-repricing-methodology.md:5
+  2. Crash payoff / offset ratio — docs/part-6/crash-payoff-ratio-tail-hedge-
+     effectiveness.md:22, bands at :45. "Offset ratio" as a synonym at
+     part-7/typical-hedge-program-targets.md:11, part-7/evaluating-and-
+     testing-tail-hedge-strategies.md:331 and :348, footnotes/index.md:45
+  3. Payoff-vs-premium multiple — defined nowhere; zero hits in docs/
+  4. Convexity/carry ratio (hedge efficiency) — four names across four pages,
+     and two different numerators:
+       part-6/hedge-efficiency-ratio.md:14  "Hedge Efficiency = crash payoff / annual carry"
+       part-10/tier-1-core-hedge-metrics.md:72  "Carry-Convexity Ratio = Convexity / Carry"  (name inverted against its own formula)
+       part-7/evaluating-and-testing-tail-hedge-strategies.md:25  "Carry-to-Convexity = Crash Payoff Ratio(25%) / Annual Carry Budget"  (different numerator)
+       part-10/introduction.md:31  "Convexity/carry ratio: 7.5"  (and tier-1's worked example gives 7.3)
+  5. Theta carry — docs/part-6/theta-carry-insurance-cost.md:15
+  6. Vega sufficiency — docs/part-6/vega-sufficiency.md:26, alternatives
+     at :32, further metrics at :39
+
+Row 4 is the real work: pick one primary name, one numerator, and say plainly
+in the synonyms column that the other three names exist and which of them
+computes something different. Row 3 is net-new (#25c). Every metric page then
+links to its row instead of restating the definition.
 
 #25(c) payoff-vs-premium multiple gets defined in that table. #25(d) — move
 the terms currently defined only inline into
@@ -241,7 +299,10 @@ tree. I need from it:
   - all nine HANDBOOK.md#anchor links in deltadewa/docs/part-x-coverage.md,
     each resolved to the correct published URL under
     https://qwertytam.github.io/deltadewa-handbook/ — verify each anchor
-    against the actual handbook page, do not guess slugs
+    against the actual handbook page, do not guess slugs. Resolve them against
+    main *after* PR2 and PR3 have merged: #mathematical-definition-of-the-ratio
+    moves out of tier-1 in PR2, and the ratio table added in PR3 is probably
+    the correct destination for several of the nine.
   - whether the repricing worked-example figures ($5,226,004, +24.6%, 17.5×)
     still agree across both repos
   - what the app actually computes for skew percentile and for realized carry,

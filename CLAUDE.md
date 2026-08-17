@@ -106,6 +106,11 @@ Do not re-litigate these; change only on explicit instruction.
   months remain". Never "roll after 9–12 months" — that reads as elapsed time
   and puts an 18-month put into the 6–9 month theta-acceleration zone the
   handbook warns against.
+- **Where material lives.** Define once, in the earliest Part where the
+  material belongs; later Parts refer back rather than restating. Definitions,
+  formulas, interpretation bands and typical values live in Parts I–VII. Part
+  X describes what a dashboard *displays* and links to the definition — a
+  formula or a band appearing for the first time in Part X is a defect.
 - **Unsourced numbers.** Try to source from a primary authority first
   (`source-verifier`). If no primary source exists, replace the figure with
   qualitative wording that drops the implied citation — "a materially wider
@@ -131,7 +136,7 @@ wins and the other page gets a link.
 | Roll timing, maturity and roll-interval targets | `docs/part-7/typical-hedge-program-targets.md` |
 | Annual carry / premium budget ranges | `docs/part-7/typical-hedge-program-targets.md` (family-office paragraph) |
 | IPS-style hard constraints | `docs/part-7/program-constraints-and-governance.md` |
-| Ratio names, formulas, target bands | `docs/part-6/` ratio-disambiguation table |
+| Ratio names, formulas, interpretation bands | the ratio-disambiguation table at the front of Part VI |
 | Crash-repricing spec and worked example | `docs/appendices/a4-crash-repricing-methodology.md` |
 | Greeks definitions and formulas | `docs/appendices/a2-mathematical-formula.md` |
 | Term definitions | `docs/appendices/a1-additional-terminology.md` |
