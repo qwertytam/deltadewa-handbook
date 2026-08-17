@@ -31,8 +31,8 @@ Three ordering traps. #27 and #23 both rewrite
 `docs/appendices/a4-crash-repricing-methodology.md`. And PR2 moves the
 "Mathematical Definition of the Ratio" heading out of
 `docs/part-10/tier-1-core-hedge-metrics.md` — which is one of the nine anchors
-#20 is repointing deltadewa's coverage doc at, so PR5 must resolve those links
-against the *final* headings, not today's. Sequencing avoids all three;
+that #20 is repointing deltadewa's coverage doc at, so PR5 must resolve those
+links against the *final* headings, not today's. Sequencing avoids all three;
 running batches in parallel invites them.
 
 ## A conflict to resolve before PR3 and PR5
