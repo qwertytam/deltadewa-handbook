@@ -9,6 +9,7 @@ When a tail event is underway and hedge gains are material, execution becomes an
 - **Do not use market orders to unwind large put positions in a crisis.** During a crash, bid-ask spreads on deep OTM puts can widen dramatically. Use limit orders near the mid-price and accept partial fills.
 - **Communicate with the trading desk in advance.** If using an external broker, pre-notify them of likely monetization ranges before markets move significantly. This avoids operational delays when liquidity matters most.
 - **Cash settlement simplifies execution.** SPX puts are cash-settled — there are no shares to deliver. This simplifies the operational process relative to physically-settled instruments.
+- **Check the settlement flavour before holding a near-expiry leg.** A standard monthly SPX contract stops trading the business day before expiration and settles against the next morning's opening rotation, so a position held that far cannot be monetized at an observable price. Monetizing under stress is exactly when that matters most. See [Settlement Mechanics](../part-1/exercise-settlement.md#settlement-mechanics).
 
 ## Redeploying Capital
 

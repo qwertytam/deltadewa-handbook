@@ -91,6 +91,55 @@ Portfolios".
 
 ## Exchange and Index Methodology
 
+### Cboe — SPX Index Options Product Specifications { #cboe-spx-spec }
+
+Cboe Exchange, Inc. "SPX Index Options" (summary product specifications fact
+sheet).
+
+[cdn.cboe.com — SPX Index Options Fact Sheet (PDF)](https://cdn.cboe.com/resources/spx/spx-fact-sheet.pdf)
+
+Cboe's own contract specification for SPX and SPXW: European exercise, cash
+settlement, the AM (opening-price) versus PM (closing-price) calculation of the
+exercise-settlement value, the rule that trading in standard series ceases the
+business day before expiration, and cash delivery on the following business day.
+Its comparison table also classifies SPY options as American-style, physically
+settled and PM-settled at expiration.
+
+### Cboe — Settlement of Standard, AM-Settled S&P 500 Index Options { #cboe-spx-am-settlement }
+
+Cboe Exchange, Inc. "Settlement of Standard, A.M.-Settled S&P 500 Index
+Options", version 2, 17 July 2024.
+
+[cdn.cboe.com — Settlement of Standard AM-Settled SPX Options (PDF)](https://cdn.cboe.com/resources/spx/Settlement_of_Standard_AM_Settled_SP_500_Index_Options.pdf)
+
+Cboe's explanation of the Special Opening Quotation: that the AM settlement
+value is published under the ticker SET, how it is assembled from component
+opening trade prices, the fallback to the prior session's last trade for a
+component that does not open, and the historical dispersion of the SOQ against
+the opening level and the day's traded range.
+
+### Cboe — XSP (Mini-SPX) Index Options Product Specifications { #cboe-xsp-spec }
+
+Cboe Exchange, Inc. "XSP Index Options" (summary product specifications fact
+sheet).
+
+[cdn.cboe.com — XSP Index Options Fact Sheet (PDF)](https://cdn.cboe.com/resources/xsp/XSP_Options_Fact_Sheet.pdf)
+
+Cboe's own contract specification for Mini-SPX: European exercise, cash
+settlement, PM settlement against one-tenth the official closing level of the
+index on the last trading day, and third-Friday standard expirations alongside
+Weeklys and end-of-month series.
+
+### Cboe — Why Option Settlement Style Matters { #cboe-settlement-style }
+
+Cboe Exchange, Inc. "Why Option Settlement Style Matters".
+
+[cboe.com — Why Option Settlement Style Matters](https://www.cboe.com/insights/posts/why-option-settlement-style-matters)
+
+Cboe's statement that equity and ETF options, SPY among them, deliver shares
+physically when exercised or assigned, in contrast to the cash settlement of SPX
+and XSP.
+
 ### Cboe — VIX Term Structure { #cboe-vix-term-structures }
 
 *Note:* While focused on VIX futures, the Cboe's published term structure data
