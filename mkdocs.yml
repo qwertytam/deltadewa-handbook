@@ -169,6 +169,7 @@ nav:
   - 'PART VII — Designing a Tail-Hedge Program':
     - 'part-7/index.md'
     - 'Program Constraints and Governance': 'part-7/program-constraints-and-governance.md'
+    - 'Continuity Planning': 'part-7/continuity-planning.md'
     - 'Beta-Adjusted Hedge Sizing': 'part-7/beta-adjusted-hedge-sizing.md'
     - 'Basis Risk': 'part-7/basis-risk.md'
     - 'Convexity Budget and Premium Budget': 'part-7/convexity-budget-and-premium-budget.md'
