@@ -179,6 +179,7 @@ nav:
     - 'Rolling Rules': 'part-7/rolling-rules.md'
     - 'Numerical Example': 'part-7/numerical-example.md'
     - 'Evaluating and Testing Tail Hedge Strategies': 'part-7/evaluating-and-testing-tail-hedge-strategies.md'
+    - 'Realized Carry Methodology': 'part-7/realized-carry-methodology.md'
     - 'Typical Hedge Program Targets': 'part-7/typical-hedge-program-targets.md'
     - 'Portfolio Hedge Sizing Framework': 'part-7/portfolio-hedge-sizing-framework.md'
     - 'Historical Crash Analysis': 'part-7/historical-crash-analysis.md'

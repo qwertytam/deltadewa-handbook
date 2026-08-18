@@ -71,7 +71,7 @@ In a persistently normal (upward-sloping) term structure, roll yield is an addit
 
 ## Rule of Thumb
 
-When the term structure is steeply upward sloping, a program's realized carry will be modestly higher than theta suggests. When the term structure is flat or inverted, realized carry may be lower than theta suggests — or even negative in a crisis inversion.
+When the term structure is steeply upward sloping, a program's [realized carry](realized-carry-methodology.md) will be modestly higher than theta suggests. When the term structure is flat or inverted, realized carry may be lower than theta suggests — or even negative in a crisis inversion. Roll yield is one of the reasons the two figures diverge, and the gap is measurable only if the position history is kept.
 
 ## Practical Implication for Roll Timing
 

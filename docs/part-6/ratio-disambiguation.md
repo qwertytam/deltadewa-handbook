@@ -100,9 +100,17 @@ The annualised cost of holding the hedge, as a fraction of the portfolio.
 !!! note
 
     "Annual carry budget" as used in backtesting is **premiums paid less
-    monetization gains**, over portfolio value. That is a realised, net figure
-    covering a historical period; theta carry is a forward-looking accrual read
-    off the current position. They answer different questions and will not agree.
+    monetization gains**, over portfolio value. That is a net figure covering a
+    simulated history; theta carry is a forward-looking accrual read off the
+    current position. They answer different questions and will not agree.
+
+    A third quantity, **realized carry**, is what a live program actually spent
+    over a period that has already happened, measured from its own fills and
+    marks rather than from a model or a simulation. It is the only one of the
+    three that reconciles to a brokerage statement, and it is defined in
+    [Realized Carry Methodology](../part-7/realized-carry-methodology.md).
+    Three carry figures for the same program in the same year are expected to
+    differ, so each should be quoted by name.
 
 ### Vega Sufficiency
 
