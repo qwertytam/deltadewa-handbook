@@ -69,7 +69,10 @@ Crash Convexity = (1.2M − 150k) / 10M = 10.5%
 
 ## Interpretation of Crash Convexity
 
-Typical institutional ranges:
+The table below is a gradient for *reading* a convexity figure — how much
+protection a given number represents — rather than a statement of what a program
+should aim for. The target band is a separate and narrower thing, and follows
+below.
 
 | Crash Convexity | Interpretation             |
 | --------------- | -------------------------- |
@@ -81,8 +84,13 @@ Typical institutional ranges:
 Most institutional programs target:
 
 ```text
-10 to 25% crash convexity at −20% to −30% SPX
+10 to 25% crash convexity at −25% SPX
 ```
+
+That band and the scenario it is quoted against are owned by
+[Typical Hedge Program Targets](../part-7/typical-hedge-program-targets.md#typical-institutional-targets);
+the figures here follow it. Quoted at a different crash depth the same book
+reads differently, which is why the scenario travels with the band.
 
 Higher convexity usually requires:
 

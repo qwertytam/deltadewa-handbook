@@ -15,6 +15,14 @@ Typical institutional allocations range between 1 to 3% annual carry. Very large
 | Skew exposure      | positive                        |
 | Roll interval      | 9 to 12 months remaining        |
 
+Crash convexity — the hedge's crash gain as a share of portfolio value — is
+banded here, and the scenario is part of the band: **10 to 25% at −25% SPX**.
+A convexity figure quoted at any other crash depth is a different number and
+cannot be read against this range, because a hedge's gain is convex in the size
+of the move while the portfolio's value is not. The metric itself is defined,
+worked through and interpreted in
+[Crash Convexity](../part-6/crash-convexity.md).
+
 The crash payoff ratio — the share of the portfolio's equity loss the hedge
 offsets, and the quantity PART VII elsewhere calls the *offset ratio* — is
 defined, worked through and banded in

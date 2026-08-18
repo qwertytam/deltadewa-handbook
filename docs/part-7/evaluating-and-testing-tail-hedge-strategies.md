@@ -174,7 +174,7 @@ QUARTERLY HEDGE PROGRAM REPORT
 Portfolio value:                $10.2M
 Portfolio beta vs. SPX:         0.95  (no resizing required)
 Hedge premium spent YTD:        $48k  (0.47% annualized)
-Crash convexity at −25% SPX:    18.2% (target: 15–25%)
+Crash convexity at −25% SPX:    18.2% (target: see program targets)
 Hedge efficiency ratio:         8.4x  (target: >6)
 Skew percentile:                24%   (protection cheap)
 Roll status:                    Next roll due Aug 2026
@@ -188,6 +188,14 @@ Note: Hedge cost is a designed feature, not a performance deficit.
 In a −25% market decline, the hedge is expected to generate +$1.8M,
 reducing the portfolio drawdown from approximately −25% to approximately −7%.
 ```
+
+The target ranges a report quotes are not the report format's to set. Crash
+convexity is banded — with its scenario — in
+[Typical Hedge Program Targets](typical-hedge-program-targets.md#typical-institutional-targets),
+and the hedge efficiency ratio in
+[Hedge Efficiency Ratio](../part-6/hedge-efficiency-ratio.md). A quarterly
+report states whichever bands the program has adopted, and always with the
+crash scenario they are measured against.
 
 Key principles for the reporting format:
 
