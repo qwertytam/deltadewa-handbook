@@ -269,7 +269,7 @@ Run this monthly across as long a history as the data supports:
    1. gross premium paid
    2. net carry
    3. hedge MTM in drawdowns
-   4. offset ratio in the worst months
+   4. crash payoff ratio in the worst months
 
 The outputs should be:
 
@@ -339,7 +339,7 @@ Then compare:
 - $\text{Annual Carry}$
 - $\text{Crash Payoff}_{20\%}$
 - $\text{Crash Payoff}_{30\%}$
-- $\text{Offset Ratio}$
+- $\text{Crash Payoff Ratio}$
 - $\text{Carry-to-Convexity}$
 
 ## A Good Sanity-Check Benchmark
@@ -356,10 +356,10 @@ That kind of sanity check is where comparing to public protective-put benchmarks
 
 A comparison table structured as follows is useful for each candidate structure:
 
-| Structure | Annual carry | Net annual carry | Payoff @ -20% | Payoff @ -30% | Offset ratio @ -30% | Carry/ convexity |
-| --------- | -----------: | ---------------: | ------------: | ------------: | ------------------: | ---------------: |
-| Lean tail |              |                  |               |               |                     |                  |
-| Balanced  |              |                  |               |               |                     |                  |
-| Richer    |              |                  |               |               |                     |                  |
+| Structure | Annual carry | Net annual carry | Payoff @ -20% | Payoff @ -30% | Crash payoff ratio @ -30% | Carry/ convexity |
+| --------- | -----------: | ---------------: | ------------: | ------------: | ------------------------: | ---------------: |
+| Lean tail |              |                  |               |               |                           |                  |
+| Balanced  |              |                  |               |               |                           |                  |
+| Richer    |              |                  |               |               |                           |                  |
 
 Once the analyst populates the table, the decision usually becomes obvious.
