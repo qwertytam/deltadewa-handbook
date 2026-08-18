@@ -52,13 +52,9 @@ Typical ranges:
 | 25 to 40% | strong tail hedge         |
 | > 40%     | very aggressive hedge     |
 
-Most long-equity hedge programs aim for:
-
-```text
-20 to 35% loss offset at −25% market decline
-```
-
-This provides liquidity to rebalance portfolios during crises.
+Most long-equity hedge programs aim for the **strong tail hedge** band above — a
+25 to 40% loss offset at a −25% market decline. That offset provides the
+liquidity to rebalance portfolios during a crisis.
 
 ## Important Caveat
 
