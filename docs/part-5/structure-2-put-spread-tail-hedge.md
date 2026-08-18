@@ -18,11 +18,13 @@ sell 2500 put
 
 ## Purpose
 
-Reduce cost. Carry becomes:
-
-```text
-1 to 2% instead of 3 to 5%
-```
+Reduce cost relative to an outright long put at the same strike, by selling a
+further OTM put against it. How much the spread reduces carry depends on how
+close the sold strike sits to the long strike — see
+[Annual Premium Budget Bands](../part-7/typical-hedge-program-targets.md#annual-premium-budget-bands)
+for the ranges programs budget to, and
+[Convexity Budget and Premium Budget](../part-7/convexity-budget-and-premium-budget.md)
+for how strike distance drives that figure.
 
 Trade-off:
 
