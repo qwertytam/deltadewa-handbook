@@ -19,7 +19,7 @@ An alternative take is this list of six:
 5. Volatility Regime
 6. Hedge Efficiency
 
-## Example of a Full Dashboard
+## Example of a Full Dashboard { #example-of-a-full-dashboard }
 
 ```text
 TAIL HEDGE DASHBOARD

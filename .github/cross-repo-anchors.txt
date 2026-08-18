@@ -1,0 +1,38 @@
+# Anchors cited from outside this repository.
+#
+# Each line is a published-site path and the heading anchor a downstream repo
+# links to. `mkdocs build --strict` validates links *within* this handbook, so
+# it cannot see an inbound link at all: renaming a heading here breaks a
+# citation over there and nothing in either repository notices. This list is
+# what makes that visible, and `ci.yml` asserts every entry still resolves in
+# the built site on each pull request.
+#
+# Every heading listed here carries an explicit `{ #slug }` in its source, so
+# the anchor survives a rewording of the heading text. The contract is that
+# the anchor does not change unless the citing repository changes in the same
+# breath — see the "Linking to this handbook from another repository" section
+# of README.md.
+#
+# To retire an entry, remove the citation downstream first, then this line.
+# To add one, give the heading an explicit anchor and add it here.
+#
+# Format: <site path>#<anchor>   — blank lines and `#` comments are ignored.
+
+# --- cited from deltadewa/docs/part-x-coverage.md ---
+part-6/hedge-efficiency-ratio/#her-metric
+part-6/hedge-efficiency-ratio/#mathematical-definition-of-the-ratio
+part-10/introduction/#example-of-a-full-dashboard
+part-10/tier-4-tactical-optional-trading-metrics/#13-delta-drift
+part-7/rolling-rules/#rule-1-time-based-roll
+part-7/rolling-rules/#rule-2-market-rally-rebalance-trigger
+
+# --- cited from deltadewa Python docstrings and tests ---
+# hedge_efficiency.py, monitor_scenario.py, test_hedge_efficiency.py
+part-6/hedge-efficiency-ratio/#interpretation-of-the-ratio
+part-6/hedge-efficiency-ratio/#hedge-efficiency-dollar-worked-example
+part-6/hedge-efficiency-ratio/#convexity-carry-worked-example
+# scenarios.py
+part-10/tier-4-tactical-optional-trading-metrics/#delta-drift-metric
+# test_crash_repricing.py pins its golden figures to this worked example, and
+# CLAUDE.md records the A4 spec as duplicated across the two repositories.
+appendices/a4-crash-repricing-methodology/#worked-example

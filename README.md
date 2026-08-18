@@ -60,6 +60,7 @@ mkdocs.yml            # site config, nav, and validation rules
 .github/workflows/    # ci.yml    - lint + strict build, on every pull request
                       # deploy.yml - builds and publishes Pages on push to main
                       # links.yml  - monthly check of outbound links
+.github/cross-repo-anchors.txt  # anchors cited by other repos; asserted by ci
 .github/actions/build-site/   # toolchain + strict build, shared by ci & deploy
 .github/rulesets/main.json    # branch ruleset, importable in repo settings
 ```
@@ -119,6 +120,33 @@ also that a page's own title is front matter, not a body heading, so it has no
 anchor — cite such a page by its URL alone.
 [HANDBOOK.md](HANDBOOK.md) states the full rule for downstream maintainers who
 arrive by way of a dead anchor.
+
+### The anchor contract
+
+A generated slug is derived from the heading text, so rewording a heading
+silently moves its anchor. That is harmless for links inside `docs/` — the
+strict build repoints or fails on them — but it breaks any citation from
+another repository, and neither side notices: `--strict` validates only
+cross-references *within* this handbook, and the monthly link check covers
+only links pointing *out* of it. An inbound link is invisible from both ends.
+
+**A heading carrying an explicit `{ #slug }` anchor is cited from another
+repository. Its anchor does not change unless that repository changes in the
+same breath.** Rewording the heading text above such an anchor is fine and is
+the reason the anchor is there; changing or removing the anchor itself is a
+cross-repo change, not a local one.
+
+The cited anchors are enumerated in
+[`.github/cross-repo-anchors.txt`](.github/cross-repo-anchors.txt), and the
+`Build docs (strict)` job asserts every one of them still resolves in the
+built site on each pull request. The check reads the rendered HTML rather than
+the Markdown source, so it also catches an anchor that was deleted and left to
+fall back on a generated slug that happens to match today.
+
+To add a citation, give the heading an explicit anchor and add the line. To
+retire one, remove the citation downstream first, then the line here. The
+citing repository runs the mirror of this check — a monthly job that fetches
+each handbook URL and asserts the fragment exists in the response.
 
 ## Deployment
 
