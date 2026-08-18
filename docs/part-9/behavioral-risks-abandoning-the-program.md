@@ -26,4 +26,12 @@ The correct response is to return the program to its target parameters, not to c
 
 The purpose of documenting rules in the IPS, defining pre-authorized monetization and re-risk actions, and conducting quarterly reviews is specifically to protect the program from behavioral modification under pressure. A well-governed program survives bull markets and crises alike because the rules — not the emotions of the moment — drive decisions.
 
+The routine that counters abandonment day to day is a short, fixed,
+scheduled review — a program on the calendar is much harder to drift away
+from than one watched ad hoc, and a program watched continuously drifts in
+the other direction, toward reacting to whatever happened that week. See
+[Weekly Review Cadence](../part-7/weekly-review-cadence.md) for the cadence
+and for the rule that keeps a routine check from becoming a discretionary
+trading session.
+
 See [Long-Term Return Drag](long-term-return-drag.md) for the quantitative context of why multi-year bleed periods are an expected feature of a functioning program.
