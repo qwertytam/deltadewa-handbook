@@ -17,6 +17,20 @@ The normative specification, its acceptance tests, and the full derivation live 
 [`docs/repricing-methodology.md`](https://github.com/qwertytam/deltadewa/blob/main/docs/repricing-methodology.md); where a number
 appears in both, that document is the reference and this one is the summary.
 
+!!! note "Which revision this summarises"
+
+    The normative document carries no version number of its own, so this
+    appendix is stamped against the revision it was reconciled to. The figures
+    below were checked line by line against
+    [`docs/repricing-methodology.md`](https://github.com/qwertytam/deltadewa/blob/main/docs/repricing-methodology.md)
+    at commit
+    [`e5887a3`](https://github.com/qwertytam/deltadewa/commit/e5887a385197329e70da9310b3444e023ed2f3e0)
+    (2026-08-13), and against the regression goldens in that repository's
+    `tests/test_analysis/test_crash_repricing.py` at the same commit, on
+    2026-08-18. A change to either the specification or those goldens supersedes
+    what is written here, and the shared figures should be re-reconciled before
+    this appendix is relied on.
+
 ## The three properties that pin $V_{crash}$
 
 - **Hedge-only.** $V$ counts the **option legs only**. The underlying equity
@@ -157,21 +171,21 @@ $K_{ref} \approx 5213$ — about 21% out of the money. The 20% rung sits just
 | 20% OTM   | 5280   | 23  | 0.95 | 44.5%     | \$219,392     | \$2,524,349     |
 | 30% OTM   | 4620   | 26  | 1.00 | 45.0%     | \$70,696      | \$1,961,615     |
 | 40% OTM   | 3960   | 16  | 1.00 | 45.0%     | \$7,627       | \$740,040       |
-| **Hedge** |        |     |      |           | **\$298,099** | **\$5,226,004** |
+| **Hedge** |        |     |      |           | **\$297,715** | **\$5,226,004** |
 
-- Hedge value today ≈ **\$298,099** — about 1.49% of the book, roughly 1%/yr of
+- Hedge value today ≈ **\$297,715** — about 1.49% of the book, roughly 1%/yr of
   carry. The skew is a crash-state effect, so this figure is unchanged by it.
 - Hedge value in the crash **\$5,226,004** — a **≈17.5×** multiple.
 - Intrinsic floor **\$759,000** — only **2.5×**, and it zeroes the 30% and 40%
   rungs entirely.
 
-$$\text{convexity} = \frac{5{,}226{,}004 - 298{,}099}{20{,}000{,}000} = \mathbf{+24.6\%}$$
+$$\text{convexity} = \frac{5{,}226{,}004 - 297{,}715}{20{,}000{,}000} = \mathbf{+24.6\%}$$
 
 For contrast, the same book on the **flat** bump — every leg at 35% crash vol —
-reprices to \$3,897,393, a 13.1× multiple and **+18.0%** convexity. The
+reprices to \$3,895,901, a 13.1× multiple and **+18.0%** convexity. The
 difference is entirely the two deep rungs, and it is convexity the flat bump was
 understating rather than convexity the skew invents. The intrinsic basis, for its
-part, gives $(759{,}000 - 298{,}099)/20{,}000{,}000 = +2.3\%$ — which, with the
+part, gives $(759{,}000 - 297{,}715)/20{,}000{,}000 = +2.3\%$ — which, with the
 equity loss netted in on top, is how a conformant book once read as failing.
 
 These are the engine's own outputs, pinned as regression goldens in
