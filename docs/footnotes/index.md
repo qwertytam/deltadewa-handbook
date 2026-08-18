@@ -161,6 +161,41 @@ time.
 
 [cboe.com — Put Protection Indices Methodology (PDF)](https://cdn.cboe.com/api/global/us_indices/governance/Cboe_SP_500_Put_Protection_Indices_Methodology.pdf)
 
+### Cboe — SKEW Index Methodology { #cboe-skew-methodology }
+
+Cboe Exchange, Inc. "The Cboe Skew Index — SKEW", white paper, January 2011.
+
+[cdn.cboe.com — The Cboe Skew Index White Paper (PDF)](https://cdn.cboe.com/resources/indices/documents/SKEWwhitepaperjan2011.pdf)
+
+Cboe's own derivation of SKEW: a risk-neutral estimate of the 30-day S&P 500
+log-return skewness coefficient, computed from a strip of out-of-the-money SPX
+options by the same replication technique as VIX, and transformed so that 100
+represents a normal distribution and higher readings mean more negative tail
+skew. This is the authority for describing SKEW as a moment-based index rather
+than a two-strike volatility spread.
+
+!!! warning
+
+    Cboe opened a consultation in May 2025 proposing to replace this
+    methodology with a differential or ratio of 25-delta put and call strikes.
+    The July 2025 consultation results record that the Index Committee
+    determined modifications are appropriate, but state that an effective date
+    "will be announced when it is available" — no replacement formula had been
+    published at the time of citation. Verify against Cboe's live methodology
+    before relying on this document for the formula in force on a given date.
+
+### Cboe — SKEW Historical Data { #cboe-skew-historical }
+
+Cboe Exchange, Inc. "Historical Price Data for the Cboe SKEW Index". Daily
+closing values published as `SKEW_History.csv`.
+
+[cdn.cboe.com — SKEW Historical Data (CSV)](https://cdn.cboe.com/api/global/us_indices/daily_prices/SKEW_History.csv)
+
+The primary source for the length of the available SKEW history and for any
+claim about the index's historical range. The daily series begins 2 January
+1990, which is what makes lookback windows longer than a few years possible at
+all.
+
 ### Cboe — VIX Historical Data { #cboe-vix-historical }
 
 "Historical Price Data for VIX Index". Daily open/high/low/close for the VIX Index since 1990, published by Cboe as `VIX_History.csv` and updated daily. The High and Close columns are distinct figures and should not be conflated when citing a single-day peak.

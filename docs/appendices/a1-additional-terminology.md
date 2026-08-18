@@ -150,3 +150,29 @@ A measure of skew: the implied volatility of the 25-delta put less that of the 2
 *Example:* “The 25-delta risk reversal widened into the sell-off.”
 
 See [Practical Skew Metrics](../part-3/volatility-skew.md#practical-skew-metrics).
+
+## SKEW Index
+
+A Cboe-published index derived from the risk-neutral skewness of the 30-day S&P
+500 log-return distribution, computed from a strip of out-of-the-money SPX
+options. A reading of 100 corresponds to a normal distribution; higher readings
+mean more negative tail skew. Distinct from a [25-Delta Risk
+Reversal](#25-delta-risk-reversal), which is a two-strike volatility spread
+computed in-house rather than a published index.
+
+*Example:* “SKEW held above 140 while the risk reversal barely moved.”
+
+See [Two Different Measures Called "Skew"](../part-3/volatility-skew.md#two-different-measures-called-skew).
+
+## Skew Percentile
+
+The rank of the current skew reading against its own history, expressed as a
+percentage. It says whether crash protection is cheap or expensive *relative to
+the past*, not whether it is cheap in absolute terms. A percentile is
+uninterpretable without two accompanying facts: which skew measure was ranked,
+and over what lookback window.
+
+*Example:* “Skew percentile of 22% on a trailing five-year window — protection
+is historically cheap.”
+
+See [The Lookback Window](../part-3/volatility-skew.md#the-lookback-window).
