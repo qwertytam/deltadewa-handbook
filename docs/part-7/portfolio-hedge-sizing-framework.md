@@ -70,21 +70,43 @@ Example: the investor targets a maximum portfolio drawdown of 20% even in a seve
 Example: in a −35% market crash, a portfolio with beta 1.0 loses approximately 35%.
 
 **Step 3: Determine required hedge offset.**
-Hedge must offset: 35% − 20% = 15% of portfolio value.
+The hedge must offset 35% − 20% = **15% of portfolio value**. On a \$10M
+portfolio that is a required hedge gain of \$1.5M in the crash scenario.
 
 **Step 4: Size the hedge to deliver the required offset.**
 
-Using the crash payoff ratio:
+Sizing needs a payoff rate quoted *per dollar of hedge*, so the divisor is
+[Crash Payoff per Unit of Notional](../part-6/ratio-disambiguation.md#crash-payoff-per-unit-of-notional)
+— the hedge's crash gain over its notional. The crash payoff ratio will not
+serve here: its denominator is the portfolio's equity loss, so it describes how
+much of the loss a hedge absorbs and says nothing about how large the hedge is.
 
-$\text{Hedge Notional} = \frac{\text{Required Portfolio Offset}}{\text{Expected Crash Payoff Ratio}} \times \text{Portfolio Value}$
+$$\text{Hedge Notional} = \frac{\text{Required Portfolio Offset} \times \text{Portfolio Value}}{\text{Crash Payoff per Unit of Notional}}$$
 
 Example:
 
 ```text
-Required portfolio offset = 15%
-Expected crash payoff ratio at -35% = 25%
-Hedge Notional = (15% / 25%) × $10M = $6M = 60% of portfolio
+Required portfolio offset            = 15% of $10M = $1.5M
+Crash payoff per unit of notional
+  at -35% SPX                        = 25%
+Hedge Notional = $1.5M / 25%         = $6M = 60% of portfolio
 ```
+
+The arithmetic closes in both directions: \$6M of notional paying 25% of
+notional in the crash returns \$1.5M, which is the 15% of portfolio value Step 3
+requires. Both sides of the division are now denominated in dollars of hedge.
+
+!!! note "The same hedge read as a crash payoff ratio"
+
+    Expressed as a
+    [Crash Payoff Ratio](../part-6/crash-payoff-ratio-tail-hedge-effectiveness.md),
+    this hedge returns \$1.5M against \$3.5M of equity loss — a 43% offset,
+    above the 25 to 40% band in
+    [Typical Hedge Program Targets](typical-hedge-program-targets.md#typical-institutional-targets).
+    That is expected rather than contradictory: the band is quoted at −25% SPX
+    and this example at −35%. The hedge's gain is convex in the move while the
+    portfolio's loss is linear, so the ratio rises with crash depth. Neither
+    figure is comparable to the other without its scenario.
 
 **Step 5: Check carry cost.**
 Confirm the premium spend implied by the hedge notional is within the annual carry budget. If it exceeds the budget, reduce hedge notional or shift to deeper OTM strikes to reduce cost.
