@@ -16,7 +16,7 @@ pages hold the worked examples and the full interpretation tables.
 | Metric | Also called | Numerator over denominator | Headline band |
 | ------ | ----------- | -------------------------- | ------------- |
 | [Crash Convexity](crash-convexity.md) | Crisis payout; crisis hedge gain as % of portfolio | Hedge gain in the crash, over **portfolio value** | See [Crash Convexity](crash-convexity.md#interpretation-of-crash-convexity) |
-| [Crash Payoff Ratio](crash-payoff-ratio-tail-hedge-effectiveness.md) | Offset ratio; loss offset; tail hedge effectiveness | Hedge gain in the crash, over **portfolio equity loss in that same crash** | 20 to 35% offset at −25% |
+| [Crash Payoff Ratio](crash-payoff-ratio-tail-hedge-effectiveness.md) | Offset ratio; loss offset; tail hedge effectiveness | Hedge gain in the crash, over **portfolio equity loss in that same crash** | 25 to 40% offset at −25% |
 | [Payoff-vs-Premium Multiple](#payoff-vs-premium-multiple) | No settled synonym | Hedge value in the crash, over **hedge value today** | No general band |
 | [Hedge Efficiency Ratio](hedge-efficiency-ratio.md) | Carry-Convexity Ratio; convexity/carry ratio. **"Carry-to-Convexity" is a different quantity** — see below | Crash convexity (% of portfolio), over **annual carry (% of portfolio)** | Under 3 poor; 3 to 6 acceptable; above 6 attractive |
 | [Theta Carry](theta-carry-insurance-cost.md) | Annual carry; insurance cost. **"Annual carry budget" in a backtest is a different quantity** — see below | Annualised hedge time decay, over **portfolio value** | See [Annual Premium Budget Bands](../part-7/typical-hedge-program-targets.md#annual-premium-budget-bands) |

@@ -72,6 +72,9 @@ theme:
 
 plugins:
   - search
+  - git-revision-date-localized:
+      enable_creation_date: false
+      type: iso_datetime
 
 markdown_extensions:
   # attr_list supplies the explicit `{ #slug }` anchors on the References

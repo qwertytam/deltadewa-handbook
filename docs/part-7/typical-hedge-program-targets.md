@@ -6,12 +6,21 @@ Typical institutional allocations range between 1 to 3% annual carry. Very large
 
 ## Typical Institutional Targets
 
-Carry budget:        1 to 3% per year
-Crash convexity:     10 to 25% @ -25% SPX
-Offset ratio:        20 to 35%
-Vega exposure:       \$1k to \$3k per \$1M portfolio
-Skew exposure:       positive
-Roll interval:       9 to 12 months remaining
+| Target             | Typical range                   |
+| ------------------ | ------------------------------- |
+| Carry budget       | 1 to 3% per year                |
+| Crash convexity    | 10 to 25% @ −25% SPX            |
+| Crash payoff ratio | 25 to 40%                       |
+| Vega exposure      | \$1k to \$3k per \$1M portfolio |
+| Skew exposure      | positive                        |
+| Roll interval      | 9 to 12 months remaining        |
+
+The crash payoff ratio — the share of the portfolio's equity loss the hedge
+offsets, and the quantity PART VII elsewhere calls the *offset ratio* — is
+defined, worked through and banded in
+[Crash Payoff Ratio / Tail Hedge Effectiveness](../part-6/crash-payoff-ratio-tail-hedge-effectiveness.md#interpretation-of-crash-payoff-ratio).
+The band in the table above is that page's, and like every crash-scenario
+figure it is meaningful only against the scenario it is quoted for.
 
 ## Typical Tail Hedge Structure
 
