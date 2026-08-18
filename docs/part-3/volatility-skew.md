@@ -117,8 +117,65 @@ Example:
 Typical hedge dashboards display:
 
 ```text
-Skew percentile (Last 5 to 10 years): 22%
+Skew percentile (trailing 5 years): 22%
 Interpretation: protection cheap
 ```
 
-Most institutional dashboards measure skew using a 25$\Delta$ risk reversal (25$\Delta$ put IV minus 25$\Delta$ call IV) or the difference between the 25$\Delta$ put and ATM volatility.
+### The Lookback Window
+
+A percentile is meaningless without the window it is ranked against, and **no
+exchange, regulator or standard-setting body publishes one**. A trailing one
+year is the common default in vendor and retail analytics, but it is a market
+habit rather than a convention anyone has defined, and it is not specific to
+skew.
+
+This handbook uses a **trailing five years** throughout, by editorial
+convention and with no citation implied. Five years is long enough to contain
+at least one genuine stress episode — without which the upper half of the
+distribution is unpopulated and every reading looks expensive — while still
+short enough that the measure responds to the prevailing volatility regime
+rather than to conditions a decade gone.
+
+The choice is a trade-off, not a right answer, and a program is free to make a
+different one provided it states the window every time it quotes a percentile.
+Longer windows are available: Cboe publishes daily SKEW index history back to
+2 January 1990 [[Cboe SKEW Historical Data]](../footnotes/index.md#cboe-skew-historical),
+which supports full-history ranking for research purposes where a
+regime-responsive reading is not what is wanted.
+
+### Two Different Measures Called "Skew"
+
+Two quite different quantities are ranked into a percentile and both get called
+skew. They are not interchangeable, and a percentile computed from one should
+never be read against a band calibrated on the other.
+
+| | 25$\Delta$-based skew measure | Cboe SKEW index |
+| --- | --- | --- |
+| What it is | A volatility *spread*: 25$\Delta$ put IV minus 25$\Delta$ call IV (the 25$\Delta$ risk reversal), or 25$\Delta$ put IV minus ATM IV | A single published index level derived from the risk-neutral skewness of the 30-day SPX log-return distribution |
+| How it is built | Two points read off the volatility surface | The whole strip of out-of-the-money SPX options, by the same replication maths as VIX |
+| Who defines it | No one — computed in-house, with the tenor, the interpolation and even the delta convention varying between desks | Cboe, by published methodology |
+| Units | Volatility points | Index points, where 100 is a normal (zero-skew) distribution and higher means more negative tail skew |
+| Comparability | Not comparable between desks without knowing each one's conventions | Directly comparable, being one published series |
+
+Most institutional dashboards measure skew using a 25$\Delta$ risk reversal or
+the 25$\Delta$-put-minus-ATM difference, because those read directly off the
+surface a program actually trades against. The trade-off is that there is no
+standard behind them: two desks quoting "the 25-delta skew" for the same day
+can legitimately disagree, so a figure travels only with its conventions
+attached. The SKEW index has the opposite profile — one fixed methodology and
+one published series, at the cost of describing the whole 30-day distribution
+rather than the specific strikes a ladder occupies
+[[Cboe SKEW Methodology]](../footnotes/index.md#cboe-skew-methodology).
+
+!!! warning "The distinction may not survive"
+
+    The contrast above is drawn against SKEW as Cboe **currently** calculates
+    it. In May 2025 Cboe opened a public consultation proposing to replace the
+    moment-based methodology with a differential or ratio of 25-delta put and
+    call strikes; in July 2025 its Index Committee determined that
+    modifications are appropriate, without publishing a new formula or an
+    effective date. Should that change be adopted, SKEW would become a
+    25$\Delta$-based measure and the architectural difference described here
+    would narrow to a difference of convention only. Check Cboe's current
+    methodology before relying on the distinction
+    [[Cboe SKEW Methodology]](../footnotes/index.md#cboe-skew-methodology).
