@@ -1,0 +1,25 @@
+{#
+  Fills Material's `outdated` banner block, which the theme renders as an
+  empty, hidden container unless a custom_dir override supplies its content.
+
+  The banner is unhidden client-side when the copy being read is not the
+  default version: Material reads the current version from the last path
+  segment of the page's own URL, looks it up in /versions.json, and shows this
+  block unless that entry's version or one of its aliases matches
+  `extra.version.default`. So it appears on /<major.minor>/, never on /latest/,
+  and never at the site root — the root sets no `extra.version` at all, which
+  switches the whole mechanism off there.
+
+  This file lives on `main` and is copied into each tag's checkout by
+  deploy.yml. A tag cannot carry a banner that was invented after it was cut,
+  and the copies that most need the notice are the oldest ones.
+#}
+{% extends "base.html" %}
+
+{% block outdated %}
+  You are reading an archived version of this handbook. Figures and
+  recommendations may have been corrected since.
+  <a href="{{ '../' ~ base_url ~ '/' ~ page.url }}">
+    <strong>Go to the current version of this page.</strong>
+  </a>
+{% endblock %}
