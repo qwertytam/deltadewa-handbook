@@ -189,13 +189,39 @@ jobs:
       # written against, so it renders as it did then.
       - uses: ./.github/actions/build-site
 
-      # That action builds at the root site_url, which is wrong for a copy
-      # living under /<major.minor>/. The venv it created is reused, so the
-      # rebuild costs a build and not an install.
+      # The "you are reading an archived version" banner comes from `main`,
+      # not from the tag. A tag cannot carry a banner invented after it was
+      # cut, and the copies that most need the notice are the oldest ones —
+      # so this is the one piece of current content deliberately injected into
+      # an old build. It is chrome, not handbook content: the pages themselves
+      # remain exactly what the tag says they are.
+      - name: Fetch the banner override from main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          path: .main-overrides
+          sparse-checkout: overrides
+          sparse-checkout-cone-mode: false
+
+      - name: Install the override into the tag's checkout
+        run: |
+          set -euo pipefail
+          rm -rf overrides
+          cp -r .main-overrides/overrides overrides
+          rm -rf .main-overrides
+          test -f overrides/main.html
+
+      # The build action produced a copy at the root site_url, which is wrong
+      # for something living under /<major.minor>/. The venv it created is
+      # reused, so the rebuild costs a build and not an install.
       #
       # edit_uri points at `blob/`, not `edit/`: a tag is not a branch, so
       # GitHub's edit view would offer to fork it. Source-at-the-tag is the
       # honest target for a page that is no longer current.
+      #
+      # theme.custom_dir deep-merges into the tag's own theme block, so its
+      # name, palette and features are untouched. A tag that already set a
+      # custom_dir of its own would be overridden here — none does.
       - name: Rebuild at the version's own URL
         run: |
           set -euo pipefail
@@ -203,6 +229,8 @@ jobs:
           INHERIT: ./mkdocs.yml
           site_url: https://qwertytam.github.io/deltadewa-handbook/${{ matrix.version }}/
           edit_uri: blob/${{ matrix.tag }}/docs/
+          theme:
+            custom_dir: overrides
           extra:
             version:
               provider: mike

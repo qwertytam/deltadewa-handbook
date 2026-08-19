@@ -112,6 +112,66 @@ jobs:
             exit 1
           fi
 
+      # deploy.yml reads .github/versions.txt to decide what to publish, and
+      # everything it does with a line — checking the tag out, naming a
+      # directory after the version — happens on `main`, after the merge. A
+      # typo would therefore break the published site rather than the pull
+      # request that introduced it. Every other contract in this repository is
+      # asserted before merge; this one should be too.
+      - name: Validate the version list
+        if: '!cancelled()'
+        run: |
+          set -uo pipefail
+
+          failed=0
+
+          while read -r version tag retain; do
+            if [ "$retain" != "recency" ] && [ "$retain" != "cited" ]; then
+              echo "::error::$version: retain must be recency or cited, got '$retain'"
+              failed=1
+            fi
+
+            case "$version" in
+              *.*.*|*[!0-9.]*|.*|*.)
+                echo "::error::$version: version must be major.minor, and it"
+                echo "::error::names a published directory — /$version/"
+                failed=1
+                ;;
+            esac
+
+            # The tag has to exist, or the deploy fails at checkout with a much
+            # less obvious message.
+            if ! git rev-parse -q --verify "refs/tags/$tag^{commit}" >/dev/null; then
+              echo "::error::$version: tag '$tag' does not exist in this repository"
+              failed=1
+            fi
+
+            # 0.2 published from tag 0.1.4 would be silently wrong, and only a
+            # reader comparing two copies would ever notice.
+            case "$tag" in
+              "$version".*) ;;
+              *)
+                echo "::error::$version: tag '$tag' is not a patch of $version"
+                failed=1
+                ;;
+            esac
+          done < <(sed -e '/^[[:space:]]*#/d' -e '/^[[:space:]]*$/d' \
+                       .github/versions.txt)
+
+          # Two lines claiming the same directory: the later copy silently wins.
+          dupes=$(awk '!/^[[:space:]]*#/ && NF {print $1}' .github/versions.txt \
+                    | sort | uniq -d)
+          if [ -n "$dupes" ]; then
+            echo "::error::Duplicate version(s) in versions.txt: $dupes"
+            failed=1
+          fi
+
+          if [ "$failed" -ne 0 ]; then
+            exit 1
+          fi
+
+          echo "Version list is well formed, and every tag it names exists."
+
       # These two steps exist only to exercise the Pages packaging path on a
       # pull request. The artifact is produced and then discarded — nothing
       # here deploys. Without them, a Dependabot bump to configure-pages or

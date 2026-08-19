@@ -249,6 +249,12 @@ this one" half cannot be derived from tags at all — nothing here knows what
 versions and every version cited downstream, so a cited version is never
 retired because it fell off the end of five.
 
+`ci.yml` validates that file on every pull request — its format, that each tag
+it names exists, that a tag matches the version it is published as, and that no
+two lines claim the same directory. Everything `deploy.yml` does with a line
+happens on `main` after the merge, so without that check a typo would break the
+published site rather than the pull request that introduced it.
+
 #### Why /latest/ exists
 
 Material's version selector cannot run at the root of a *project* Pages site.
@@ -265,6 +271,28 @@ indexing 110 pages twice. `robots.txt` would not work here for the same reason
 repository does not own. mike is not installed and is not needed — Material
 consults it only if it is present, and a hand-written `versions.json` drives
 the selector on its own.
+
+#### The archived-version banner
+
+A copy under `/<major.minor>/` shows a warning banner saying it is not current.
+Material decides that client-side: it reads the current version from the last
+path segment of the page's own URL, looks it up in `versions.json`, and shows
+the banner unless that entry matches `extra.version.default`. So it appears on
+a version directory, never on `/latest/`, and never at the root — which sets no
+`extra.version` at all and so has the mechanism switched off entirely.
+
+The theme renders that banner as an empty hidden container until a `custom_dir`
+override supplies its content, which is what `overrides/main.html` is for. The
+file lives on `main` and `deploy.yml` copies it into each tag's checkout, so
+older versions get the banner too — a tag cut before the banner existed cannot
+carry one, and those are precisely the copies that most need it. It is the only
+current content injected into an old build, and it is chrome: the pages
+themselves stay exactly what the tag says they are.
+
+The banner links to the same page under the root rather than to the root home
+page. When a page has since been renamed or removed that lands on the 404, which
+is the trade for landing every other reader on the page they were actually
+reading.
 
 #### When an old tag stops building
 
