@@ -1,0 +1,30 @@
+# Versions published alongside the site root.
+#
+# The root of the published site is always the current `main`, and no URL under
+# it ever moves. This file lists the *additional* copies published under
+# /<major.minor>/, each built from its own tag with that tag's own toolchain —
+# its own poetry.lock, its own mkdocs.yml, its own build-site action. An old
+# version therefore renders the way it did when it was written, not the way
+# today's Material would render it.
+#
+# The list is checked in rather than derived from `git tag` for two reasons.
+# A tag is not automatically a published version — see the release bar in
+# README.md — and the "cited" half below cannot be derived from tags at all:
+# nothing in this repository knows which version another repository points at.
+#
+# Retention is the union of two rules, not the first one that matches:
+#
+#   recency  one of the last five minor versions. Retired by age: when a sixth
+#            minor is tagged, the oldest `recency` line is removed.
+#   cited    a downstream repository links at this version explicitly. Never
+#            retired on age. Remove the citation over there first, then this
+#            line — the same order the anchor contract uses.
+#
+# A `recency` version that stops building is dropped from that deploy and the
+# run goes red; a `cited` version that stops building fails the deploy outright,
+# because publishing without it breaks a link someone else depends on.
+#
+# Format: <major.minor>  <tag>  <recency|cited>
+#         blank lines and `#` comments are ignored.
+
+0.1  0.1.0  recency

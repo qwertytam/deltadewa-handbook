@@ -76,6 +76,14 @@ jobs:
       # It reads the built HTML rather than the Markdown source, so it also
       # catches an explicit anchor that was removed and left to fall back to a
       # generated slug.
+      #
+      # Two things keep this honest now that deploy.yml also publishes copies
+      # under /<major.minor>/, and both must stay true. This job builds `main`
+      # alone and never assembles those copies, and each line resolves to
+      # site/<root-relative path>/index.html — so a copy at site/0.1/… is not
+      # on any path this looks at and can never satisfy an assertion the root
+      # build failed. Do not rewrite the lookup as a recursive grep over site/,
+      # and do not move this step into deploy.yml downstream of the assembly.
       - name: Assert cross-repo anchors
         run: |
           set -uo pipefail

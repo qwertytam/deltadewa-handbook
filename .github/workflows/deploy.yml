@@ -8,11 +8,10 @@ on:
 
 # Least privilege: the Pages deployment is uploaded as an artifact and
 # published over OIDC, so the workflow never needs write access to the
-# repository contents (the previous `mkdocs gh-deploy` flow did).
+# repository contents (the previous `mkdocs gh-deploy` flow did). Only the
+# `deploy` job widens this, and only to what deploy-pages requires.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 # Let an in-flight deploy finish rather than being cancelled, but collapse
 # queued runs so rapid merges do not race each other onto Pages.
@@ -20,8 +19,81 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+# What this publishes:
+#
+#   /                 current main — every existing URL, unmoved
+#   /latest/          a second copy of main, carrying the version selector
+#   /<major.minor>/   one copy per line of .github/versions.txt, each built
+#                     from its own tag with that tag's own toolchain
+#   /versions.json    the list the selector reads
+#
+# The root copy is deliberately identical in URL shape to what was published
+# before versioning existed. Downstream citations and every anchor in
+# .github/cross-repo-anchors.txt resolve against root paths, so nothing there
+# may move.
+#
+# /latest/ exists because Material's version selector cannot work at the root
+# of a project Pages site. The selector fetches `../versions.json` relative to
+# the site base and identifies the current version from the last path segment
+# of that base. From /deltadewa-handbook/ that resolves to
+# https://qwertytam.github.io/versions.json — the user Pages root, a different
+# repository. It 404s and the selector silently renders nothing. From
+# /deltadewa-handbook/latest/ it resolves correctly. So the root keeps no
+# selector and /latest/ is the copy that has one.
 jobs:
-  build:
+  versions:
+    name: Read the version list
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.read.outputs.matrix }}
+      any: ${{ steps.read.outputs.any }}
+    steps:
+      - uses: actions/checkout@v7
+
+      # Parsed with awk rather than a YAML library so the job needs nothing
+      # installed. The file is the same shape as cross-repo-anchors.txt.
+      - name: Parse .github/versions.txt
+        id: read
+        run: |
+          set -euo pipefail
+
+          if [ ! -f .github/versions.txt ]; then
+            echo "::error::.github/versions.txt is missing."
+            exit 1
+          fi
+
+          # Reject a malformed line loudly rather than publishing a version
+          # directory named after a typo.
+          awk '!/^[[:space:]]*#/ && NF {
+                 if (NF != 3) {
+                   printf "::error::versions.txt line %d: expected 3 fields, got %d\n", NR, NF
+                   bad = 1
+                 } else if ($3 != "recency" && $3 != "cited") {
+                   printf "::error::versions.txt line %d: retain must be recency or cited, got %s\n", NR, $3
+                   bad = 1
+                 }
+               }
+               END { exit bad }' .github/versions.txt
+
+          include=$(awk '!/^[[:space:]]*#/ && NF {
+                           printf "%s{\"version\":\"%s\",\"tag\":\"%s\",\"retain\":\"%s\"}", sep, $1, $2, $3
+                           sep = ","
+                         }' .github/versions.txt)
+
+          if [ -z "$include" ]; then
+            echo "any=false" >> "$GITHUB_OUTPUT"
+            echo "matrix={\"include\":[]}" >> "$GITHUB_OUTPUT"
+            echo "No versions listed — publishing the root and /latest/ only."
+          else
+            echo "any=true" >> "$GITHUB_OUTPUT"
+            echo "matrix={\"include\":[$include]}" >> "$GITHUB_OUTPUT"
+          fi
+
+          awk '!/^[[:space:]]*#/ && NF {print "  " $1 "  <- tag " $2 "  (" $3 ")"}' \
+            .github/versions.txt
+
+  build-root:
+    name: Build main
     runs-on: ubuntu-latest
     steps:
       # fetch-depth: 0 — full history, not just the tip commit. The
@@ -34,20 +106,219 @@ jobs:
           fetch-depth: 0
 
       # Shared with ci.yml, so the build that gets published is the same one
-      # every pull request was checked against.
+      # every pull request was checked against. This produces the root copy,
+      # at the root site_url, with no version selector.
       - uses: ./.github/actions/build-site
+
+      # The same content again at /latest/, which is where the selector works.
+      # The overlay adds `extra.version` and changes nothing else — in
+      # particular it does *not* override site_url, so every canonical link in
+      # this copy points at the equivalent page under the root.
+      #
+      # That is deliberate. /latest/ is a byte-for-byte duplicate of the root,
+      # published only so the selector has somewhere to run, and two indexable
+      # copies of the same 110 pages is a search-engine problem. Pointing the
+      # duplicate's canonical at the original is the standard remedy. robots.txt
+      # is not an option: a project Pages site is served under a path, so
+      # crawlers read https://qwertytam.github.io/robots.txt, which belongs to
+      # the user Pages repository rather than to this one.
+      #
+      # The selector is unaffected by the canonical because it does not read
+      # site_url. Material resolves its config base against the document's own
+      # location (`Ct.base = new URL(Ct.base, we())` in the bundle) and takes
+      # the current version from the last path segment of that, so a page served
+      # from /deltadewa-handbook/latest/ identifies as "latest" whatever
+      # site_url says.
+      - name: Build the /latest/ copy
+        run: |
+          set -euo pipefail
+          cat > mkdocs.latest.yml <<'YAML'
+          INHERIT: ./mkdocs.yml
+          extra:
+            version:
+              provider: mike
+              default: latest
+          YAML
+          poetry run mkdocs build --strict -f mkdocs.latest.yml -d latest-site
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: site-root
+          path: site
+          retention-days: 1
+          if-no-files-found: error
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: site-latest
+          path: latest-site
+          retention-days: 1
+          if-no-files-found: error
+
+  build-version:
+    name: Build ${{ matrix.version }}
+    needs: versions
+    if: needs.versions.outputs.any == 'true'
+    runs-on: ubuntu-latest
+    # A version that no longer builds must not stop today's content from
+    # publishing. The artifact simply does not arrive, `assemble` notices, and
+    # what happens next depends on why the version is retained — see there.
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.versions.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ matrix.tag }}
+          fetch-depth: 0
+
+      # Tags predating the shared composite action cannot be built this way.
+      # Say so plainly instead of failing three steps later on a missing path.
+      - name: Check the tag carries a build action
+        run: |
+          if [ ! -f .github/actions/build-site/action.yml ]; then
+            echo "::error::Tag ${{ matrix.tag }} has no .github/actions/build-site."
+            echo "It predates the shared build action and cannot be republished."
+            exit 1
+          fi
+
+      # The tag's *own* action: its Python pin, its poetry.lock, its Material
+      # version. This is the entire reason each version is a separate job
+      # rather than a loop — an old version builds with the toolchain it was
+      # written against, so it renders as it did then.
+      - uses: ./.github/actions/build-site
+
+      # That action builds at the root site_url, which is wrong for a copy
+      # living under /<major.minor>/. The venv it created is reused, so the
+      # rebuild costs a build and not an install.
+      #
+      # edit_uri points at `blob/`, not `edit/`: a tag is not a branch, so
+      # GitHub's edit view would offer to fork it. Source-at-the-tag is the
+      # honest target for a page that is no longer current.
+      - name: Rebuild at the version's own URL
+        run: |
+          set -euo pipefail
+          cat > mkdocs.version.yml <<YAML
+          INHERIT: ./mkdocs.yml
+          site_url: https://qwertytam.github.io/deltadewa-handbook/${{ matrix.version }}/
+          edit_uri: blob/${{ matrix.tag }}/docs/
+          extra:
+            version:
+              provider: mike
+              default: latest
+          YAML
+          poetry run mkdocs build --strict -f mkdocs.version.yml -d version-site
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: site-${{ matrix.version }}
+          path: version-site
+          retention-days: 1
+          if-no-files-found: error
+
+  assemble:
+    name: Assemble the Pages artifact
+    needs: [versions, build-root, build-version]
+    # always(), because build-version is allowed to fail and this job decides
+    # what that means. The root build is not allowed to fail: if it did, there
+    # is nothing worth publishing and the deploy must not run.
+    if: always() && needs.build-root.result == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    outputs:
+      dropped: ${{ steps.compose.outputs.dropped }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/download-artifact@v8
+        with:
+          path: artifacts
+          pattern: site-*
+
+      - name: Compose the site
+        id: compose
+        run: |
+          set -euo pipefail
+
+          mkdir -p public
+          cp -r artifacts/site-root/. public/
+          mkdir -p public/latest
+          cp -r artifacts/site-latest/. public/latest/
+
+          # versions.json is what Material's selector fetches. "latest" leads
+          # the list so that a copy whose path segment matches no entry falls
+          # back to it — the selector uses the first entry as its fallback.
+          entries='{"version":"latest","title":"latest","aliases":[]}'
+          dropped=""
+          missing_cited=0
+
+          while read -r version tag retain; do
+            src="artifacts/site-$version"
+
+            if [ -d "$src" ]; then
+              mkdir -p "public/$version"
+              cp -r "$src/." "public/$version/"
+              entries="$entries,{\"version\":\"$version\",\"title\":\"$version\",\"aliases\":[]}"
+              echo "ok      $version (tag $tag)"
+              continue
+            fi
+
+            if [ "$retain" = "cited" ]; then
+              echo "::error::Version $version (tag $tag) failed to build, and it is"
+              echo "::error::retained because another repository cites it. Publishing"
+              echo "::error::without it would break that citation."
+              missing_cited=1
+            else
+              echo "::error::Version $version (tag $tag) failed to build and has been"
+              echo "::error::dropped from this deploy. Its URLs will 404 until the tag"
+              echo "::error::builds again or its line is removed from versions.txt."
+              dropped="$dropped $version"
+            fi
+          done < <(sed -e '/^[[:space:]]*#/d' -e '/^[[:space:]]*$/d' .github/versions.txt)
+
+          if [ "$missing_cited" -ne 0 ]; then
+            exit 1
+          fi
+
+          printf '[%s]\n' "$entries" > public/versions.json
+          cat public/versions.json
+
+          echo "dropped=${dropped# }" >> "$GITHUB_OUTPUT"
 
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:
-          path: site
+          path: public
 
   deploy:
-    needs: build
+    needs: assemble
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
         uses: actions/deploy-pages@v5
+
+  # Turns the run red for a dropped version, but only after the deploy has
+  # happened. Withholding current content because a two-year-old copy no
+  # longer builds would be the wrong trade; leaving the failure invisible
+  # would be worse.
+  report:
+    name: Report dropped versions
+    needs: [assemble, deploy]
+    if: always() && needs.assemble.outputs.dropped != ''
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail on dropped versions
+        run: |
+          echo "::error::Dropped from this deploy: ${{ needs.assemble.outputs.dropped }}"
+          echo "The site is published and current. Either repair the tag's build or"
+          echo "remove its line from .github/versions.txt."
+          exit 1

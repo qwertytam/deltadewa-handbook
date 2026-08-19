@@ -208,6 +208,89 @@ packages the Pages artifact, so a dependency bump to `configure-pages` or
 Only `actions/deploy-pages` itself is untestable outside a real deployment,
 since running it *is* the deployment.
 
+### Versioned copies
+
+The root of the site is always the current `main`, and no URL under it moves.
+Versioned copies are published *alongside* it:
+
+```text
+/                 current main — every existing URL, unchanged
+/latest/          a second copy of main, carrying the version selector
+/<major.minor>/   one copy per line of .github/versions.txt
+/versions.json    the list the selector reads
+```
+
+Each versioned copy is built from its own tag with **that tag's own toolchain**
+— its `poetry.lock`, its `mkdocs.yml`, its `build-site` action — so an old
+version renders the way it did when it was written rather than the way today's
+Material would render it. That is the reason each version is a separate CI job
+rather than a loop, and it is why a tag predating the shared build action cannot
+be republished at all.
+
+`mkdocs build` has no `--site-url` flag, so a copy's URL is changed through
+MkDocs config inheritance: the workflow writes a small overlay next to the tag's
+own config, and the overlay's `INHERIT` pulls the rest in.
+
+```yaml
+INHERIT: ./mkdocs.yml
+site_url: https://qwertytam.github.io/deltadewa-handbook/0.1/
+edit_uri: blob/0.1.0/docs/
+```
+
+`edit_uri` points at `blob/`, not `edit/`: a tag is not a branch, so GitHub's
+edit view would offer to fork it. Source-at-the-tag is the honest target for a
+page that is no longer current.
+
+Which versions are published is a checked-in list,
+[`.github/versions.txt`](.github/versions.txt), not `git tag` arithmetic. A tag
+is not automatically a published version, and the "another repository cites
+this one" half cannot be derived from tags at all — nothing here knows what
+`deltadewa` points at. The published set is the union of the last five minor
+versions and every version cited downstream, so a cited version is never
+retired because it fell off the end of five.
+
+#### Why /latest/ exists
+
+Material's version selector cannot run at the root of a *project* Pages site.
+It fetches `../versions.json` relative to the page's own location and takes the
+current version from the last path segment, so from `/deltadewa-handbook/` it
+asks for `https://qwertytam.github.io/versions.json` — the user Pages root,
+a different repository. It 404s and the selector silently renders nothing.
+
+The root therefore has no selector, and `/latest/` is the copy that does. Its
+`site_url` is left at the root, so every canonical link in it points at the
+equivalent root page and search engines consolidate the duplicate rather than
+indexing 110 pages twice. `robots.txt` would not work here for the same reason
+`versions.json` does not: crawlers read it from the domain root, which this
+repository does not own. mike is not installed and is not needed — Material
+consults it only if it is present, and a hand-written `versions.json` drives
+the selector on its own.
+
+#### When an old tag stops building
+
+Pages deploys a whole artifact, so anything missing from the artifact vanishes
+from the site. There is no "leave last time's copy in place", which makes the
+failure behaviour a decision rather than an accident:
+
+- **`main` fails to build** — the deploy fails and nothing publishes.
+- **A version retained for recency fails** — it is dropped from that deploy,
+  its URLs 404, and the run goes **red after the deploy has happened**. Current
+  content still publishes; withholding it because a two-year-old copy no longer
+  builds would be the wrong trade, and leaving the failure invisible would be
+  worse. Repair the tag's build or remove its line.
+- **A version retained because it is cited fails** — the deploy fails outright.
+  Publishing without it breaks a link another repository depends on, which is
+  the failure the anchor contract exists to prevent.
+
+The usual causes are a yanked wheel making an old `poetry.lock` unresolvable,
+`setup-python` dropping an old patch release, and runner image changes. None is
+fixed by re-running, which is why the tolerant path has to exist.
+
+The `Assert cross-repo anchors` check is unaffected by any of this. It runs in
+`ci.yml`, which builds `main` alone, and it resolves each line against
+`site/<root-relative path>`, so a copy under `site/0.1/` is not on a path it
+inspects and can never make a failing assertion pass.
+
 ## Repository settings
 
 These live in GitHub rather than in the repository, and are recorded here so
