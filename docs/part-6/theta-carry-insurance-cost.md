@@ -19,7 +19,7 @@ $\Theta = -\frac{\partial V}{\partial t}$
 
 Theta carry is usually expressed relative to portfolio size:
 
-$\text{Theta Carry} = \frac{-\Theta \times 252}{\text{Portfolio Value}}$
+$\text{Theta Carry} = \frac{-\Theta \times 365}{\text{Portfolio Value}}$
 
 *Example:*
 
@@ -32,18 +32,23 @@ $10M
 Hedge theta:
 
 ```text
--$2,500 per day
+-$550 per day
 ```
 
 Annualized cost:
 
 ```text
--$2,500 × 252 ≈ -$630k → 6.3% of portfolio
+-$550 × 365 ≈ -$201k → 2.0% of portfolio
 ```
 
-!!! note
+The 365 multiplier is the calendar-day convention this handbook uses
+throughout; see [Theta Day Convention](../part-2/theta.md#theta-day-convention)
+for why, and check the basis of any theta you take off a platform before
+annualizing it here.
 
-    See [Theta Day Convention](../part-2/theta.md#theta-day-convention)
+At 2.0% of portfolio value this example sits inside the institutional carry
+band; the bands themselves are owned by
+[Annual Premium Budget Bands](../part-7/typical-hedge-program-targets.md#annual-premium-budget-bands).
 
 ## Portfolio Interpretation
 
