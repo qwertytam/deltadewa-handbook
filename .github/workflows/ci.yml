@@ -63,6 +63,42 @@ jobs:
       # merge a broken cross-reference, missing anchor or orphaned page.
       - uses: ./.github/actions/build-site
 
+      # --strict validates cross-references *within* this handbook, so an
+      # inbound link from another repository is invisible to it: renaming a
+      # heading here breaks a citation there and nothing in either repository
+      # fails. .github/cross-repo-anchors.txt enumerates the anchors other
+      # repos cite; this step asserts each one still exists in the built site.
+      # It reads the built HTML rather than the Markdown source, so it also
+      # catches an explicit anchor that was removed and left to fall back to a
+      # generated slug.
+      - name: Assert cross-repo anchors
+        run: |
+          set -uo pipefail
+
+          failed=0
+          while IFS= read -r entry; do
+            page="site/${entry%%#*}index.html"
+            frag="${entry#*#}"
+
+            if [ ! -f "$page" ]; then
+              echo "::error::$entry - page not built ($page is missing)"
+              failed=1
+            elif ! grep -qF "id=\"$frag\"" "$page"; then
+              echo "::error::$entry - page builds, but nothing has id=\"$frag\""
+              failed=1
+            else
+              echo "ok  $entry"
+            fi
+          done < <(sed -e '/^[[:space:]]*#/d' -e '/^[[:space:]]*$/d' \
+                       .github/cross-repo-anchors.txt)
+
+          if [ "$failed" -ne 0 ]; then
+            echo "::error::A heading cited from another repository lost its anchor."
+            echo "Restore the { #slug }, or change the citing repository in the"
+            echo "same breath and update .github/cross-repo-anchors.txt."
+            exit 1
+          fi
+
       # These two steps exist only to exercise the Pages packaging path on a
       # pull request. The artifact is produced and then discarded — nothing
       # here deploys. Without them, a Dependabot bump to configure-pages or

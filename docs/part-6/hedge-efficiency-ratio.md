@@ -11,7 +11,7 @@ It does not introduce new information beyond:
 - Crash Convexity
 - Theta Carry
 
-## HER Metric
+## HER Metric { #her-metric }
 
 In dollar terms, the numerator is the hedge's gain in the crash and the denominator its annual cost to hold:
 
@@ -29,9 +29,8 @@ $\text{Hedge Efficiency} = \frac{\text{Crash convexity \%}}{\text{Annual carry \
     the same crash. Substituting one for the other changes the result and
     invalidates the bands below.
 
-<a id="hedge-efficiency-dollar-worked-example"></a>
-
 *Example:*
+{ #hedge-efficiency-dollar-worked-example }
 
 For:
 
@@ -46,7 +45,7 @@ Result:
 Efficiency = 1.5M / 300k = 5x payoff relative to cost
 ```
 
-## Mathematical Definition of the Ratio
+## Mathematical Definition of the Ratio { #mathematical-definition-of-the-ratio }
 
 The same ratio, written in the convexity-and-carry terms used by the PART X dashboard:
 
@@ -54,15 +53,14 @@ $\text{Carry-Convexity Ratio} = \frac{\text{Convexity}}{\text{Carry}}$
 
 Crash convexity is the crash payoff expressed as a percentage of portfolio value, so this is the percentage form of the formula above under its other name.
 
-<a id="convexity-carry-worked-example"></a>
-
 If crash convexity at −25% SPX is 22% and annual carry is 3%, then the ratio is:
+{ #convexity-carry-worked-example }
 
 ```text
 22% / 3% = 7.3
 ```
 
-## Interpretation of the Ratio
+## Interpretation of the Ratio { #interpretation-of-the-ratio }
 
 | Ratio  | Meaning    |
 | ------ | ---------- |

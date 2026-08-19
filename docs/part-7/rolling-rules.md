@@ -8,7 +8,7 @@ Most programs roll on **time or moneyness triggers**. Hedge programs rarely hold
 
 Most institutional programs use time-based rolling as the primary rule.
 
-## Rule 1 — Time-Based Roll
+## Rule 1 — Time-Based Roll { #rule-1-time-based-roll }
 
 Rolling early preserves **convexity per dollar of cost**.
 
@@ -43,7 +43,7 @@ Note on the gamma-theta trade-off: the standard time-based roll rule is designed
     confirm its own trigger measures time-to-maturity, not time held, before
     relying on it.
 
-## Rule 2 — Market Rally Rebalance Trigger
+## Rule 2 — Market Rally Rebalance Trigger { #rule-2-market-rally-rebalance-trigger }
 
 See [Hedge Rebalance Triggers](../part-10/tier-3-structural-and-operational-metrics.md#11-hedge-rebalance-triggers) in Part X for how this trigger integrates with the dashboard monitoring framework.
 

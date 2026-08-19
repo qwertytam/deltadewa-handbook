@@ -63,7 +63,7 @@ rolling positions
 scaling hedge size
 ```
 
-## 13. Delta Drift
+## 13. Delta Drift { #13-delta-drift }
 
 ### Delta Drift Definition
 
@@ -72,7 +72,7 @@ Delta drift measures how quickly the hedge’s delta becomes more negative as ma
 It answers:
 > How quickly does the hedge begin offsetting losses?
 
-### Delta Drift Metric
+### Delta Drift Metric { #delta-drift-metric }
 
 Compute the change in hedge delta across small price moves.
 

@@ -153,7 +153,7 @@ $$V_{crash}^{floor} = \sum_i \max\big(K_i - S_{crash},\,0\big)\cdot q_i \cdot c_
 It is a labelled secondary figure and must never be the headline. The worked
 example below shows why: it reads 2.5× where the repriced value reads 17.5×.
 
-## Worked example
+## Worked example { #worked-example }
 
 A \$20M book hedged with a three-rung ladder at 20/30/40% out of the money,
 18-month tenor, 23/26/16 contracts, European puts. Spot 6600, today-volatility
