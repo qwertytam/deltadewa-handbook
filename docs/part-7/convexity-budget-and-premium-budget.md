@@ -19,11 +19,26 @@ Note on cash management: premium is typically paid in advance when options are p
 
 The convexity target defines the expected hedge payoff under a defined crash scenario.
 
-Example targets:
+A convexity target is a schedule of required payoffs across several crash
+depths, which is what a program sizes against. That is not the same object as
+the crash-convexity band in
+[Typical Hedge Program Targets](typical-hedge-program-targets.md#typical-institutional-targets),
+which is a single figure at a single depth — 10 to 20% at −25% SPX. The two are
+the same metric, [Crash Convexity](../part-6/crash-convexity.md), read at
+different scenarios, so a schedule cannot be checked against the band row by
+row. Only its −25% row is comparable, and none of the illustrative rows below
+is quoted there:
 
 - +3% portfolio return during a −15% equity drawdown
 - +5% portfolio return during a −20% equity drawdown
 - +10% portfolio return during a −30% equity drawdown
+
+These are floors rather than expected payoffs, and they are deliberately modest.
+Because hedge payoff is convex in the size of the move, the gap between a floor
+and what a book actually returns widens with depth: the
+[convexity profile](../part-6/crash-convexity.md#convexity-profile) illustrates
+one book delivering 5.0% at −20% and 21.0% at −30%. Set the schedule against
+your own repriced book at each depth, not against a band quoted at another one.
 
 ## Implementation
 
