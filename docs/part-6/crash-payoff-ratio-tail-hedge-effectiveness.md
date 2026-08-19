@@ -30,16 +30,16 @@ Example:
 Portfolio      = $10M
 Scenario       = SPX −25%
 Portfolio loss = −$2.5M
-Hedge profit   = +$800k
+Hedge profit   = +$1.5M
 ```
 
 Result:
 
 ```text
-Crash Payoff Ratio = 800k / 2.5M = 32%
+Crash Payoff Ratio = 1.5M / 2.5M = 60%
 ```
 
-*Interpretation:* 32% of the equity drawdown is offset by the hedge at a −25% SPX decline
+*Interpretation:* 60% of the equity drawdown is offset by the hedge at a −25% SPX decline
 
 ## Interpretation of Crash Payoff Ratio
 
@@ -47,14 +47,20 @@ Typical ranges:
 
 | Ratio     | Meaning                   |
 | --------- | ------------------------- |
-| < 10%     | hedge largely ineffective |
-| 10 to 25% | partial protection        |
-| 25 to 40% | strong tail hedge         |
-| > 40%     | very aggressive hedge     |
+| < 20%     | hedge largely ineffective |
+| 20 to 40% | partial protection        |
+| 40 to 80% | strong tail hedge         |
+| > 80%     | very aggressive hedge     |
 
 Most long-equity hedge programs aim for the **strong tail hedge** band above — a
-25 to 40% loss offset at a −25% market decline. That offset provides the
+40 to 80% loss offset at a −25% market decline. That offset provides the
 liquidity to rebalance portfolios during a crisis.
+
+Read against [Crash Convexity](crash-convexity.md), that band is the same
+statement in the other denominator: at −25% SPX the equity loss is a quarter of
+portfolio value, so a 40 to 80% offset is a 10 to 20% crash convexity. Both are
+owned by
+[Typical Hedge Program Targets](../part-7/typical-hedge-program-targets.md#typical-institutional-targets).
 
 ## Important Caveat
 

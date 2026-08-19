@@ -9,14 +9,14 @@ Typical institutional allocations range between 1 to 3% annual carry. Very large
 | Target             | Typical range                   |
 | ------------------ | ------------------------------- |
 | Carry budget       | 1 to 3% per year                |
-| Crash convexity    | 10 to 25% @ −25% SPX            |
-| Crash payoff ratio | 25 to 40%                       |
+| Crash convexity    | 10 to 20% @ −25% SPX            |
+| Crash payoff ratio | 40 to 80% @ −25% SPX            |
 | Vega exposure      | \$1k to \$3k per \$1M portfolio |
 | Skew exposure      | positive                        |
 | Roll interval      | 9 to 12 months remaining        |
 
 Crash convexity — the hedge's crash gain as a share of portfolio value — is
-banded here, and the scenario is part of the band: **10 to 25% at −25% SPX**.
+banded here, and the scenario is part of the band: **10 to 20% at −25% SPX**.
 A convexity figure quoted at any other crash depth is a different number and
 cannot be read against this range, because a hedge's gain is convex in the size
 of the move while the portfolio's value is not. The metric itself is defined,
@@ -29,6 +29,14 @@ defined, worked through and banded in
 [Crash Payoff Ratio / Tail Hedge Effectiveness](../part-6/crash-payoff-ratio-tail-hedge-effectiveness.md#interpretation-of-crash-payoff-ratio).
 The band in the table above is that page's, and like every crash-scenario
 figure it is meaningful only against the scenario it is quoted for.
+
+The two crash bands above are one statement written twice, not two independent
+targets. At −25% SPX the portfolio's equity loss is 25% of its value, so the
+crash payoff ratio is crash convexity multiplied by four: 10% convexity is a
+40% offset, 20% convexity an 80% offset. A program that satisfies one band
+satisfies the other automatically, and a book that satisfies only one has had
+its two figures measured against different scenarios. Check the scenario before
+concluding the bands disagree.
 
 ## Typical Tail Hedge Structure
 

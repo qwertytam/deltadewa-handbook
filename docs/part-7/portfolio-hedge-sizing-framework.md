@@ -100,13 +100,16 @@ requires. Both sides of the division are now denominated in dollars of hedge.
 
     Expressed as a
     [Crash Payoff Ratio](../part-6/crash-payoff-ratio-tail-hedge-effectiveness.md),
-    this hedge returns \$1.5M against \$3.5M of equity loss — a 43% offset,
-    above the 25 to 40% band in
-    [Typical Hedge Program Targets](typical-hedge-program-targets.md#typical-institutional-targets).
-    That is expected rather than contradictory: the band is quoted at −25% SPX
-    and this example at −35%. The hedge's gain is convex in the move while the
-    portfolio's loss is linear, so the ratio rises with crash depth. Neither
-    figure is comparable to the other without its scenario.
+    this hedge returns \$1.5M against \$3.5M of equity loss — a 43% offset.
+    The 40 to 80% band in
+    [Typical Hedge Program Targets](typical-hedge-program-targets.md#typical-institutional-targets)
+    is quoted at −25% SPX and this example at −35%, so the two are not
+    comparable and 43% landing inside that numeric range is a coincidence
+    rather than a pass. The hedge's gain is convex in the move while the
+    portfolio's loss is linear, so the ratio rises with crash depth: the same
+    book read at −25% gives a different figure, and that is the one to check
+    against the band. A crash payoff ratio quoted without its scenario cannot
+    be read against any band at all.
 
 **Step 5: Check carry cost.**
 Confirm the premium spend implied by the hedge notional is within the annual carry budget. If it exceeds the budget, reduce hedge notional or shift to deeper OTM strikes to reduce cost.

@@ -15,8 +15,8 @@ pages hold the worked examples and the full interpretation tables.
 
 | Metric | Also called | Numerator over denominator | Headline band |
 | ------ | ----------- | -------------------------- | ------------- |
-| [Crash Convexity](crash-convexity.md) | Crisis payout; crisis hedge gain as % of portfolio | Hedge gain in the crash, over **portfolio value** | [10 to 25% @ −25% SPX](../part-7/typical-hedge-program-targets.md#typical-institutional-targets) |
-| [Crash Payoff Ratio](crash-payoff-ratio-tail-hedge-effectiveness.md) | Offset ratio; loss offset; tail hedge effectiveness | Hedge gain in the crash, over **portfolio equity loss in that same crash** | 25 to 40% offset at −25% |
+| [Crash Convexity](crash-convexity.md) | Crisis payout; crisis hedge gain as % of portfolio | Hedge gain in the crash, over **portfolio value** | [10 to 20% @ −25% SPX](../part-7/typical-hedge-program-targets.md#typical-institutional-targets) |
+| [Crash Payoff Ratio](crash-payoff-ratio-tail-hedge-effectiveness.md) | Offset ratio; loss offset; tail hedge effectiveness | Hedge gain in the crash, over **portfolio equity loss in that same crash** | 40 to 80% offset at −25% |
 | [Crash Payoff per Unit of Notional](#crash-payoff-per-unit-of-notional) | Per-notional payoff rate; payoff per dollar of notional | Hedge gain in the crash, over **hedge notional** | No general band |
 | [Payoff-vs-Premium Multiple](#payoff-vs-premium-multiple) | No settled synonym | Hedge value in the crash, over **hedge value today** | No general band |
 | [Hedge Efficiency Ratio](hedge-efficiency-ratio.md) | Carry-Convexity Ratio; convexity/carry ratio. **"Carry-to-Convexity" is a different quantity** — see below | Crash convexity (% of portfolio), over **annual carry (% of portfolio)** | Under 3 poor; 3 to 6 acceptable; above 6 attractive |
@@ -38,7 +38,7 @@ carrying the same denominator — which is what makes it, not the crash payoff
 ratio, the right numerator for hedge efficiency.
 
 The headline band above is a program target and carries its scenario with it —
-10 to 25% at −25% SPX, owned by
+10 to 20% at −25% SPX, owned by
 [Typical Hedge Program Targets](../part-7/typical-hedge-program-targets.md#typical-institutional-targets).
 The wider gradient on the metric page, where 15 to 30% reads as a strong tail
 hedge, answers a different question: what a convexity figure *means*, rather

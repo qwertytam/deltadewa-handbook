@@ -84,7 +84,7 @@ below.
 Most institutional programs target:
 
 ```text
-10 to 25% crash convexity at −25% SPX
+10 to 20% crash convexity at −25% SPX
 ```
 
 That band and the scenario it is quoted against are owned by
