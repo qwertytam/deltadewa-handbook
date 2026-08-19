@@ -27,4 +27,10 @@
 # Format: <major.minor>  <tag>  <recency|cited>
 #         blank lines and `#` comments are ignored.
 
-0.1  0.1.0  recency
+# Cited by qwertytam/deltadewa, which pins the citations that underwrite one of
+# its figures or definitions rather than letting them track this site's root:
+# the A4 worked example its crash-repricing goldens are reconciled against, the
+# hedge-efficiency band its IPS config transcribes, the delta-drift shock its
+# constant hardcodes, and the rolling rules its roll planner is derived from.
+# Its explanatory links still track the root, deliberately.
+0.1  0.1.0  cited
