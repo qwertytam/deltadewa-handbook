@@ -136,6 +136,15 @@ Do not re-litigate these; change only on explicit instruction.
        `tests/test_analysis/test_hedge_efficiency.py` asserts the page's
        worked example (`22 / 3 = 7.3333`). Changing the band or the worked
        example breaks that test.
+    3. The theta day-count convention in `docs/part-2/theta.md` names 365
+       calendar days as both the handbook's basis *and the application's*, and
+       `docs/part-6/theta-carry-insurance-cost.md` annualises with it. In
+       deltadewa the convention is `constants.py` `DAYS_PER_YEAR = 365`, which
+       `theta_charts.py` annualises with. Nothing checks this in either
+       direction, and `constants.py` also defines `TRADING_DAYS_PER_YEAR = 252`
+       — so switching an annualisation to the 252 constant leaves the handbook
+       asserting something false about the application, with both repos' CI
+       green.
 
 ## Canonical sources
 
