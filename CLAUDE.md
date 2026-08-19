@@ -125,6 +125,11 @@ Do not re-litigate these; change only on explicit instruction.
     1. The crash-repricing spec in
        `docs/appendices/a4-crash-repricing-methodology.md` and
        `deltadewa/docs/repricing-methodology.md` share worked-example figures.
+       Only half of this coupling is machine-checked: `.github/cross-repo-anchors.txt`
+       and its CI step assert that A4's `#worked-example` *anchor* still exists,
+       because `deltadewa/tests/test_analysis/test_crash_repricing.py` cites it —
+       but nothing asserts the *figures* it points to still agree. A number
+       changed on one side and not the other passes both repos' CI green.
     2. The hedge-efficiency ratio in `docs/part-6/hedge-efficiency-ratio.md`
        is pinned in deltadewa code: `ips_config.py` hardcodes the
        interpretation band (`3.0` / `6.0`) against that page's table, and
