@@ -104,15 +104,29 @@ Because skew varies over time, institutional desks often evaluate skew relative 
 
 $\text{Skew Percentile}=\text{rank of current skew vs historical distribution}$
 
-Example:
+This page owns the skew percentile bands. Three of them drive action —
+accumulate below the 30th percentile, stay neutral from 30 to 70, avoid buying
+above 70 — and they live here, with the measure, rather than on
+[Typical Hedge Program Targets](../part-7/typical-hedge-program-targets.md).
+The distinction is that every band on that page is something a program chooses,
+while this one is a reading of the market and is the same for every program
+regardless of its targets. Parts VII and X apply these bands and link back.
 
-| Percentile | Interpretation                    |
-| ---------- | --------------------------------- |
-| < 20%      | protection historically cheap     |
-| 20 to 70%  | normal                            |
-| 70 to 80%  | moderately expensive              |
-| 80 to 90%  | protection historically expensive |
-| > 90%      | panic pricing                     |
+| Percentile | Interpretation                    | Action     |
+| ---------- | --------------------------------- | ---------- |
+| < 30%      | protection historically cheap     | accumulate |
+| 30 to 70%  | normal                            | neutral    |
+| 70 to 80%  | moderately expensive              | avoid      |
+| 80 to 90%  | protection historically expensive | avoid      |
+| > 90%      | panic pricing                     | avoid      |
+
+The five descriptive rungs are gradations inside the three action bands, not a
+competing scheme. The top three all read as *avoid*; they differ in how far past
+the threshold the market has gone, which is why the vocabulary is worth keeping.
+Above the 90th percentile the reading carries a further implication — protection
+that expensive is usually a signal to monetize existing hedges rather than to
+hold and wait, covered in
+[Tail Hedge Decision Matrix](../part-10/tail-hedge-decision-matrix.md).
 
 Typical hedge dashboards display:
 

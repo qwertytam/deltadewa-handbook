@@ -85,8 +85,13 @@ Strike selection and hedge sizing do not need to be static. A regime-sensitive a
 | Vol Regime | Skew Percentile | Recommended Adjustment                                         |
 | ---------- | --------------- | -------------------------------------------------------------- |
 | VIX < 15   | < 30%           | Increase allocation; consider slightly closer-to-money strikes |
-| VIX < 15   | > 50%           | Buy standard deep OTM; avoid chasing expensive skew            |
-| VIX 15–25  | < 40%           | Maintain program as designed                                   |
+| VIX < 15   | 30 to 70%       | Buy standard deep OTM; avoid chasing expensive skew            |
+| VIX 15–25  | < 70%           | Maintain program as designed                                   |
 | VIX > 25   | > 70%           | Reduce new purchases; wait for vol to normalize                |
+
+The skew percentile column uses the bands owned by
+[Skew Percentile](../part-3/volatility-skew.md#skew-percentile) rather than cut
+points of its own. What varies row to row is the volatility regime the same band
+is read against.
 
 This is consistent with the See [Tail Hedge Decision Matrix](../part-10/tail-hedge-decision-matrix.md) in PART X.

@@ -74,7 +74,9 @@ LOW <----|-----[x]---------|------> HIGH
 
 ### Hedge Decision Rule for Skew Percentile
 
-Typical logic:
+These are the bands owned by
+[Skew Percentile](../part-3/volatility-skew.md#skew-percentile), which also
+carries the finer descriptive rungs above the 70th percentile:
 
 | Skew Percentile | Action                                          |
 | --------------- | ----------------------------------------------- |
