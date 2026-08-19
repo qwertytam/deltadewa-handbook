@@ -160,6 +160,7 @@ wins and the other page gets a link.
 | IPS-style hard constraints | `docs/part-7/program-constraints-and-governance.md` |
 | Monetization staging, tranche sizes, retained tail position | `docs/part-8/profits-versus-convexity-when-to-take-and-when-to-hold.md` |
 | Ratio names, formulas, interpretation bands | `docs/part-6/ratio-disambiguation.md` |
+| Skew percentile bands and action thresholds | `docs/part-3/volatility-skew.md` |
 | Crash-repricing spec and worked example | `docs/appendices/a4-crash-repricing-methodology.md` |
 | Greeks definitions and formulas | `docs/appendices/a2-mathematical-formula.md` |
 | Term definitions | `docs/appendices/a1-additional-terminology.md` |
@@ -168,6 +169,18 @@ wins and the other page gets a link.
 A range that legitimately differs by investor type (institutional vs family
 office) is still owned by one page: the owner states every band and what
 distinguishes them, and other pages link rather than picking a favourite.
+
+Most bands are owned by a Part VII targets page because they are choices a
+program makes. The skew percentile bands are the exception and are owned by
+Part III, where the measure is defined: they are a reading of the market, the
+same for every program regardless of its targets. Use that test — chosen by the
+program, or observed in the market — when siting a new band.
+
+The canonical skew percentile bands are **accumulate below 30, neutral from 30
+to 70, avoid above 70**. Part III's five descriptive rungs (cheap, normal,
+moderately expensive, expensive, panic) are gradations inside those three, not a
+second scheme; "panic" above 90 is retained because it carries a monetization
+implication the three action bands do not.
 
 ## Git and PR workflow
 

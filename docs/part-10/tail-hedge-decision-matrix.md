@@ -22,6 +22,21 @@ A simple decision matrix combines them.
 | High              | High            | High             | Avoid new purchases            |
 | High              | Extreme         | High             | Monetize existing hedges       |
 
+The words in the first two columns are bands, not impressions, and the matrix is
+only executable once they are read as numbers:
+
+| Word    | Volatility Regime (VIX) | Skew Percentile       |
+| ------- | ----------------------- | --------------------- |
+| Low     | < 15                    | < 30%                 |
+| Normal  | 15 to 25                | 30 to 70%             |
+| High    | > 25                    | > 70%                 |
+| Extreme | > 40                    | > 90%, panic pricing  |
+
+The skew percentile column is the banding owned by
+[Skew Percentile](../part-3/volatility-skew.md#skew-percentile), with *Extreme*
+being that page's top rung rather than a fourth band. The VIX column follows the
+same cut points as the entry decision tree below.
+
 !!! note "Monetization on this page always means partial"
 
     Wherever this page says to monetize, it means monetizing in stages under
@@ -49,8 +64,8 @@ protection historically cheap → increase hedge allocation
 Conversely:
 
 ```text
-VIX = 40
-Skew percentile = 90%
+VIX = 45
+Skew percentile = 93%
 ```
 
 Conclusion:
