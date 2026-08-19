@@ -27,8 +27,8 @@ TAIL HEDGE DASHBOARD
 Portfolio value: $10M
 
 Carry cost:             2.1% / year
-Crash convexity:        28% @ -25% SPX
-Hedge efficiency ratio: 13.3
+Crash convexity:        15% @ -25% SPX
+Hedge efficiency ratio: 7.1
 Vega exposure:          $18k / vol point
 Skew exposure:          High
 Skew percentile:        22%  (cheap)
@@ -37,8 +37,12 @@ Forward variance:       cheap
 Dealer gamma:           negative
 ```
 
-The efficiency ratio is the two lines above it divided out — 28% of crash
-convexity against 2.1% of annual carry. It is one line item, not two: see
+The efficiency ratio is the two lines above it divided out — 15% of crash
+convexity against 2.1% of annual carry. Both inputs sit inside the bands owned
+by
+[Typical Hedge Program Targets](../part-7/typical-hedge-program-targets.md#typical-institutional-targets),
+which is what makes the conclusion below a judgement about pricing rather than
+a correction of a book that is already off target. It is one line item, not two: see
 [Ratio Disambiguation](../part-6/ratio-disambiguation.md) for why
 "convexity/carry ratio" and "hedge efficiency" name the same quantity.
 

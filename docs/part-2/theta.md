@@ -34,7 +34,19 @@ defined in [Theta Carry / Insurance Cost](../part-6/theta-carry-insurance-cost.m
 
 ### Theta Day Convention
 
-Theta is usually annualized using 252 trading days in equity options markets. Some trading desks do quote using calendar year i.e., 365 days.
+Conventions differ. Some desks annualise daily theta over 252 trading days,
+others over 365 calendar days, and the two answers differ by about 45% for the
+same position — so a theta figure is not interpretable until you know which
+basis produced it.
+
+**This handbook uses 365 calendar days, and so does the deltadewa
+application.** That follows from the definition above: $\Theta$ is the
+derivative with respect to *calendar* time, so a calendar-day theta has to be
+scaled by calendar days. Multiplying a calendar-day theta by 252 mixes the two
+bases and understates annual carry by roughly 31%.
+
+When you take a theta off a broker platform or a pricing model, check its
+convention before comparing it to any figure in this handbook.
 
 ## Practical Interpretation of Theta
 

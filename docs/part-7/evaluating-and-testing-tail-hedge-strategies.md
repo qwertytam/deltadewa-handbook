@@ -173,19 +173,19 @@ QUARTERLY HEDGE PROGRAM REPORT
 
 Portfolio value:                $10.2M
 Portfolio beta vs. SPX:         0.95  (no resizing required)
-Hedge premium spent YTD:        $48k  (0.47% annualized)
+Hedge premium spent YTD:        $204k (2.0% annualized)
 Crash convexity at −25% SPX:    18.2% (target: see program targets)
-Hedge efficiency ratio:         8.4x  (target: >6)
+Hedge efficiency ratio:         9.1x  (target: >6)
 Skew percentile:                24%   (protection cheap)
 Roll status:                    Next roll due Aug 2026
 Program status:                 WITHIN PARAMETERS
 
 Portfolio return YTD (ex-hedge cost):   +7.2%
-Portfolio return YTD (incl. hedge cost): +6.7%
-Hedge cost this quarter:                −$12k (0.12%)
+Portfolio return YTD (incl. hedge cost): +5.2%
+Hedge cost this quarter:                −$51k (0.50%)
 
 Note: Hedge cost is a designed feature, not a performance deficit.
-In a −25% market decline, the hedge is expected to generate +$1.8M,
+In a −25% market decline, the hedge is expected to generate +$1.9M,
 reducing the portfolio drawdown from approximately −25% to approximately −7%.
 ```
 
@@ -200,16 +200,16 @@ crash scenario they are measured against.
 Key principles for the reporting format:
 
 - Always show equity return both before and after hedge cost, so stakeholders see the drag explicitly rather than having it hidden in blended returns.
-- Show the carry-to-convexity ratio alongside the cost — this frames cost in terms of what it buys, not as a pure loss.
+- Show the hedge efficiency ratio alongside the cost — this frames cost in terms of what it buys, not as a pure loss.
 - Include a program status line (Within Parameters / Review Required / Action Required) to give a clear signal without requiring stakeholders to interpret raw numbers.
 - The bottom note restating the hedge's scenario value reinforces the insurance framing at every reporting period.
 
 Note on reporting in quarters when hedge positions are monetized: show the monetization gain as a **separate line** rather than netting it against the carry cost. For example:
 
 ```text
-Hedge premium spent YTD:        $48k  (0.47% annualized)
+Hedge premium spent YTD:        $204k (2.0% annualized)
 Hedge monetization gain YTD:    +$620k
-Net hedge programme P&L YTD:    +$572k
+Net hedge program P&L YTD:      +$416k
 ```
 
 Netting monetization gains against carry costs obscures both the cost of protection in normal years and the value of the payoff in crisis years — making it impossible for stakeholders to understand either number in isolation. Showing them separately preserves the insurance framing: the carry is the premium paid, the monetization gain is the insurance claim received.

@@ -60,6 +60,13 @@ If crash convexity at −25% SPX is 22% and annual carry is 3%, then the ratio i
 22% / 3% = 7.3
 ```
 
+The inputs here are chosen to demonstrate the arithmetic, not to describe a
+book at target: 22% crash convexity sits above the program band in
+[Typical Hedge Program Targets](../part-7/typical-hedge-program-targets.md#typical-institutional-targets),
+and the ratio would be read against the interpretation table below regardless.
+A convexity figure has to carry its crash scenario before it can be compared to
+that band at all.
+
 ## Interpretation of the Ratio { #interpretation-of-the-ratio }
 
 | Ratio  | Meaning    |
