@@ -24,7 +24,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # fetch-depth: 0 — full history, not just the tip commit. The
+      # git-revision-date-localized plugin reads, per page, the date of the
+      # most recent commit that touched its source file; a shallow checkout
+      # gives it only one commit to search, so every page falls back to that
+      # commit's date and the footer shows the same timestamp everywhere.
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       # Shared with ci.yml, so the build that gets published is the same one
       # every pull request was checked against.

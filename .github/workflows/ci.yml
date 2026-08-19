@@ -57,7 +57,12 @@ jobs:
       contents: read
       pages: read
     steps:
+      # fetch-depth: 0 to match deploy.yml — see the comment there. Not
+      # required for --strict itself, but this job claims to build the exact
+      # site deploy.yml publishes, which is only true if both see full history.
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       # Literally the same steps deploy.yml runs, so a pull request cannot
       # merge a broken cross-reference, missing anchor or orphaned page.
