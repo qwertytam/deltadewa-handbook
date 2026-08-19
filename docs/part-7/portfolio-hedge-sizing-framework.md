@@ -45,11 +45,11 @@ The hedge reduced the drawdown from **25% to 10%**.
 
 Institutional programs often target:
 
-| Hedge Notional Relative to Portfolio | Description        |
-| ------------------------------------ | ------------------ |
-| 25 to 50%                            | partial protection |
-| 50 to 75%                            | moderate hedge     |
-| 75 to 100%                           | strong protection  |
+| Hedge Notional Relative to Portfolio | Description       |
+| ------------------------------------ | ----------------- |
+| 25 to 50%                            | partial coverage  |
+| 50 to 75%                            | moderate coverage |
+| 75 to 100%                           | full coverage     |
 
 Many tail-risk funds operate around:
 

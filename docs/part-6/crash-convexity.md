@@ -69,17 +69,28 @@ Crash Convexity = (1.2M − 150k) / 10M = 10.5%
 
 ## Interpretation of Crash Convexity
 
-The table below is a gradient for *reading* a convexity figure — how much
-protection a given number represents — rather than a statement of what a program
-should aim for. The target band is a separate and narrower thing, and follows
-below.
+The table below reads a convexity figure quoted at −25% SPX. It is the ladder on
+[Crash Payoff Ratio](crash-payoff-ratio-tail-hedge-effectiveness.md#interpretation-of-crash-payoff-ratio)
+in the other denominator: at −25% the portfolio's equity loss is a quarter of its
+value, so each rung here is the matching payoff rung divided by four. A book does
+not read as a strong tail hedge on one of those pages and a moderate one on the
+other.
 
-| Crash Convexity | Interpretation             |
-| --------------- | -------------------------- |
-| < 5%            | weak crash protection      |
-| 5 to 15%        | moderate hedge             |
-| 15 to 30%       | strong tail hedge          |
-| > 30%           | very aggressive protection |
+| Crash Convexity at −25% SPX | Interpretation             |
+| --------------------------- | -------------------------- |
+| < 5%                        | weak crash protection      |
+| 5 to 10%                    | moderate hedge             |
+| 10 to 20%                   | strong tail hedge          |
+| > 20%                       | very aggressive protection |
+
+The "strong tail hedge" rung is the program target band below, not a wider range
+around it. The ladder's use is in the other three rungs, which say how far off
+target a book sits and in which direction.
+
+Read a deeper scenario against its own figures rather than against this table.
+The [profile](#convexity-profile) at the foot of the
+page shows one book at −15% through −40%, where convexity is mechanically larger
+at every step down; these rungs do not apply to those rows.
 
 Most institutional programs target:
 
@@ -153,6 +164,8 @@ Institutional tail funds run full surface shock scenarios with explicit skew ste
 ### Important Practical Point
 
 The most important practical point is that crash convexity is only meaningful when specified with its scenario assumptions. A number quoted as "28% crash convexity" is incomplete without knowing whether that is at −20% or −30% SPX, and whether it assumes a historical vol spike or a flat parallel shift.
+
+<a id="convexity-profile"></a>
 
 ## Example Convexity Profile / Multi-Scenario Table
 

@@ -40,10 +40,11 @@ ratio, the right numerator for hedge efficiency.
 The headline band above is a program target and carries its scenario with it —
 10 to 20% at −25% SPX, owned by
 [Typical Hedge Program Targets](../part-7/typical-hedge-program-targets.md#typical-institutional-targets).
-The wider gradient on the metric page, where 15 to 30% reads as a strong tail
-hedge, answers a different question: what a convexity figure *means*, rather
-than what a program should aim for. The two are not competing ranges and should
-not be read against each other.
+The interpretation ladder on the metric page is that band with rungs either side
+of it, and it is the crash payoff ratio's ladder in this denominator: at −25% SPX
+the two differ only by the factor of four between portfolio value and portfolio
+equity loss. A figure that reads as a strong tail hedge on one of those pages
+reads the same way on the other.
 
 ### Crash Payoff Ratio
 
