@@ -53,7 +53,12 @@ Typical rule:
 | < 15     | accumulate                   |
 | 15 to 25 | maintain                     |
 | 25 to 40 | partial reduction            |
-| > 40     | more aggressive monetization |
+| > 40     | monetize in stages           |
+
+The sizing of each stage, and the tail position retained throughout, are set
+by [Typical Monetization Triggers](../part-8/typical-monetization-triggers.md)
+and [Profits Versus Convexity](../part-8/profits-versus-convexity-when-to-take-and-when-to-hold.md#principles-for-deciding).
+No rung of this table closes the whole position.
 
 ## 7. Skew Percentile Gauge
 

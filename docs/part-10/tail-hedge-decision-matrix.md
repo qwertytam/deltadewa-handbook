@@ -22,6 +22,16 @@ A simple decision matrix combines them.
 | High              | High            | High             | Avoid new purchases            |
 | High              | Extreme         | High             | Monetize existing hedges       |
 
+!!! note "Monetization on this page always means partial"
+
+    Wherever this page says to monetize, it means monetizing in stages under
+    the schedule in
+    [Typical Monetization Triggers](../part-8/typical-monetization-triggers.md),
+    retaining a small tail position throughout. The entire hedge is never
+    closed in a single transaction — see
+    [Profits Versus Convexity](../part-8/profits-versus-convexity-when-to-take-and-when-to-hold.md#principles-for-deciding)
+    for the rule and the reasoning.
+
 Example interpretation:
 
 ```text
@@ -63,7 +73,7 @@ The matrix above can be converted into sequential decision rules:
 
 | VIX Level | Initial Guidance                                                                                                         |
 | --------- | ------------------------------------------------------------------------------------------------------------------------ |
-| VIX > 40  | Stop — monetize existing hedges; do not buy new protection                                                               |
+| VIX > 40  | Stop — do not buy new protection; monetize per the staged schedule in Part VIII                                          |
 | VIX 25–40 | Caution — avoid new purchases unless a roll is urgently required; if roll required, reduce size and consider put spreads |
 | VIX 15–25 | Proceed to Step 2                                                                                                        |
 | VIX < 15  | Proceed to Step 2 with increased urgency to accumulate                                                                   |
@@ -88,5 +98,5 @@ Explicit rules derived from this tree:
 
 - **VIX > 25: Avoid new hedge purchases**
 - **VIX < 15 + skew percentile < 30%: Increase allocation aggressively**
-- **VIX > 40: Monetize existing positions**
+- **VIX > 40: Monetize in stages, never in full** — see [Profits Versus Convexity](../part-8/profits-versus-convexity-when-to-take-and-when-to-hold.md#principles-for-deciding)
 - **Term structure inverted: Roll costs lower — consider refreshing ladder earlier**

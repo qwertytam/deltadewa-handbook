@@ -11,7 +11,7 @@ The key tension:
 
 ## Principles for Deciding
 
-1. **Pre-commit to a partial monetization schedule** — the scenario-based playbook below provides a structured framework. Having rules in advance removes the temptation to over-optimize in real time.
+1. **Pre-commit to a partial monetization schedule** — the [Scenario-Based Re-Risk Playbook](scenario-based-re-risk-playbook.md) and [Typical Monetization Triggers](typical-monetization-triggers.md) provide a structured framework. Having rules in advance removes the temptation to over-optimize in real time.
 
 2. **Never monetize the entire hedge in a single transaction** — staged monetization (e.g., sell 25% at each trigger) preserves convexity exposure while realizing some liquidity.
 

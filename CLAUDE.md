@@ -149,6 +149,7 @@ wins and the other page gets a link.
 | Roll timing, maturity and roll-interval targets | `docs/part-7/typical-hedge-program-targets.md` |
 | Annual carry / premium budget ranges | `docs/part-7/typical-hedge-program-targets.md` (family-office paragraph) |
 | IPS-style hard constraints | `docs/part-7/program-constraints-and-governance.md` |
+| Monetization staging, tranche sizes, retained tail position | `docs/part-8/profits-versus-convexity-when-to-take-and-when-to-hold.md` |
 | Ratio names, formulas, interpretation bands | `docs/part-6/ratio-disambiguation.md` |
 | Crash-repricing spec and worked example | `docs/appendices/a4-crash-repricing-methodology.md` |
 | Greeks definitions and formulas | `docs/appendices/a2-mathematical-formula.md` |

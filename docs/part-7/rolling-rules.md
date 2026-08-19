@@ -133,11 +133,21 @@ Example rule:
 ```text
 If VIX < 15 → increase hedge exposure
 If VIX 15 to 25 → no action
-If VIX 25 to 40 → monetize some part of hedge
-If VIX > 40 → look to liquidate hedge in full
+If VIX 25 to 40 → do not add exposure; defer any roll not forced by a trigger
+If VIX > 40 → do not buy new protection
 ```
 
-This rule helps control the long-term carry cost of the hedge program.
+This rule helps control the long-term carry cost of the hedge program. It
+governs **what you buy**, not what you sell.
+
+Disposal is a separate decision with its own rules. Above VIX 25 the question
+is no longer when to roll but whether to monetize, and that is governed by
+[Typical Monetization Triggers](../part-8/typical-monetization-triggers.md)
+and the staged schedule in
+[Profits Versus Convexity](../part-8/profits-versus-convexity-when-to-take-and-when-to-hold.md#principles-for-deciding).
+Monetization there is always partial: no rung of any ladder closes the whole
+position in one transaction, and a small tail position is retained after
+substantial monetization to preserve optionality.
 
 ### What to Do When Skew Is Expensive
 
