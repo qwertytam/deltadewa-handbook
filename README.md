@@ -148,6 +148,47 @@ retire one, remove the citation downstream first, then the line here. The
 citing repository runs the mirror of this check — a monthly job that fetches
 each handbook URL and asserts the fragment exists in the response.
 
+### Version numbers
+
+The anchor contract promises a URL keeps resolving. A version tag is the other
+half of that promise: it names *what the URL resolved to* on a given day, so a
+downstream repository can cite a band or a worked example and say which reading
+of it it meant.
+
+Versions are `major.minor.patch`. The line between minor and patch is whether a
+reader — or a citing repository — could notice the change:
+
+| Bump | What it covers |
+| --- | --- |
+| Minor (`0.1` → `0.2`) | A canonical number or band moves; a page is added, moved or renamed; the `nav` restructures; a line in `.github/cross-repo-anchors.txt` is added or changed. |
+| Patch (`0.1.0` → `0.1.1`) | Wording, formatting, a repaired link, a citation added for a fact already asserted. The claims are unchanged. |
+
+A leading `0.` says the canon is still settling: bands may still move, and a
+page may still be re-sited from one Part to another. **1.0.0** is the point at
+which every entry in the canonical-sources table has one owning page and no
+open argument about which number wins. After 1.0.0 a major bump means a break
+in what this repository promises downstream — a cited URL or anchor retired —
+not merely a rewrite.
+
+### The release bar
+
+A tag costs nothing to create, which is exactly why it needs a bar: a version
+is worth citing only if the content it names does not contradict itself. All
+four of these must hold **on the commit being tagged**:
+
+1. No open issue labelled `priority: P1` — nothing known to be factually wrong
+   or self-contradicting.
+2. No open issue labelled `internal-consistency` — no concept stated two
+   different ways in two places.
+3. `Lint Markdown` and `Build docs (strict)` both green on that commit itself,
+   not merely on the pull request that preceded it.
+4. The cross-repo anchor assertion green on that commit, so every anchor
+   another repository cites still resolves in the built site.
+
+Tagging is the maintainer's editorial act, not something CI does on merge.
+Meeting the bar makes a version *permissible*, not *due* — a batch of issues
+that has landed but not settled is a reason to wait.
+
 ## Deployment
 
 Every push to `main` builds the site and publishes it to GitHub Pages via
