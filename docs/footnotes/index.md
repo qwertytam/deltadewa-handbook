@@ -267,6 +267,40 @@ same underlying security or index, for the same account, to accomplish a
 particular strategy, and governs execution of such orders as a single net-priced
 package rather than as separately worked legs.
 
+### 26 U.S.C. § 1256 — Section 1256 Contracts Marked to Market { #irc-1256 }
+
+26 U.S.C. § 1256, "Section 1256 contracts marked to market", including
+§ 1256(b)(1)(C) (nonequity options are section 1256 contracts), § 1256(f)(5)
+(disapplying the § 1091 wash-sale rule), and § 1256(g)(3) and (g)(6) (defining
+"nonequity option" and "equity option").
+
+[law.cornell.edu — 26 U.S.C. § 1256](https://www.law.cornell.edu/uscode/text/26/1256)
+
+The primary statutory authority for section 1256 mark-to-market treatment.
+§ 1256(f)(5) provides that "Section 1091 (relating to loss from wash sales of
+stock or securities) shall not apply to any loss taken into account by reason
+of paragraph (1) of subsection (a)". § 1256(g)(6) confines "equity option" to
+options on stock and on narrow-based security indices, so a broad-based index
+option falls outside that definition and is a "nonequity option" under
+§ 1256(g)(3) by exclusion — the statute contains no explicit "broad-based"
+label.
+
+### 26 U.S.C. §§ 1091 and 1092 — Wash Sales and Straddles { #irc-1091-1092 }
+
+26 U.S.C. § 1091, "Loss from wash sales of stock or securities", and
+26 U.S.C. § 1092, "Straddles".
+
+[law.cornell.edu — 26 U.S.C. § 1091](https://www.law.cornell.edu/uscode/text/26/1091)<br>
+[law.cornell.edu — 26 U.S.C. § 1092](https://www.law.cornell.edu/uscode/text/26/1092)
+
+Two distinct Code sections governing separate loss-deferral regimes. § 1091
+disallows a loss where a substantially identical position is acquired within
+30 days before or after the sale; § 1092 defers a loss on one position to the
+extent of unrecognized gain on an offsetting position. § 1256(f)(5) disapplies
+§ 1091 to mark-to-market losses but does not touch § 1092, so a section 1256
+contract can still be part of a straddle even though its wash-sale exposure is
+switched off.
+
 ## Data Sources
 
 ### FRED — Treasury Constant Maturity Yields { #fred }
